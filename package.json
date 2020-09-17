@@ -1,0 +1,27 @@
+{
+  "name": "41SLSP_NETWORK",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
+  "author": "Mehmet Celik <mehmet@celik.be>",
+  "license": "MIT",
+  "babel": {
+    "plugins": [
+      "import-directory",
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "scripts": {
+    "start": "primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./package",
+    "build": "parcel build src/index.js --no-cache --target browser --out-dir package/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
+    "watch": "parcel watch src/index.js --no-cache --target browser --out-dir package/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "babel-plugin-import-directory": "^1.1.0",
+    "parcel-bundler": "^1.12.4",
+    "primo-serve": "^0.0.8"
+  }
+}
