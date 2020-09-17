@@ -1,6 +1,6 @@
 class HelloWorldController {
     constructor() {
-
+        console.log('constructor');
     }
 }
 
@@ -12,6 +12,6 @@ export let component = {
         template: "<h1>Hello World</h1>"
     },
     enabled: true,
-    appendTo: 'prm-top-bar-bedore',
+    appendTo: 'prm-top-bar-before',
     enableInView: '.*'
 }
