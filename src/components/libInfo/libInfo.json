@@ -1,0 +1,30 @@
+{
+    "Lesesaal Sondersammlung ZHB": {
+        "code": "LULSO",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-sempacherstrasse-im-provisorium-murbacherstrasse/"
+    },
+    "Luzern ZHB HSLU Wirtschaft": {
+        "code": "LUHSW",
+        "url": "https://www.idsluzern.ch/bibliotheken/hslu/bibliothek-hslu-w/"
+    },
+    "Luzern ZHB Sempacherstrasse": {
+        "code": "LUZHB",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-sempacherstrasse-im-provisorium-murbacherstrasse/"
+    },
+    "Luzern ZHB Speicherbibliothek": {
+        "code": "LUSBI",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-aussenmagazin/"
+    },
+    "Luzern ZHB Uni/PH-Gebäude": {
+        "code": "LUUHL",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
+    },
+    "Luzern ZHB Uni/PH-Gebäude (LUNI3)": {
+        "code": "LUNI3",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
+    },
+    "Luzern ZHB Uni/PH-Gebäude (LUPHL)": {
+        "code": "LUPHL",
+        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
+    }
+}

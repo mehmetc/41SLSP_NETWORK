@@ -9,7 +9,7 @@ export let component = {
     config: {
         bindings: {parentCtrl: '<'},
         controller: HelloWorldController,
-        template: "<h3>Hello Magic</h3>"
+        template: "<h3>Hello World!</h3>"
     },
     enabled: true,
     appendTo: 'prm-top-bar-before',
