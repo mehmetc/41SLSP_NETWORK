@@ -59,7 +59,7 @@ SearchAlsoBodyController.$inject = ['$location'];
 
 
 export let component = {
-  name: 'zbl-search-also-body',
+  name: 'rzs-search-also-body',
   config: {
     bindings: { parentCtrl: '<' },
     controller: SearchAlsoBodyController,

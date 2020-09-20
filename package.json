@@ -7,19 +7,29 @@
   "license": "MIT",
   "babel": {
     "plugins": [
-      "import-directory",
       "@babel/plugin-transform-runtime"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": "defaults",
+          "sourceMaps": "inline"
+        }
+      ]
     ]
   },
   "scripts": {
-    "start": "yarn run build && primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./package --ve",
-    "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir package/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
-    "watch": "parcel watch src/index.js --no-cache --target browser --out-dir package/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js"
+    "start": "yarn run build && primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
+    "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
+    "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
+    "package": "yarn build && cd dist && zip -r ./* ../package/41SLSP_NETWORK-CENTRAL_PACKAGE.zip && cd -"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
     "babel-plugin-import-directory": "^1.1.0",
     "parcel-bundler": "^1.12.4",
     "rimraf": "^3.0.2"

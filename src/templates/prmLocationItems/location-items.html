@@ -20,9 +20,6 @@
         <span ng-if="$ctrl.currLoc.location && $ctrl.currLoc.location.subLocation && $ctrl.getSubLibraryName($ctrl.currLoc.location)">{{$ctrl.currLoc.location.collectionTranslation}} </span>
         <span ng-if="$ctrl.currLoc.location.callNumber"></span>
         <span ng-if="$ctrl.currLoc.location.callNumber">{{$ctrl.currLoc.location.callNumber}}</span>
-        <zbl-vscout library-code='$ctrl.currLoc.location.libraryCode'
-                    location-code="$ctrl.currLoc.location.callNumber">
-        </zbl-vscout>
       </p>
       <p ng-if="$ctrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin">{{$ctrl.currLoc.location.availabilityStatement}}</p>
       <div ng-if="!$ctrl.currLoc.locationNoItems">
@@ -63,7 +60,7 @@
     </div>
   </div>
   <div layout="row">
-    <zbl-lib-info location-code="$ctrl.currLoc.location.mainLocation"></zbl-lib-info>
+    <rzs-lib-info location-code="$ctrl.currLoc.location.mainLocation"></rzs-lib-info>
     <prm-stack-map ng-if="$ctrl.isSuprima() && $ctrl.currLoc.location.stackMapUrl" [map-url]="$ctrl.currLoc.location.stackMapUrl"></prm-stack-map>
   </div>
   <div layout="row" ng-hide="$ctrl.currLoc.locationNoItems" layout-align="end center">

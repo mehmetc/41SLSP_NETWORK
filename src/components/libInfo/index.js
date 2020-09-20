@@ -16,7 +16,7 @@ class LibInfoController {
   }
 
   get sourceURL() {
-    console.log(this.locationCode);
+    //console.log(this.locationCode);
     let location = libInfoJSON[this.locationCode];    
     if (location) {
       return location.url;
@@ -28,7 +28,7 @@ class LibInfoController {
 LibInfoController.$inject = ['$translate'];
 
 export let component = {
-  name: 'zbl-lib-info',
+  name: 'rzs-lib-info',
   config: {
     bindings: { locationCode: '<' },
     controller: LibInfoController,

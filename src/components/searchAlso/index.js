@@ -25,7 +25,7 @@ class SearchAlsoController {
   
   
   export let component = {
-    name: 'zbl-search-also',
+    name: 'rzs-search-also',
     config: {
       bindings:{parentCtrl:'<'},
       controller: SearchAlsoController

@@ -6,7 +6,7 @@
       <div flex flex-xs="100">
         <h3 ng-if="$ctrl.location && $ctrl.getLibraryName($ctrl.location)">
           <span>{{$ctrl.location.librarycodeTranslation}}</span>
-          <zbl-lib-info location-code="$ctrl.location.mainLocation"></zbl-lib-info>
+          <rzs-lib-info location-code="$ctrl.location.mainLocation"></rzs-lib-info>
         </h3>
         <h5 ng-if="$ctrl.location.relatedTitle != null && $ctrl.location.relatedTitle !== ''" class="related-title">
           <prm-icon icon-type="{{$ctrl.opacLocations.relatedArrow.type}}" svg-icon-set="{{$ctrl.opacLocations.relatedArrow.iconSet}}" icon-definition="{{$ctrl.opacLocations.relatedArrow.icon}}" class="related-title-icon h-flipped"></prm-icon>

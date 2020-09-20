@@ -1,4 +1,10 @@
-import * as Components from './components/**'
+//import * as Components from './components/**'
+import {component as dotTestComponent} from './components/dotTest';
+import {component as libInfoComponent} from './components/libInfo';
+import {component as searchAlsoComponent} from './components/searchAlso';
+import {component as searchAlsoBodyComponent} from './components/searchAlsoBody';
+import {component as AltmetricComponent} from './components/altmetric';
+import {component as BrowzineComponent} from './components/browzine';
 
 String.prototype.toCamelCase = function () {
     return this.split('-').map((d, i, a) => i > 0 ? d.charAt(0).toUpperCase() + d.slice(1) : d).join('');
@@ -8,8 +14,8 @@ export default class Loader {
     constructor() {
     }
 
-    load(app) {
-        this._injectComponentPlaceHoldersIntoAfterComponents(app);
+    load(modType) {
+        this._injectComponentPlaceHoldersIntoAfterComponents(modType);        
     }
 
     /**
@@ -17,18 +23,26 @@ export default class Loader {
      * 
      **/
     _importComponents() {
-        let components = [];
-        Object.keys(Components).forEach((component_def) => {
-            components.push(Components[component_def].component);
-        });
-        return components.filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
+        // let components = [];
+        // Object.keys(Components).forEach((component_def) => {
+        //     components.push(Components[component_def].component);
+        // });
+        return [
+            dotTestComponent,
+            libInfoComponent,
+            searchAlsoComponent,
+            searchAlsoBodyComponent,
+            AltmetricComponent,
+            BrowzineComponent
+        ]
+                    .filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
     }
 
     /**
      * 
      * 
      **/
-    _createComponents(app) {
+    _createComponents(modType) {
         let components = this._importComponents();
         let afterComponents = {};
 
@@ -45,8 +59,8 @@ export default class Loader {
                     afterComponents[component.appendTo] = elements;
 
                 }
-                app.constant('afterComponents', afterComponents);
-                app.component(component.name.toCamelCase(), component.config);
+                angular.module(modType).constant('afterComponents', afterComponents);
+                angular.module(modType).component(component.name.toCamelCase(), component.config);
             }
         });
 
@@ -57,13 +71,13 @@ export default class Loader {
      * 
      * 
      **/
-    _injectComponentPlaceHoldersIntoAfterComponents(app) {
-        let afterComponents = this._createComponents(app);
+    _injectComponentPlaceHoldersIntoAfterComponents(modType) {
+        let afterComponents = this._createComponents(modType);
         //Inject place holders into the after components
         Object.keys(afterComponents).forEach((component, i) => {
             let subComponents = afterComponents[component];
 
-            app.component(component.toCamelCase(), {
+            angular.module(modType).component(component.toCamelCase(), {
                 bindings: {
                     parentCtrl: '<'
                 },
