@@ -24,7 +24,7 @@
     "start": "yarn run build && primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
     "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
     "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
-    "package": "yarn build && cd dist && zip -r ./* ../package/41SLSP_NETWORK-CENTRAL_PACKAGE.zip && cd -"
+    "package": "cd dist && zip -r ./* ../package/41SLSP_NETWORK-CENTRAL_PACKAGE.zip && cd -"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",

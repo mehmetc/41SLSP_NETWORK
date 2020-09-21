@@ -29,7 +29,6 @@ export default class Primo {
         })
     }
 
-
     get components() {
         return Component;
     }
