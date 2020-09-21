@@ -1,19 +1,23 @@
 //import angular from 'angular';
 "use strict"
 import Loader from './loader';
+import MessageService from './factories/messageService'
 
 import locationItemsHTML from './templates/prmLocationItems/location-items.html'
 import locationHTML from './templates/prmLocation/location.html'
 
+import Primo from './primo'
+
 (function () {
 
   let customType = 'centralCustom';
-
+  window.Primo = new Primo();
   let app = angular.module(customType, ['ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
     $sceDelegateProvider.resourceUrlWhitelist([
       '**'
     ]);
   })
+    .service('MessageService', MessageService)
     .run(($translate, $rootScope, $templateCache, angularLoad) => {
       let watcher = $rootScope.$watch(() => {
         try {
@@ -68,6 +72,6 @@ import locationHTML from './templates/prmLocation/location.html'
       $templateCache.put('components/search/fullView/getit/opac/locations/location/location.html', locationHTML);
 
     });
-
-  new Loader().load(customType);
+  
+    new Loader().load(customType);
 })();

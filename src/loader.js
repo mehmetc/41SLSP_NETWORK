@@ -5,6 +5,8 @@ import {component as searchAlsoComponent} from './components/searchAlso';
 import {component as searchAlsoBodyComponent} from './components/searchAlsoBody';
 import {component as AltmetricComponent} from './components/altmetric';
 import {component as BrowzineComponent} from './components/browzine';
+import {component as FinesComponent} from './components/finesMessage';
+import {component as AlertComponent} from './components/alertMessage';
 
 String.prototype.toCamelCase = function () {
     return this.split('-').map((d, i, a) => i > 0 ? d.charAt(0).toUpperCase() + d.slice(1) : d).join('');
@@ -33,9 +35,10 @@ export default class Loader {
             searchAlsoComponent,
             searchAlsoBodyComponent,
             AltmetricComponent,
-            BrowzineComponent
-        ]
-                    .filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
+            BrowzineComponent,
+            FinesComponent,
+            AlertComponent
+        ].filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
     }
 
     /**
