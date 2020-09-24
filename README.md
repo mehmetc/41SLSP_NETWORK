@@ -8,12 +8,11 @@ This is the CENTRAL_PACKAGE for RZS
 ```
 yarn install
 ```
-- Start up a proxy for testing
+- Start up a proxy for testing. Copy the URL into a private or incognito window to break the browser cache.
 ```
 yarn start
 ```
 - Build the source. 
-  !!!!Open the deleveloper console and disable cache "Network -> Disable cache"
 ```
 yarn build
 yarn watch
@@ -21,6 +20,8 @@ yarn watch
 - Create a package that you can upload to the back office 
 ```
 yarn package
+OR
+make_package.sh
 ```
 
 ### Directory structure
