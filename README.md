@@ -21,3 +21,22 @@ yarn watch
 ```
 yarn package
 ```
+
+### Directory structure
+```
+dist                                            Directory with compiled sources
+package                                         Directory with the packaged compiled sources
+src                                             Source code
+├── components                                  Directory with all the components                 
+│   └── libInfo                                 Component
+│       ├── index.js                            Business logic of component
+│       ├── libInfo.html                        Visuals of component
+│       └── libInfo.json                        Extra data
+├── factories                                   Angular factories and services
+│   ├── messageService.html
+│   └── messageService.js
+├── index.js                                    CentralCustom definition
+├── loader.js                                   Component loader
+├── primo                                       Bridge into Angular eco system
+└── templates                                   Template files used to overwrite existing primo templates
+```
