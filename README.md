@@ -12,12 +12,13 @@ yarn install
 ```
 yarn start
 ```
-- Build the source
+- Build the source. 
+  !!!!Open the deleveloper console and disable cache "Network -> Disable cache"
 ```
 yarn build
 yarn watch
 ```
-- Create a package
+- Create a package that you can upload to the back office 
 ```
 yarn package
 ```
@@ -37,6 +38,15 @@ src                                             Source code
 │   └── messageService.js
 ├── index.js                                    CentralCustom definition
 ├── loader.js                                   Component loader
-├── primo                                       Bridge into Angular eco system
+├── primo                                       Bridge into Primo services like user, records, facets ...
 └── templates                                   Template files used to overwrite existing primo templates
+```
+## Changing the server address
+
+In ```package.json``` you can find the proxy and vid parameter. If you update them then next time you run ```yarn start``` it will open the newly assigned Primo. the ```---ve``` parameter is only needed if you have PrimoVE aka Alma Discovery.
+
+```
+{
+    "script": "start": "primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve"
+}
 ```

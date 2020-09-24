@@ -1,7 +1,7 @@
 {
   "name": "41slsp_network",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
@@ -21,7 +21,7 @@
     ]
   },
   "scripts": {
-    "start": "yarn run build && primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
+    "start": "primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
     "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
     "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_NETWORK-CENTRAL_PACKAGE/js --out-file custom.js",
     "package": "cd dist && zip -r ./* ../package/41SLSP_NETWORK-CENTRAL_PACKAGE.zip && cd -"
