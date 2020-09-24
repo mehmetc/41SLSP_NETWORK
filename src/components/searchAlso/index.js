@@ -1,21 +1,21 @@
 //facets.facet.facet_search_also
 class SearchAlsoController {
     constructor($scope){
-  
-      $scope.$watch(() => {
-          return this.parentCtrl.parentCtrl.facetService.results;
-      }, (n,o) => {
-        if (n != o) {
-          if (this.parentCtrl.parentCtrl.facetService.results.filter(f => {return f.name == 'search_also'}).length == 0) {
-            this.parentCtrl.parentCtrl.facetService.results.unshift({
+      let facetService = this.parentCtrl.parentCtrl.facetService;
+      let searchAsoWatcher = $scope.$watch(() => {        
+          return facetService.results;
+      }, (n,o) => {          
+          if (facetService.results.filter(f => {return f.name == 'search_also'}).length == 0) {            
+            facetService.results.unshift({
               name: 'search_also',
               displayedType: 'exact',
               limitCount: 0,
               facetGroupCollapsed: false,
               values: undefined
             });
+            console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
+            //searchAsoWatcher();
           }
-        }
       });
       
     }

@@ -10,7 +10,8 @@ import Primo from './primo'
 
 (function () {
 
-  let customType = 'centralCustom';
+  //let customType = 'centralCustom';
+  let customType = 'viewCustom';
   window.Primo = new Primo();
   let app = angular.module(customType, ['ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -68,8 +69,8 @@ import Primo from './primo'
         console.log('bibtip.js loaded');
       });
 
-      $templateCache.put('components/search/fullView/getit/opac/locations/location-items.html', locationItemsHTML);
-      $templateCache.put('components/search/fullView/getit/opac/locations/location/location.html', locationHTML);
+      //$templateCache.put('components/search/fullView/getit/opac/locations/location-items.html', locationItemsHTML);
+      //$templateCache.put('components/search/fullView/getit/opac/locations/location/location.html', locationHTML);
 
     });
   

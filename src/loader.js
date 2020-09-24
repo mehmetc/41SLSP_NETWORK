@@ -1,11 +1,11 @@
 //import * as Components from './components/**'
 import {component as dotTestComponent} from './components/dotTest';
-import {component as libInfoComponent} from './components/libInfo';
+import {component as libInfoContainerComponent} from './components/libInfo/container';
+import {component as libInfoComponent} from './components/libInfo/info';
 import {component as searchAlsoComponent} from './components/searchAlso';
 import {component as searchAlsoBodyComponent} from './components/searchAlsoBody';
 import {component as altmetricComponent} from './components/altmetric';
 import {component as browzineComponent} from './components/browzine';
-import {component as finesComponent} from './components/finesMessage';
 import {component as alertComponent} from './components/alertMessage';
 
 String.prototype.toCamelCase = function () {
@@ -31,12 +31,12 @@ export default class Loader {
         // });
         return [
             dotTestComponent,
+            libInfoContainerComponent,
             libInfoComponent,
             searchAlsoComponent,
             searchAlsoBodyComponent,
             altmetricComponent,
-            browzineComponent,
-            finesComponent,
+            browzineComponent,            
             alertComponent
         ].filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
     }

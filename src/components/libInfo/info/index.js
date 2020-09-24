@@ -35,6 +35,6 @@ export let component = {
     template: libInfoHTML
   },
   enabled: true,
-  appendTo: 'prm-stack-map-after',
+  appendTo: null,
   enableInView: '.*'
 }
