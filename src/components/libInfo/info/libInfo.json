@@ -1,30 +1,118 @@
 {
-    "Lesesaal Sondersammlung ZHB": {
-        "code": "LULSO",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-sempacherstrasse-im-provisorium-murbacherstrasse/"
-    },
-    "Luzern ZHB HSLU Wirtschaft": {
-        "code": "LUHSW",
-        "url": "https://www.idsluzern.ch/bibliotheken/hslu/bibliothek-hslu-w/"
-    },
-    "Luzern ZHB Sempacherstrasse": {
-        "code": "LUZHB",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-sempacherstrasse-im-provisorium-murbacherstrasse/"
-    },
-    "Luzern ZHB Speicherbibliothek": {
-        "code": "LUSBI",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-aussenmagazin/"
-    },
-    "Luzern ZHB Uni/PH-Gebäude": {
-        "code": "LUUHL",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
-    },
-    "Luzern ZHB Uni/PH-Gebäude (LUNI3)": {
-        "code": "LUNI3",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
-    },
-    "Luzern ZHB Uni/PH-Gebäude (LUPHL)": {
-        "code": "LUPHL",
-        "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-standort-uniph-gebaeude/"
-    }
+  "Luzern ZHB Lesesaal Sondersammlung": {
+    "code": "LULSO",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDNd/"
+  },
+  "Luzern ZHB Lesesaal Sempacherstrasse": {
+    "code": "LULES",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDNd/"
+  },
+  "Luzern ZHB HSLU Wirtschaft": {
+    "code": "LUHSW",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MDVd/"
+  },
+  "Luzern ZHB HSLU Campus Zug-Rotkreuz": {
+    "code": "LUHSI",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MTBd/"
+  },
+  "Luzern ZHB Sempacherstrasse": {
+    "code": "LUZHB",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDNd/"
+  },
+  "Luzern ZHB Speicherbibliothek": {
+    "code": "LUSBI",
+    "url": "https://www.idsluzern.ch/bibliotheken/zhbuni/zhb-aussenmagazin/"
+  },
+  "Luzern ZHB Uni/PH-Gebäude": {
+    "code": "LUUHL",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDJd/"
+  },
+  "Luzern ZHB Uni/PH-Gebäude (LUNI3)": {
+    "code": "LUNI3",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDJd/"
+  },
+  "Luzern ZHB Uni/PH-Gebäude (LUPHL)": {
+    "code": "LUPHL",
+    "url": "https://www.ilunet.ch/bibliotheken/zhb-uni/#Wzg3MDJd/"
+  },
+  "Luzern HSLU Technik & Architektur (LUHTA)": {
+    "code": "LUHTA",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MDZd/"
+  },
+  "Luzern HSLU Musik (LUMHS)": {
+    "code": "LUMHS",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MDld/"
+  },
+  "Luzern HSLU Soziale Arbeit (LUHSA)": {
+    "code": "LUHSA",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MDRd/"
+  },
+   "Luzern HSLU Design & Kunst (LUHGK)": {
+    "code": "LUHGK",
+    "url": "https://www.ilunet.ch/bibliotheken/hslu/#Wzg3MTFd/"
+  },
+   "Luzern PMZ Luzern (LUPML)": {
+    "code": "LUPML",
+    "url": "https://www.ilunet.ch/bibliotheken/ph-pmz/#Wzg3MTVd/"
+  },
+   "Luzern Bilderbuchsammlung PH Luzern (LUPIL)": {
+    "code": "LUPIL",
+    "url": "https://www.ilunet.ch/bibliotheken/ph-pmz/#Wzg3MTRd/"
+  },
+   "Luzern Mediothek PH Zug (LUPHZ)": {
+    "code": "LUPHZ",
+    "url": "https://www.ilunet.ch/bibliotheken/ph-pmz/#Wzg3MTNd/"
+  },
+   "Luzern Medienzentrum PH Schwyz (LUPHS)": {
+    "code": "LUPHS",
+    "url": "https://www.ilunet.ch/bibliotheken/ph-pmz/#Wzg3MTJd/"
+  },
+   "Luzern Medienzentrum PH Schwyz - Standort Pfäffikon (LUPHP)": {
+    "code": "LUPHP",
+    "url": "https://www.ilunet.ch/bibliotheken/ph-pmz/#Wzg3MTJd/"
+  },
+   "Luzern Denkmalpflege & Archäologie Kanton Luzern (LUDAL)": {
+    "code": "LUDAL",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3Mjdd/"
+  },
+   "Luzern Haus zum Dolder Beromünster (LUDOL)": {
+    "code": "LUDOL",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjZd/"
+  },
+   "Luzern Hugo-Loetscher-Bibliothek (LUHLB)": {
+    "code": "LUHLB",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjVd/"
+  },
+   "Luzern Seminar St. Beat, Luzern (LUSSB)": {
+    "code": "LUSSB",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjRd/"
+  },
+  "Luzern Kapuzinerbibliothek Wesemlin (LUKBW)": {
+    "code": "LUKBW",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjRd/"
+  },
+  "Luzern Klosterbibliothek Sursee (LUKBS)": {
+    "code": "LUKBS",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjNd/"
+  },
+  "Luzern Mediothek XUND (LUXUN)": {
+    "code": "LUXUN",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjFd/"
+  },
+   "Luzern Natur-Museum Luzern (LUNML)": {
+    "code": "LUNML",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MjBd/"
+  },
+   "Luzern Staatsarchiv Luzern (LUSTA)": {
+    "code": "LUSTA",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MThd/"
+  },
+   "Luzern Stadtarchiv Luzern (LUSAR)": {
+    "code": "LUSAR",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MTdd/"
+  },
+    "Luzern Vogelwarte Sempach (LUVOG)": {
+    "code": "LUVOG",
+    "url": "https://www.ilunet.ch/bibliotheken/spezialbibliotheken/#Wzg3MTZd/"
+  }
 }
