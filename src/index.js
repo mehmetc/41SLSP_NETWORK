@@ -1,19 +1,14 @@
-//import angular from 'angular';
 "use strict"
+import Primo from './primo'
 import Loader from './loader';
 import MessageService from './factories/messageService'
-
-import locationItemsHTML from './templates/prmLocationItems/location-items.html'
-import locationHTML from './templates/prmLocation/location.html'
-
-import Primo from './primo'
 
 (function () {
 
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   window.Primo = new Primo();
-  let app = angular.module(customType, ['ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
     $sceDelegateProvider.resourceUrlWhitelist([
       '**'
     ]);
@@ -68,11 +63,8 @@ import Primo from './primo'
       angularLoad.loadScript('https://recommender.bibtip.de/js/bibtip_zhb_luzern.js').then(function () {
         console.log('bibtip.js loaded');
       });
-
-      //$templateCache.put('components/search/fullView/getit/opac/locations/location-items.html', locationItemsHTML);
-      //$templateCache.put('components/search/fullView/getit/opac/locations/location/location.html', locationHTML);
-
     });
   
     new Loader().load(customType);
+    console.log(`Done initializing ${customType}`)
 })();
