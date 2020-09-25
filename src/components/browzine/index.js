@@ -30,7 +30,7 @@ BrowzineController.$inject = ['$scope'];
 
 export let component = {
     name: 'rzs-browzine',  
-    enabled: false,
+    enabled: true,
     appendTo: 'prm-search-result-availability-line-after',
     enableInView: '.*',
     config:{    bindings: {
