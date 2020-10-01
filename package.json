@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "primoServe --vid=41SLSP_RZS:VU06 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
-    "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
-    "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
+    "build": "rimraf dist/ && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
+    "watch": "rimraf dist/ && parcel watch src/index.js --no-minify --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
     "package": "./make_package.sh"
   },
   "devDependencies": {

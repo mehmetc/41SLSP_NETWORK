@@ -22,8 +22,9 @@ export default class MessageService {
         // code table entries can not have empty descriptions.
         // message <= 1 will not be displayed!!!!
         let messageKey = 'nui.customizing.idslu.alertMessage';
+        
         message = self.translate.instant(messageKey);
-        message = (message == messageKey || message <= 1) ? '' : message;
+        message = (message == 'alertMessage' || message <= 1) ? '' : message;
       }
 
       if (message.length > 0) {

@@ -19,7 +19,7 @@ for VIEW in $VIEWS; do
   if [ ! -e "./$VIEW/js" ]; then
     mkdir ./$VIEW/js
   fi
-  cp -rp ../dist/$VIEW/js/custom.js ./$VIEW/js
+  cp -rp ../dist/41SLSP_RZS-VU06/js/custom.js ./$VIEW/js
   
   find . -name '.DS_Store' -exec rm -f {} \;
 

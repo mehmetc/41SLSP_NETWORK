@@ -3,6 +3,16 @@ import Primo from './primo'
 import Loader from './loader';
 import MessageService from './factories/messageService'
 
+  // standard google analytics tracking code
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments);
+    }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-22162390-13', 'auto');
+  ga('send', 'pageview');
+
 (function () {
 
   //let customType = 'centralCustom';
@@ -14,7 +24,7 @@ import MessageService from './factories/messageService'
     ]);
   })
     .service('MessageService', MessageService)
-    .run(($translate, $rootScope, $templateCache, angularLoad) => {
+    .run(($translate, $rootScope, angularLoad, $ocLazyLoad) => {
       let watcher = $rootScope.$watch(() => {
         try {
           if ($translate.instant('nui.customization.browzine.id') == 'nui.customization.browzine.id') {
@@ -64,7 +74,7 @@ import MessageService from './factories/messageService'
         console.log('bibtip.js loaded');
       });
     });
-  
-    new Loader().load(customType);
-    console.log(`Done initializing ${customType}`)
+
+  new Loader().load(customType);
+  console.log(`Done initializing ${customType}`)
 })();

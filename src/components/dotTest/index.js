@@ -1,8 +1,12 @@
+import User from "../../primo/user";
+
 class DotTestController {
-    constructor() {
+    constructor($ocLazyLoad,$injector) {
         console.log('constructor');
     }
 }
+
+DotTestController.$inject = ['$ocLazyLoad','$injector']
 
 export let component = {
     name: 'dot-test',
