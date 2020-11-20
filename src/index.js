@@ -10,9 +10,6 @@ import MessageService from './factories/messageService'
     }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
   })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-22162390-13', 'auto');
-  ga('send', 'pageview');
-
 (function () {
 
   //let customType = 'centralCustom';
@@ -24,7 +21,7 @@ import MessageService from './factories/messageService'
     ]);
   })
     .service('MessageService', MessageService)
-    .run(($translate, $rootScope, angularLoad, $ocLazyLoad) => {
+    .run(($translate, $rootScope, angularLoad) => {
       let watcher = $rootScope.$watch(() => {
         try {
           if ($translate.instant('nui.customization.browzine.id') == 'nui.customization.browzine.id') {
@@ -62,6 +59,19 @@ import MessageService from './factories/messageService'
             console.log('browzine-primo-adapter.js loaded');
           });
 
+
+          let googleAnalyticsKey = $translate.instant(`nui.customization.googleanalytics.${window.Primo.bridge.viewCode}`);
+          if (googleAnalyticsKey) {
+            ga('create', googleAnalyticsKey, 'auto');
+            ga('send', 'pageview');
+          }
+
+          let bibTipURL = $translate.instant(`nui.customization.bibTip`);
+          //https://recommender.bibtip.de/js/bibtip_zhb_luzern.js
+          angularLoad.loadScript(bibTipURL).then(function () {
+            console.log('bibtip.js loaded');
+          });
+
           watcher();
         }
       });
@@ -70,9 +80,7 @@ import MessageService from './factories/messageService'
         console.log('Altmetric script loaded');
       });
 
-      angularLoad.loadScript('https://recommender.bibtip.de/js/bibtip_zhb_luzern.js').then(function () {
-        console.log('bibtip.js loaded');
-      });
+
     });
 
   new Loader().load(customType);

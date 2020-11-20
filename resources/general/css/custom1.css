@@ -748,3 +748,51 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
     background-color: #009991; }
 
 /* primary color hook end*/
+
+/* mehmet/bibtip column right */
+ .bibtip_bx_style_container {
+     background: #f3f3f3 !important;
+    /* hellgrau */
+     padding-left: 10px !important;
+     margin-left: 1.0em;
+     margin-bottom: 20px;
+}
+ .bibtip_bx_style_header_text {
+     font-size: 20px !important;
+     font-family: 'Roboto', sans-serif !important;
+     display: block;
+     padding-top: 5px;
+     padding-bottom: 10px;
+     font-weight: 300;
+}
+.bibtip_bx_style_item {
+     padding-bottom: 25px;
+     display: none;
+     margin-left: 1.5em;
+}
+ .bibtip_bx_style_item_visible {
+     padding-bottom: 25px;
+     display: flex;
+     margin-left: 1.5em;
+}
+ .bibtip_bx_style_thumbnail {
+     /* width: 90px;
+     height: 128px; */
+     width: 60px;
+     height: 80px;
+}
+ .bibtip_bx_style_description a {
+     font-size: 1em !important;
+     font-family: 'Roboto', sans-serif !important;
+     color: #009991 !important;
+     display: block;
+     padding: 5px 5px 0px 10px;
+}
+ .bibtip_bx_style_more_button a {
+     font-size: 0.9em !important;
+     font-family: 'Roboto', sans-serif !important;
+     color: #009991 !important;
+}
+ .bibtip_bx_style_more_button {
+     padding-top: 25px !important;
+}
