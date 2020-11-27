@@ -8,6 +8,10 @@ This is the CENTRAL_PACKAGE for RZS
 ```
 yarn install
 ```
+- Check if primoServe was installed if not install it manually
+```
+yarn add primo-server --dev
+```
 - Start up a proxy for testing. Copy the URL into a private or incognito window to break the browser cache.
 ```
 yarn start
@@ -44,7 +48,15 @@ src                                             Source code
 ```
 ## Changing the server address
 
-In ```package.json``` you can find the proxy and vid parameter. If you update them then next time you run ```yarn start``` it will open the newly assigned Primo. the ```---ve``` parameter is only needed if you have PrimoVE aka Alma Discovery.
+In ```package.json``` you can find the proxy parameters. 
+```json
+  "primo": {
+    "url": "https://slsp-rzs.primo.exlibrisgroup.com",
+    "institution": "41SLSP_RZS",
+    "vidId": "VU15"
+  },
+```
+If you update them then next time you run ```yarn start``` it will point to a new Primo. the ```--ve``` parameter is only needed if you have PrimoVE aka Alma Discovery.
 
 ```
 {

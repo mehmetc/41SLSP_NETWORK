@@ -5,6 +5,11 @@
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
+  "primo": {
+    "url": "https://slsp-rzs.primo.exlibrisgroup.com",
+    "institution": "41SLSP_RZS",
+    "vidId": "VU15"
+  },  
   "babel": {
     "plugins": [
       "transform-html-import-to-string",
@@ -21,9 +26,9 @@
     ]
   },
   "scripts": {
-    "start": "primoServe --vid=41SLSP_RZS:VU06 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
-    "build": "rimraf dist/ && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
-    "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
+    "start": "primoServe --vid=${npm_package_primo_institution}:${npm_package_primo_vidId} --proxy=${npm_package_primo_url} --dir=./dist --ve",
+    "build": "rimraf dist/ && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/${npm_package_primo_institution}-${npm_package_primo_vidId}/js --out-file custom.js",
+    "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/${npm_package_primo_institution}-${npm_package_primo_vidId}/js --out-file custom.js",
     "package": "./make_package.sh"
   },
   "devDependencies": {
@@ -34,7 +39,8 @@
     "babel-plugin-import-directory": "^1.1.0",
     "babel-plugin-transform-html-import-to-string": "^0.0.1",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "primo-serve": "^0.0.14"
   },
   "dependencies": {
     "angular": "1.8.0"
