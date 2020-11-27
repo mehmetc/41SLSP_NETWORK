@@ -1,4 +1,9 @@
 #!/bin/bash
+CODE_DIR=$1
+if [ -z "$CODE_DIR" ]; then
+  CODE_DIR='41SLSP_RZS-VU??'
+fi
+
 VIEWS="41SLSP_RZS-VU06 41SLSP_RZS-VU07 41SLSP_RZS-VU15"
 OS=$(uname -s)
 
@@ -19,7 +24,8 @@ for VIEW in $VIEWS; do
   if [ ! -e "./$VIEW/js" ]; then
     mkdir ./$VIEW/js
   fi
-  cp -rp ../dist/41SLSP_RZS-VU06/js/custom.js ./$VIEW/js
+  #TODO: make dynamic
+  cp -rp ../dist/$CODE_DIR/js/custom.js ./$VIEW/js
   
   find . -name '.DS_Store' -exec rm -f {} \;
 

@@ -1,17 +1,23 @@
+/*
+  General entry to Primo custom methods
+
+  (c)2020 KULeuven/LIBIS 
+  Mehmet Celik  
+*/
+
 "use strict"
 import Primo from './primo'
 import Loader from './loader';
 import MessageService from './factories/messageService'
 
-  // standard google analytics tracking code
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments);
-    }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+// standard google analytics tracking code
+(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments);
+  }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 (function () {
-
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   window.Primo = new Primo();
@@ -79,10 +85,9 @@ import MessageService from './factories/messageService'
       angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
         console.log('Altmetric script loaded');
       });
-
-
     });
 
+    //Load components
   new Loader().load(customType);
   console.log(`Done initializing ${customType}`)
 })();

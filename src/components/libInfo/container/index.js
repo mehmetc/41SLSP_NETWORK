@@ -12,7 +12,7 @@ class LibInfoContainerController{
 
 LibInfoContainerController.$inject = ['$element'];
 
-export let component = {
+export let libInfoContainerComponent = {
     name: 'rzs-lib-info-container',
     config: {
       bindings:{parentCtrl:'<'},

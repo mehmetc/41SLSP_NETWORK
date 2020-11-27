@@ -27,7 +27,7 @@ class LibInfoController {
 
 LibInfoController.$inject = ['$translate'];
 
-export let component = {
+export let libInfoComponent = {
   name: 'rzs-lib-info',
   config: {
     bindings: { locationCode: '<' },

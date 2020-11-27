@@ -8,7 +8,7 @@ class DotTestController {
 
 DotTestController.$inject = ['$ocLazyLoad','$injector']
 
-export let component = {
+export let dotTestComponent = {
     name: 'dot-test',
     config: {
         bindings: {parentCtrl: '<'},

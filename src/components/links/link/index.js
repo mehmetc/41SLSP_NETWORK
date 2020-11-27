@@ -42,7 +42,7 @@ class LinkController {
   }
 }
 
-export let component = {
+export let linksComponent = {
   name: 'rzs-link',
   config: {
     bindings: { 

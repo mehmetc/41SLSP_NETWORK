@@ -6,7 +6,7 @@ class AlertMessageController {
 
 AlertMessageController.$inject = ['$scope', 'MessageService'];
 
-export let component = {
+export let alertMessagecomponent = {
   name: 'rzs-alert-message',  
   enabled: true,
   appendTo: 'prm-top-bar-before',

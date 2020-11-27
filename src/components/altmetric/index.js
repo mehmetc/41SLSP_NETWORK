@@ -65,7 +65,7 @@ class AltMetricController {
 
 AltMetricController.$inject = ['$element', '$window', '$scope'];
 
-export let component = {
+export let altMetricComponent = {
   name: 'rzs-altmetric',  
   enabled: true,
   appendTo: 'prm-brief-result-after',

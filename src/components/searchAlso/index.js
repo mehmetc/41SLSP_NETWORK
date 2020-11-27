@@ -24,7 +24,7 @@ class SearchAlsoController {
   SearchAlsoController.$inject = ['$scope'];
   
   
-  export let component = {
+  export let searchAlsoComponent = {
     name: 'rzs-search-also',
     config: {
       bindings:{parentCtrl:'<'},

@@ -1,15 +1,12 @@
-//import * as Components from './components/**'
-import {component as dotTestComponent} from './components/dotTest';
-import {component as libInfoContainerComponent} from './components/libInfo/container';
-import {component as libInfoComponent} from './components/libInfo/info';
-import {component as searchAlsoComponent} from './components/searchAlso';
-import {component as searchAlsoBodyComponent} from './components/searchAlsoBody';
-import {component as altmetricComponent} from './components/altmetric';
-import {component as browzineComponent} from './components/browzine';
-import {component as alertComponent} from './components/alertMessage';
-import {component as linksContainerComponent} from './components/links/container';
-import {component as linkComponent} from './components/links/link';
+/*
+    Primo component loader.
+    Will load all defined components in the src/components directory. 
 
+    (c)2020 KULeuven/LIBIS 
+    Mehmet Celik
+*/
+
+import Components from './components/**/*'
 
 String.prototype.toCamelCase = function () {
     return this.split('-').map((d, i, a) => i > 0 ? d.charAt(0).toUpperCase() + d.slice(1) : d).join('');
@@ -28,22 +25,11 @@ export default class Loader {
      * 
      **/
     _importComponents() {
-        // let components = [];
-        // Object.keys(Components).forEach((component_def) => {
-        //     components.push(Components[component_def].component);
-        // });
-        return [
-            dotTestComponent,
-            libInfoContainerComponent,
-            libInfoComponent,
-            searchAlsoComponent,
-            searchAlsoBodyComponent,
-            altmetricComponent,
-            browzineComponent,            
-            alertComponent,
-            linksContainerComponent,
-            linkComponent
-        ].filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
+        let components = [];
+        Object.keys(Components).forEach((component_def) => {
+            components.push(Components[component_def]);
+        });
+        return components.filter((component) => (component.enabled && new RegExp(component.enableInView).test(window.appConfig.vid)));
     }
 
     /**

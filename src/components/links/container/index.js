@@ -1,6 +1,6 @@
 import linksContainerHTML from './linksContainer.html'
 
-export let component = {
+export let linksContainerComponent = {
   name: 'rzs-links-container',
   config: {
     template:linksContainerHTML
