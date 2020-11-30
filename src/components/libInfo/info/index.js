@@ -1,5 +1,5 @@
 import libInfoHTML from './libInfo.html'
-import libInfoJSON from './libInfo.json'
+import libInfoJSON from './libInfo2.json'
 
 class LibInfoController {
   constructor($translate) {
@@ -15,9 +15,8 @@ class LibInfoController {
     });
   }
 
-  get sourceURL() {
-    //console.log(this.locationCode);
-    let location = libInfoJSON[this.locationCode];    
+  get sourceURL() {    
+    let location = libInfoJSON[this.location.libraryCode];    
     if (location) {
       return location.url;
     }  
@@ -30,7 +29,7 @@ LibInfoController.$inject = ['$translate'];
 export let libInfoComponent = {
   name: 'rzs-lib-info',
   config: {
-    bindings: { locationCode: '<' },
+    bindings: { location: '<' },
     controller: LibInfoController,
     template: libInfoHTML
   },

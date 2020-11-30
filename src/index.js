@@ -28,6 +28,10 @@ import MessageService from './factories/messageService';
   })
     .service('MessageService', MessageService)
     .run(($translate, $rootScope, angularLoad) => {
+      angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
+        console.log('browzine-primo-adapter.js loaded');
+      });
+
       let watcher = $rootScope.$watch(() => {
         try {
           if ($translate.instant('nui.customization.browzine.id') == 'nui.customization.browzine.id') {
@@ -61,9 +65,6 @@ import MessageService from './factories/messageService';
             //articleAcceptedManuscriptArticleLinkViaUnpaywallText = "Read Article (Accepted Manuscript via Unpaywall)";            
           };
 
-          angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
-            console.log('browzine-primo-adapter.js loaded');
-          });
 
 
           let googleAnalyticsKey = $translate.instant(`nui.customization.googleanalytics.${window.Primo.bridge.viewCode}`);

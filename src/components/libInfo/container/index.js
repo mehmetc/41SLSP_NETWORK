@@ -1,5 +1,5 @@
 class LibInfoContainerController{
-    constructor($element) {        
+    constructor($element) {           
         let locationController = $element.parent().parent().parent().parent().parent().parent().parent().controller('prm-location');        
         if (locationController) {
             this.location = locationController.location;    
@@ -17,7 +17,7 @@ export let libInfoContainerComponent = {
     config: {
       bindings:{parentCtrl:'<'},
       controller: LibInfoContainerController,
-      template:'<rzs-lib-info location-code="$ctrl.location.mainLocation"></rzs-lib-info>'
+      template:'<rzs-lib-info location="$ctrl.location"></rzs-lib-info>'
     },
     enabled: true,
     appendTo: 'prm-stack-map-after',

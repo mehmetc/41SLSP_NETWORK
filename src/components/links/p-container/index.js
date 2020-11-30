@@ -1,11 +1,11 @@
 import linksContainerHTML from './linksContainer.html'
 
-export let linksContainerComponent = {
-  name: 'rzs-links-container',
+export let linksContainerPComponent = {
+  name: 'rzs-links-p-container',
   config: {
     template:linksContainerHTML
   },
   enabled: true,
-  appendTo: 'prm-alma-viewit-items-after',
+  appendTo: 'prm-opac-after',
   enableInView: '.*',
 }
