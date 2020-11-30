@@ -6,9 +6,9 @@
 */
 
 "use strict"
-import Primo from './primo'
+import Primo from './primo';
 import Loader from './loader';
-import MessageService from './factories/messageService'
+import MessageService from './factories/messageService';
 
 // standard google analytics tracking code
 (function (i, s, o, g, r, a, m) {
