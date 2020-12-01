@@ -26,11 +26,12 @@
       ]
     ]
   },
-  "scripts": {    
+  "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
-    "build": "cross-env-shell \"rimraf dist/ && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
+    "build": "cross-env-shell \"rimraf dist/ && yarn resources && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
     "watch": "cross-env-shell \"rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
-    "package": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\""
+    "package": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
+    "resources": "cross-env-shell \"rimraf dist/ && mkdir -p ./dist/$npm_package_primo_institution-$npm_package_primo_vidId && copyfiles -u 1 resources/$npm_package_primo_institution-$npm_package_primo_vidId/**/* ./dist && copyfiles -u 2 resources/general/**/* ./dist/$npm_package_primo_institution-$npm_package_primo_vidId\""
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
@@ -39,6 +40,7 @@
     "@babel/preset-env": "^7.12.7",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-plugin-transform-html-import-to-string": "^0.0.1",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.2",
     "parcel-bundler": "^1.12.4",
     "primo-serve": "^0.0.15",
