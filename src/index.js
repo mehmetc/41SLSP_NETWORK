@@ -28,6 +28,10 @@ import MessageService from './factories/messageService';
   })
     .service('MessageService', MessageService)
     .run(($translate, $rootScope, angularLoad) => {
+      angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
+        console.log('Altmetric script loaded');
+      });
+
       angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
         console.log('browzine-primo-adapter.js loaded');
       });
@@ -65,16 +69,13 @@ import MessageService from './factories/messageService';
             //articleAcceptedManuscriptArticleLinkViaUnpaywallText = "Read Article (Accepted Manuscript via Unpaywall)";            
           };
 
-
-
           let googleAnalyticsKey = $translate.instant(`nui.customization.googleanalytics.${window.Primo.bridge.viewCode}`);
           if (googleAnalyticsKey) {
             ga('create', googleAnalyticsKey, 'auto');
             ga('send', 'pageview');
           }
 
-          let bibTipURL = $translate.instant(`nui.customization.bibTip`);
-          //https://recommender.bibtip.de/js/bibtip_zhb_luzern.js
+          let bibTipURL = $translate.instant(`nui.customization.bibTip`);          
           angularLoad.loadScript(bibTipURL).then(function () {
             console.log('bibtip.js loaded');
           });
@@ -83,9 +84,6 @@ import MessageService from './factories/messageService';
         }
       });
 
-      angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
-        console.log('Altmetric script loaded');
-      });
     });
 
     //Load components

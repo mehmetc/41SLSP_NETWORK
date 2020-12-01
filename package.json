@@ -29,7 +29,7 @@
   "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
     "build": "cross-env-shell \"rimraf dist/ && yarn resources && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
-    "watch": "cross-env-shell \"rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
+    "watch": "cross-env-shell \"rimraf dist/ && yarn resources && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
     "package": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
     "resources": "cross-env-shell \"rimraf dist/ && mkdir -p ./dist/$npm_package_primo_institution-$npm_package_primo_vidId && copyfiles -u 1 resources/$npm_package_primo_institution-$npm_package_primo_vidId/**/* ./dist && copyfiles -u 2 resources/general/**/* ./dist/$npm_package_primo_institution-$npm_package_primo_vidId\""
   },
