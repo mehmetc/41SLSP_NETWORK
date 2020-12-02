@@ -18,13 +18,14 @@ export default class MessageService {
     let actionLabel = options.actionLabel || 'unknown';
 
     this.timeout(function() {
+      //debugger;
       if (message.length == 0) {
         // code table entries can not have empty descriptions.
         // message <= 1 will not be displayed!!!!
         let messageKey = 'nui.customizing.idslu.alertMessage';
         
         message = self.translate.instant(messageKey);        
-        message = (message == 'alertMessage' || message <= 1) ? '' : message;
+        message = (message == 'alertMessage' || message.length <= 1) ? '' : message;
       }
 
       if (message.length > 0) {
