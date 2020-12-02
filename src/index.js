@@ -32,14 +32,6 @@ import MessageService from './factories/messageService';
         console.log('Altmetric script loaded');
       });
 
-      //Fixing a bug in the browzine adapter
-      if (typeof window.browzine == 'undefined') {
-        window.browzine={};
-      }
-      angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
-        console.log('browzine-primo-adapter.js loaded');
-      });
-
       let watcher = $rootScope.$watch(() => {
         try {
           if ($translate.instant('nui.customization.browzine.id') == 'nui.customization.browzine.id') {
@@ -72,6 +64,10 @@ import MessageService from './factories/messageService';
             //articleAcceptedManuscriptPDFViaUnpaywallText = "Download PDF (Accepted Manuscript via Unpaywall)";
             //articleAcceptedManuscriptArticleLinkViaUnpaywallText = "Read Article (Accepted Manuscript via Unpaywall)";            
           };
+
+          angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
+            console.log('browzine-primo-adapter.js loaded');
+          });
 
           let googleAnalyticsKey = $translate.instant(`nui.customization.googleanalytics.${window.Primo.bridge.viewCode}`);
           if (googleAnalyticsKey) {
