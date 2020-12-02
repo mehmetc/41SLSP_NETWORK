@@ -58,11 +58,11 @@ import MessageService from './factories/messageService';
             articleBrowZineWebLinkText: issue,
             articlePDFDownloadLinkEnabled: downloadEnabled,
             articlePDFDownloadLinkText: download,
-            //articleLinkText = "Read Article";
-            //articlePDFDownloadViaUnpaywallText = "Download PDF (via Unpaywall)";
-            //articleLinkViaUnpaywallText = "Read Article (via Unpaywall)";
-            //articleAcceptedManuscriptPDFViaUnpaywallText = "Download PDF (Accepted Manuscript via Unpaywall)";
-            //articleAcceptedManuscriptArticleLinkViaUnpaywallText = "Read Article (Accepted Manuscript via Unpaywall)";            
+            articleLinkText: "Read Article",
+            articlePDFDownloadViaUnpaywallText: "Download PDF (via Unpaywall)",
+            articleLinkViaUnpaywallText: "Read Article (via Unpaywall)",
+            articleAcceptedManuscriptPDFViaUnpaywallText: "Download PDF (Accepted Manuscript via Unpaywall)",
+            articleAcceptedManuscriptArticleLinkViaUnpaywallText: "Read Article (Accepted Manuscript via Unpaywall)"
           };
 
           angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
