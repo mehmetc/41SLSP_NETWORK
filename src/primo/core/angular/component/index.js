@@ -4,7 +4,7 @@ export default class Component {
         let components = [];
         for (let tag of tags) {
             let tagName = tag.localName;
-            if (/^prm-|primo-/.test(tagName)) {
+            if (/^prm-|primo-|rzs-/.test(tagName)) {
                 let component = { name: tagName, obj: angular.element(tag) };
                 components.push(component);
             }

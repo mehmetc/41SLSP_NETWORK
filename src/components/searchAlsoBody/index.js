@@ -87,7 +87,7 @@ class SearchAlsoBodyController {
 SearchAlsoBodyController.$inject = ['$location'];
 
 
-export let searchAlsoComponent = {
+export let searchAlsoBodyComponent = {
   name: 'rzs-search-also-body',
   config: {
     bindings: { parentCtrl: '<' },

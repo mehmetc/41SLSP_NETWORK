@@ -23,7 +23,7 @@ export default class MessageService {
         // message <= 1 will not be displayed!!!!
         let messageKey = 'nui.customizing.idslu.alertMessage';
         
-        message = self.translate.instant(messageKey);
+        message = self.translate.instant(messageKey);        
         message = (message == 'alertMessage' || message <= 1) ? '' : message;
       }
 

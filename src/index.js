@@ -32,6 +32,10 @@ import MessageService from './factories/messageService';
         console.log('Altmetric script loaded');
       });
 
+      //Fixing a bug in the browzine adapter
+      if (typeof window.browzine == 'undefined') {
+        window.browzine={};
+      }
       angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
         console.log('browzine-primo-adapter.js loaded');
       });
