@@ -15,11 +15,13 @@ class LibInfoController {
     });
   }
 
-  get sourceURL() {    
-    let location = libInfoJSON[this.location.libraryCode];    
-    if (location) {
-      return location.url;
-    }  
+  get sourceURL() {   
+    if (this.location) {
+      let location = libInfoJSON[this.location.libraryCode];    
+      if (location) {
+        return location.url;
+      }  
+    }
     return '';  
   }
 }

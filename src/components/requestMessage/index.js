@@ -1,27 +1,28 @@
-import requestMessageHTML from './requestMessage.html'
-
 class RequestMessageController {
-    constructor($element) {
-        this.$element = $element[0];
-        this.form = this.$element.parentElement.parentElement;
-        let feesLinkText = this.parentCtrl.$translate.instant('customized.fulldisplay.fees'); //default SLSP
+    constructor($element, $translate) {
+        this.element = $element[0];
+        this.translate = $translate;
+        
+        this.form = angular.element(this.element.parentElement.parentElement.parentElement.parentElement).find('prm-request')[0];
+        
         //params with default values:
-        let params = { "feesUrl": "https:\/\/slsp.ch\/fees", "feesLinkText": feesLinkText, "feesInfo": "" };
-        //load params form labels table:
-        for (let param in params) {
-            let translation = this.parentCtrl.$translate.instant('customize.fullview.' + param);
-            //label present
-            if (translation != param) {
-                this[param] = translation;
-            }
-            //label not present -> set default
-            else {
-                this[param] = params[param];
-            }
-        }
+        let params = { "feesUrl": "https:\/\/slsp.ch\/fees", "feesLinkText": '', "feesInfo": "" };
     }
+
+    get feesInfo() {
+        return this.translate.instant('customize.fullview.feesInfo');
+    }
+
+    get feesUrl() {
+        return this.translate.instant('customize.fullview.feesUrl');
+    }
+
+    get feesLinkText() {
+        return this.translate.instant('customize.fullview.feesLinkText');
+    }
+
     //function for cloning info block into form
-    $doCheck = function () {
+    $doCheck() {
         let form = false;
         if (this.form.children[1].children[1] !== undefined) {
             if (this.form.children[1].children[1].children[0] !== undefined) {
@@ -36,23 +37,31 @@ class RequestMessageController {
                 //remove bracket info (="see below") from request button:
                 form.children[1].lastChild.firstChild.lastChild.innerHTML = form.children[1].lastChild.firstChild.lastChild.innerHTML.replace(/.\(.*\)/gi, '');
                 //clone an insert info-block:
-                let elem = this.$element.children[0].cloneNode(true)
+
+                let elem = document.createElement('span');
+                elem.innerHTML = `
+<div class="courier-info bar alert-bar">
+    <div class="info-text">${this.feesInfo}</div>
+    <div class="fees-link">
+        <a ng-href="${this.feesUrl}" target="_blank">${this.feesLinkText}</a>
+    </div>
+</div>`;
                 form.insertBefore(elem, form.children[1]);
             }
         }
     }
-}
+} 
 
-RequestMessageController.$inject = ['$element'];
+RequestMessageController.$inject = ['$element', '$translate'];
 
 export let requestMessagecomponent = {
     name: 'rzs-request-message',
     enabled: true,
-    appendTo: 'prm-request-after',
+    appendTo: 'prm-request-services-after',
     enableInView: '.*',
     config: {
         bindings: { parentCtrl: '<' },
         controller: RequestMessageController,
-        template: requestMessageHTML
+        template: ''
     }
 }

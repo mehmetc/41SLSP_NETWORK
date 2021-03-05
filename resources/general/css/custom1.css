@@ -796,3 +796,22 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
  .bibtip_bx_style_more_button {
      padding-top: 25px !important;
 }
+
+prm-request-after { display: none !important; } 
+
+/*Weitere Styles für die Info-box */
+.courier-info.alert-bar {
+    height: 6.2em;
+    margin: .5em;
+    text-align: center;
+    /*... ev. weitere Anpassungen */
+
+} 
+/* für Anpassungen von feesInfo: */
+.courier-info.alert-bar .info-text  {
+
+}
+/* für Anpassungen des Links: */
+.courier-info.alert-bar .fees-link { 
+
+}

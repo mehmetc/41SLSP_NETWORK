@@ -6,7 +6,7 @@ class SearchAlsoBodyController {
     this.targets = this._targets();
   }
 
-  get search() {
+  get search() {    
     return this.location.search().query || '';
   }
 
@@ -14,7 +14,20 @@ class SearchAlsoBodyController {
     return this.parentCtrl.parentCtrl.facetGroup.name;
   }
 
+  get parsedQuery() {
+    let query = this.search;
+    if (!Array.isArray(query)) {
+      query = [query]
+    }          
+    return query.map(m => m.split(','));    
+  }
+
+  get searchTerms() {
+    return this.parsedQuery.map(m => m[2] || '').join(' ');  
+  }
+
   _targets() {
+    let self = this;
     return [
       {
         "name": "swisscovery RZS",
@@ -22,8 +35,7 @@ class SearchAlsoBodyController {
         "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU06/img/favicon_everything_view.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs",
         mapping: function mapping(search) {
-          var terms = search.split(",");
-          return terms[2] || "";
+          return self.searchTerms;
         }
       },
       /*{
@@ -42,8 +54,7 @@ class SearchAlsoBodyController {
         "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU06/img/favicon_zhb_view.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs-zhbuniph",
         mapping: function mapping(search) {
-          var terms = search.split(",");
-          return terms[2] || "";
+          return self.searchTerms;
         }
       }, {
         "name": "swisscovery",
@@ -51,8 +62,7 @@ class SearchAlsoBodyController {
         "img": "https://slsp-network.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU06/img/favicon_swisscovery.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery",
         mapping: function mapping(search) {
-          var terms = search.split(",");
-          return terms[2] || "";
+          return self.searchTerms;
         }
       }, {
         "name": "Google Scholar",
@@ -60,9 +70,7 @@ class SearchAlsoBodyController {
         "img": "https://primo-direct-eu-sb.hosted.exlibrisgroup.com/primo-explore/custom/41ZBL/img/google_icon.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.google_scolar",
         mapping: function mapping(search) {
-          var terms = search.split(",");
-          return terms[2] || "";
-        }
+          return self.searchTerms;        }
       }, {
         "name": "Worldcat",
         "url": "https://www.worldcat.org/search?q=",
@@ -75,10 +83,8 @@ class SearchAlsoBodyController {
             "creator": "au",
             "subject": "su"
           };
-          var terms = search.split(",");
-          var type = type_mappings[terms[0]] || "kw";
-          var query = terms[2] || "";
-          return type + ':' + query;
+
+          return self.parsedQuery.map( m => `${type_mappings[m[0]] || "kw"}:${m[2] || ''}`).join(' ');
         }
       }];
   }
