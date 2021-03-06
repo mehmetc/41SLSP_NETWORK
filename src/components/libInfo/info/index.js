@@ -4,6 +4,7 @@ import libInfoJSON from './libInfo2.json'
 class LibInfoController {
   constructor($translate) {
     let self = this;
+    this.sourceURL = '';
     self.translate = $translate;    
     self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;
     //self.iconUrl = `/custom/${window.appConfig.vid}/img/information.png`;
@@ -14,15 +15,15 @@ class LibInfoController {
       }
     });
   }
-
-  get sourceURL() {   
-    if (this.location) {
+  
+  $doCheck(){
+    if (this.location && this.sourceURL == '') {      
       let location = libInfoJSON[this.location.libraryCode];    
       if (location) {
-        return location.url;
+        this.sourceURL = location.url;
       }  
     }
-    return '';  
+
   }
 }
 
