@@ -13,7 +13,7 @@ class SearchAlsoController {
               facetGroupCollapsed: false,
               values: undefined
             });
-            console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
+            //console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
             //searchAsoWatcher();
           }
       });

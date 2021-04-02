@@ -22,7 +22,7 @@ export let libInfoContainerComponent = {
         controller: LibInfoContainerController,
         template: '<rzs-lib-info location="$ctrl.location"></rzs-lib-info>'
     },
-    enabled: true,
+    enabled: false,
     appendTo: 'prm-stack-map-after',
     enableInView: '.*',
 }

@@ -8,7 +8,18 @@
   "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
-    "vidId": "VU07"
+    "vidId": "VU07",
+    "build": {
+      "views": [
+        "VU06",
+        "VU07",
+        "VU15"
+      ],
+      "dist": "./dist",
+      "resources": "./resources",
+      "package": "./package",
+      "tmp": "./tmpPackage"
+    }
   },
   "babel": {
     "plugins": [
@@ -30,7 +41,8 @@
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
     "build": "cross-env-shell \"rimraf dist/ && yarn resources && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
     "watch": "cross-env-shell \"rimraf dist/ && yarn resources && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
-    "package": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
+    "package_old": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
+    "package": "node make_package.js",
     "resources": "cross-env-shell \"rimraf dist/ && mkdir ./dist && mkdir ./dist/$npm_package_primo_institution-$npm_package_primo_vidId && copyfiles -u 1 resources/$npm_package_primo_institution-$npm_package_primo_vidId/**/* ./dist && copyfiles -u 2 resources/general/**/* ./dist/$npm_package_primo_institution-$npm_package_primo_vidId\""
   },
   "devDependencies": {
@@ -42,9 +54,12 @@
     "babel-plugin-transform-html-import-to-string": "^0.0.1",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.2",
+    "fs-extra": "^9.1.0",
     "parcel-bundler": "^1.12.4",
     "primo-serve": "^0.0.15",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "glob": "^7.1.6",
+    "adm-zip": "^0.5.4"
   },
   "dependencies": {
     "angular": "1.8.2"
