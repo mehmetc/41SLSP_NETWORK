@@ -2,8 +2,9 @@ import libInfoHTML from './libInfo.html'
 import libInfoJSON from './libInfo.json'
 
 class LibInfoController {
-  constructor($translate) {
+  constructor($translate, $element) {
     let self = this;
+    self.sourceURL = '';
     self.translate = $translate;    
     self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;
     //self.iconUrl = `/custom/${window.appConfig.vid}/img/information.png`;
@@ -12,25 +13,25 @@ class LibInfoController {
       if (iconUrl !== 'informationicon') {
         self.iconUrl = iconUrl;
       }
-    });
+    });          
   }
-
-  get sourceURL() {
-    //console.log(this.locationCode);
-    let location = libInfoJSON[this.locationCode];    
-    if (location) {
-      return location.url;
-    }  
-    return '';  
+  
+  $doCheck(){    
+    if (this.location && this.sourceURL == '') {
+      let location = libInfoJSON[this.location.libraryCode];    
+      if (location) {
+        this.sourceURL = location.url;
+      } 
+    }
   }
 }
 
-LibInfoController.$inject = ['$translate'];
+LibInfoController.$inject = ['$translate', '$element'];
 
-export let component = {
+export let libInfoComponent = {
   name: 'rzs-lib-info',
   config: {
-    bindings: { locationCode: '<' },
+    bindings: { location: '<', library: '<' },
     controller: LibInfoController,
     template: libInfoHTML
   },

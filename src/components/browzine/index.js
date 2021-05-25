@@ -10,7 +10,7 @@ class BrowzineController {
         }
 
         let browzineWatcher = $scope.$watch(() => {
-            return typeof browzine.primo === 'object'
+            return ((typeof browzine != "undefined") && (typeof browzine.primo === 'object'));            
         }, (n, o) => {
             if (n == true) {
                 console.log("trigger browzine for:", self.recordid)
@@ -28,7 +28,7 @@ class BrowzineController {
 
 BrowzineController.$inject = ['$scope'];
 
-export let component = {
+export let browzineComponent = {
     name: 'rzs-browzine',  
     enabled: true,
     appendTo: 'prm-search-result-availability-line-after',

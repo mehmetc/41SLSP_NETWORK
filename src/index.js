@@ -1,25 +1,37 @@
-//import angular from 'angular';
+/*
+  General entry to Primo custom methods
+
+  (c)2020 KULeuven/LIBIS 
+  Mehmet Celik  
+*/
+
 "use strict"
+import Primo from './primo';
 import Loader from './loader';
-import MessageService from './factories/messageService'
+import MessageService from './factories/messageService';
 
-import locationItemsHTML from './templates/prmLocationItems/location-items.html'
-import locationHTML from './templates/prmLocation/location.html'
-
-import Primo from './primo'
+// standard google analytics tracking code
+(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments);
+  }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 (function () {
-
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   window.Primo = new Primo();
-  let app = angular.module(customType, ['ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
     $sceDelegateProvider.resourceUrlWhitelist([
       '**'
     ]);
   })
     .service('MessageService', MessageService)
-    .run(($translate, $rootScope, $templateCache, angularLoad) => {
+    .run(($translate, $rootScope, angularLoad) => {
+      angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
+        console.log('Altmetric script loaded');
+      });
+
       let watcher = $rootScope.$watch(() => {
         try {
           if ($translate.instant('nui.customization.browzine.id') == 'nui.customization.browzine.id') {
@@ -46,33 +58,35 @@ import Primo from './primo'
             articleBrowZineWebLinkText: issue,
             articlePDFDownloadLinkEnabled: downloadEnabled,
             articlePDFDownloadLinkText: download,
-            //articleLinkText = "Read Article";
-            //articlePDFDownloadViaUnpaywallText = "Download PDF (via Unpaywall)";
-            //articleLinkViaUnpaywallText = "Read Article (via Unpaywall)";
-            //articleAcceptedManuscriptPDFViaUnpaywallText = "Download PDF (Accepted Manuscript via Unpaywall)";
-            //articleAcceptedManuscriptArticleLinkViaUnpaywallText = "Read Article (Accepted Manuscript via Unpaywall)";            
+            articleLinkText: "Read Article",
+            articlePDFDownloadViaUnpaywallText: "Download PDF (via Unpaywall)",
+            articleLinkViaUnpaywallText: "Read Article (via Unpaywall)",
+            articleAcceptedManuscriptPDFViaUnpaywallText: "Download PDF (Accepted Manuscript via Unpaywall)",
+            articleAcceptedManuscriptArticleLinkViaUnpaywallText: "Read Article (Accepted Manuscript via Unpaywall)"
           };
 
           angularLoad.loadScript('https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js').then(() => {
             console.log('browzine-primo-adapter.js loaded');
           });
 
+          let googleAnalyticsKey = $translate.instant(`nui.customization.googleanalytics.${window.Primo.bridge.viewCode}`);
+          if (googleAnalyticsKey) {
+            ga('create', googleAnalyticsKey, 'auto');
+            ga('send', 'pageview');
+          }
+
+          let bibTipURL = $translate.instant(`nui.customization.bibTip`);          
+          angularLoad.loadScript(bibTipURL).then(function () {
+            console.log('bibtip.js loaded');
+          });
+
           watcher();
         }
       });
 
-      angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
-        console.log('Altmetric script loaded');
-      });
-
-      angularLoad.loadScript('https://recommender.bibtip.de/js/bibtip_zhb_luzern.js').then(function () {
-        console.log('bibtip.js loaded');
-      });
-
-      //$templateCache.put('components/search/fullView/getit/opac/locations/location-items.html', locationItemsHTML);
-      //$templateCache.put('components/search/fullView/getit/opac/locations/location/location.html', locationHTML);
-
     });
-  
-    new Loader().load(customType);
+
+    //Load components
+  new Loader().load(customType);
+  console.log(`Done initializing ${customType}`)
 })();

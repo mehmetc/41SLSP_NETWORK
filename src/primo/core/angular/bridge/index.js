@@ -64,8 +64,12 @@ export default class Bridge {
     return this.injector.get('restBaseURLs')
   }
 
+  static get viewCode() {
+    return this.jwtData.viewId || window.appConfig['vid'];
+  }
+
   static async userDetails() {
-    let viewCode = this.jwtData.viewId || window.appConfig['vid'];
+    let viewCode = this.viewCode;
     let details = await this.http.get(`${this.restBaseURLs.userSettingsBaseURL}?vid=${viewCode}`);
 
     return details.data;

@@ -1,5 +1,5 @@
 # 41SLSP_NETWORK
-This is the CENTRAL_PACKAGE for RZS
+This is the CUSTOM_VIEW package for RZS
 
 ## Getting started:
 ### Setting up the environment
@@ -7,6 +7,10 @@ This is the CENTRAL_PACKAGE for RZS
 - Install dependencies
 ```
 yarn install
+```
+- Check if ```primoServe``` was installed if not install it manually
+```
+yarn add primo-server --dev
 ```
 - Start up a proxy for testing. Copy the URL into a private or incognito window to break the browser cache.
 ```
@@ -20,7 +24,9 @@ yarn watch
 - Create a package that you can upload to the back office 
 ```
 yarn package
+```
 OR
+```
 make_package.sh
 ```
 
@@ -37,17 +43,19 @@ src                                             Source code
 ├── factories                                   Angular factories and services
 │   ├── messageService.html
 │   └── messageService.js
-├── index.js                                    CentralCustom definition
+├── index.js                                    ViewCustom definition
 ├── loader.js                                   Component loader
 ├── primo                                       Bridge into Primo services like user, records, facets ...
 └── templates                                   Template files used to overwrite existing primo templates
 ```
 ## Changing the server address
 
-In ```package.json``` you can find the proxy and vid parameter. If you update them then next time you run ```yarn start``` it will open the newly assigned Primo. the ```---ve``` parameter is only needed if you have PrimoVE aka Alma Discovery.
-
+In ```package.json``` you can find the proxy parameters. 
+```json
+  "primo": {
+    "url": "https://slsp-rzs.primo.exlibrisgroup.com",
+    "institution": "41SLSP_RZS",
+    "vidId": "VU15"
+  },
 ```
-{
-    "script": "start": "primoServe --vid=41SLSP_RZS:VU05 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve"
-}
-```
+If you update them then next time you run ```yarn start``` it will point to a new configured Primo. 

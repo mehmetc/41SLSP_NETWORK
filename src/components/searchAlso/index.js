@@ -13,7 +13,7 @@ class SearchAlsoController {
               facetGroupCollapsed: false,
               values: undefined
             });
-            console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
+            //console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
             //searchAsoWatcher();
           }
       });
@@ -24,7 +24,7 @@ class SearchAlsoController {
   SearchAlsoController.$inject = ['$scope'];
   
   
-  export let component = {
+  export let searchAlsoComponent = {
     name: 'rzs-search-also',
     config: {
       bindings:{parentCtrl:'<'},

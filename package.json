@@ -5,10 +5,27 @@
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
+  "primo": {
+    "url": "https://slsp-rzs.primo.exlibrisgroup.com",
+    "institution": "41SLSP_RZS",
+    "vidId": "VU07",
+    "build": {
+      "views": [
+        "VU06",
+        "VU07",
+        "VU15"
+      ],
+      "dist": "./dist",
+      "resources": "./resources",
+      "package": "./package",
+      "tmp": "./tmpPackage"
+    }
+  },
   "babel": {
     "plugins": [
+      "import-directory",
       "transform-html-import-to-string",
-      "@babel/plugin-transform-runtime"      
+      "@babel/plugin-transform-runtime"
     ],
     "presets": [
       [
@@ -21,21 +38,30 @@
     ]
   },
   "scripts": {
-    "start": "primoServe --vid=41SLSP_RZS:VU06 --proxy=https://slsp-rzs.primo.exlibrisgroup.com --dir=./dist --ve",
-    "build": "rimraf dist/ && parcel build src/index.js --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
-    "watch": "rimraf dist/ && parcel watch src/index.js --no-cache --target browser --out-dir dist/41SLSP_RZS-VU06/js --out-file custom.js",
-    "package": "./make_package.sh"
+    "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
+    "build": "cross-env-shell \"rimraf dist/ && yarn resources && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
+    "watch": "cross-env-shell \"rimraf dist/ && yarn resources && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
+    "package_old": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
+    "package": "node make_package.js",
+    "resources": "cross-env-shell \"rimraf dist/ && mkdir ./dist && mkdir ./dist/$npm_package_primo_institution-$npm_package_primo_vidId && copyfiles -u 1 resources/$npm_package_primo_institution-$npm_package_primo_vidId/**/* ./dist && copyfiles -u 2 resources/general/**/* ./dist/$npm_package_primo_institution-$npm_package_primo_vidId\""
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
     "babel-plugin-import-directory": "^1.1.0",
+    "babel-plugin-transform-html-import-to-string": "^0.0.1",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.2",
+    "fs-extra": "^9.1.0",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.2"
+    "primo-serve": "^0.0.15",
+    "rimraf": "^3.0.2",
+    "glob": "^7.1.6",
+    "adm-zip": "^0.5.4"
   },
   "dependencies": {
-    "angular": "1.8.0"
+    "angular": "1.8.2"
   }
 }
