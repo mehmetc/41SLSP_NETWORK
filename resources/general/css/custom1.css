@@ -271,6 +271,10 @@ prm-logo .product-logo {
       [dir="rtl"] .md-button.button-with-menu-arrow .menu-arrow {
         margin-right: 8px; }
 
+/***************This entry is the mouse over background of the item expandbutton*****************/ 
+/*button.item-expand-button.md-button.md-primoExplore-theme.md-ink-ripple{ background-color:#D3D3D3; }*/
+
+
 .buttons-group .md-button {
   box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1); }
 
@@ -667,10 +671,17 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     background-color: #F7EDA3; }
   .prm-alert-border, .bar.alert-bar, .classic-input .search-scope {
     border-color: #ede49e; }
-
+    
 /* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  display:none; }
+  display:none;
+  background-color: #DC143C !important; 
+  color: #F0FFFF !important; 
+  }
+a.lbs-message-service { 
+  /*background-color: #DC143C !important; */
+  color: #F7EDA3  !important;
+  } 
 
 .prm-highlight, prm-breadcrumbs .md-chip.persistent-facet {
   background-color: #FFFCC4; }
@@ -753,6 +764,16 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
 
 /* primary color hook end*/
 
+.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple  {
+background-color: #F3F3F3 !important; 
+}
+
+.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple:hover  {
+background-color: #ddd !important;
+}
+
+
+
 /* mehmet/bibtip column right */
  .bibtip_bx_style_container {
      background: #f3f3f3 !important;
@@ -801,22 +822,46 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
      padding-top: 25px !important;
 }
 
+
+/* extensoion display of fees */
 prm-request-after { display: none !important; } 
 
-/*Weitere Styles für die Info-box */
+
+/*
+/*Weitere Styles für die Info-box 
 .courier-info.alert-bar {
-    height: 6.2em;
     margin: .5em;
     text-align: center;
-    /*... ev. weitere Anpassungen */
+    /*... ev. weitere Anpassungen 
 
 } 
-/* für Anpassungen von feesInfo: */
+/* für Anpassungen von feesInfo: 
 .courier-info.alert-bar .info-text  {
 
 }
-/* für Anpassungen des Links: */
+/* für Anpassungen des Links: 
 .courier-info.alert-bar .fees-link { 
 
 }
+*/
 
+
+/*Styling für den eigenen Info-Block: */
+.courier-info.bar.alert-bar {
+    height: unset;
+    margin: 6px 8px;
+    padding: .5em .5em 0.25em;
+    text-align: center;
+    /*background-color: #F7EDA3 !important; */
+}
+.courier-info.bar.alert-bar a {
+    color: #44d; /*hier passende Farbe einfügen oder Regel weglassen */
+ }
+
+
+
+
+/* temporary hide closures  
+.idslu-closures {
+  display:none; }
+  */
