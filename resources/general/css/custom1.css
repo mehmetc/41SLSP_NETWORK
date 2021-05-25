@@ -668,6 +668,10 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
   .prm-alert-border, .bar.alert-bar, .classic-input .search-scope {
     border-color: #ede49e; }
 
+/* temporary hide mehmets alert-bar */
+.alert-bar.lbs-message-service {
+  display:none; }
+
 .prm-highlight, prm-breadcrumbs .md-chip.persistent-facet {
   background-color: #FFFCC4; }
   .prm-highlight.prm-hue1, .list-item-wrapper .item-bookmarked,
@@ -815,3 +819,4 @@ prm-request-after { display: none !important; }
 .courier-info.alert-bar .fees-link { 
 
 }
+
