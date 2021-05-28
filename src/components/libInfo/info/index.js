@@ -23,8 +23,14 @@ class LibInfoController {
     }, (xs) => {
       if (xs) {        
         self.showLabel = true;        
+        document.querySelectorAll('prm-stack-map > a > span').forEach(el => {
+          el.style.display='none';
+        })          
       } else {
-        self.showLabel =  false;        
+        self.showLabel =  false;      
+        document.querySelectorAll('prm-stack-map > a > span').forEach(el => {          
+          el.style.display='';
+        })  
       }
     })
   }
