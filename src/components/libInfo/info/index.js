@@ -23,11 +23,13 @@ class LibInfoController {
     }, (xs) => {
       if (xs) {        
         self.showLabel = true;        
+        // remove span from VScout
         document.querySelectorAll('prm-stack-map > a > span').forEach(el => {
           el.style.display='none';
         })          
       } else {
-        self.showLabel =  false;      
+        self.showLabel =  false;     
+        // remove span from VScout 
         document.querySelectorAll('prm-stack-map > a > span').forEach(el => {          
           el.style.display='';
         })  
