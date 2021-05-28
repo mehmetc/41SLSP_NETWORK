@@ -17,7 +17,7 @@ LibInfoContainerController.$inject = ['$element'];
 
 export let libInfoContainerComponent = {
     name: 'rzs-lib-info-container',
-    config: {
+    config: { 
         bindings: { parentCtrl: '<' },
         controller: LibInfoContainerController,
         template: '<rzs-lib-info location="$ctrl.location"></rzs-lib-info>'
