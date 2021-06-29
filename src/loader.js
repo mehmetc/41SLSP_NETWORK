@@ -13,11 +13,10 @@ String.prototype.toCamelCase = function () {
 }
 
 export default class Loader {
-    constructor() {
-    }
+    constructor() {}
 
     load(modType) {
-        this._injectComponentPlaceHoldersIntoAfterComponents(modType);        
+        this._injectComponentPlaceHoldersIntoAfterComponents(modType);
     }
 
     /**
@@ -48,10 +47,19 @@ export default class Loader {
 
             if (component.enabled) {
                 if (component.appendTo) {
-                    let elements = afterComponents[component.appendTo] || [];
-                    elements.push({ 'name': component.name, 'enableInView': component.enableInView });
-                    afterComponents[component.appendTo] = elements;
 
+                    let elements = afterComponents[component.appendTo] || [];
+                    elements.push({
+                        'name': component.name,
+                        'enableInView': component.enableInView
+                    });
+                    if (Array.isArray(component.appendTo)) {
+                        component.appendTo.forEach(appendTo => {
+                            afterComponents[appendTo] = elements;
+                        });
+                    } else {
+                        afterComponents[component.appendTo] = elements;
+                    }
                 }
                 angular.module(modType).constant('afterComponents', afterComponents);
                 angular.module(modType).component(component.name.toCamelCase(), component.config);

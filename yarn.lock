@@ -4958,6 +4958,11 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
+primo-explore-eth-archives-getit@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/primo-explore-eth-archives-getit/-/primo-explore-eth-archives-getit-0.0.15.tgz#d5ff463f656223ae2db99c450e99f9ca90020606"
+  integrity sha512-MD1xFnUSuipF51KnBB60g131glQ3mcHC3V7FckXWCJPEpqiaz3wqN3fUrCj9BZvLSBUQEu37TlbsxkaRbaPaPA==
+
 primo-serve@^0.0.15:
   version "0.0.15"
   resolved "https://registry.yarnpkg.com/primo-serve/-/primo-serve-0.0.15.tgz#9dd3906953fce3234aa7d90ad5d5b2389ea6eb3d"

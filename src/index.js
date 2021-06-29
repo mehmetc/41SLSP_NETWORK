@@ -9,6 +9,7 @@
 import Primo from './primo';
 import Loader from './loader';
 import MessageService from './factories/messageService';
+import 'primo-explore-eth-archives-getit';
 
 // standard google analytics tracking code
 (function (i, s, o, g, r, a, m) {
@@ -21,7 +22,7 @@ import MessageService from './factories/messageService';
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   window.Primo = new Primo();
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule']).config(($sceDelegateProvider) => {
     $sceDelegateProvider.resourceUrlWhitelist([
       '**'
     ]);

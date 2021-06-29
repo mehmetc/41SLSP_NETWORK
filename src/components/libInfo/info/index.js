@@ -2,15 +2,16 @@ import libInfoHTML from './libInfo.html'
 import libInfoJSON from './libInfo.json'
 
 class LibInfoController {
-  constructor($translate, $mdMedia, $scope) {
+  constructor($translate, $mdMedia, $scope, $element) {
     let self = this;
-    self.showLabel = true;
+    self.element = $element;
+    self.hideLabel = false;
     self.mediaQueries = $mdMedia;
     self.scope = $scope;
     self.sourceURL = '';
-    self.translate = $translate;    
-    self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;
-    //self.iconUrl = `/custom/${window.appConfig.vid}/img/information.png`;
+    self.translate = $translate;
+    self.XSElement = self.element.parent().parent().parent();
+    self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;    
     
     self.translate('nui.customizing.idslu.informationicon').then((iconUrl) => {
       if (iconUrl !== 'informationicon') {
@@ -18,26 +19,32 @@ class LibInfoController {
       }
     });              
 
-    self.scope.$watch(() => {
-      return self.mediaQueries('xs');
+    let mediawatcher = $scope.$watch(() => {      
+      return self.mediaQueries('xs') || false;
     }, (xs) => {
-      if (xs) {        
-        self.showLabel = true;        
-        // remove span from VScout
-        document.querySelectorAll('prm-stack-map > a > span').forEach(el => {
-          el.style.display='none';
-        })          
+
+      self.hideLabel = xs;          
+      if (self.hideLabel) {
+        self.XSElement.removeClass('layout-row');
+        self.XSElement.removeClass('layout-align-space-between-end');
+        self.XSElement.addClass('layout-column');
+        self.XSElement.addClass('layout-align-space-between-start');
       } else {
-        self.showLabel =  false;     
-        // remove span from VScout 
-        document.querySelectorAll('prm-stack-map > a > span').forEach(el => {          
-          el.style.display='';
-        })  
+        self.XSElement.addClass('layout-row');
+        self.XSElement.addClass('layout-align-space-between-end');
+        self.XSElement.removeClass('layout-column');
+        self.XSElement.removeClass('layout-align-space-between-start');
       }
-    })
+    });    
   }
   
-  $doCheck(){    
+  $onInit() {
+    if (self.mediaQueries) {
+      self.hideLabel = self.mediaQueries('xs');
+    }
+  }
+
+  $doCheck(){ 
     if (this.location && this.sourceURL == '') {
       let location = libInfoJSON[this.location.libraryCode];    
       if (location) {
@@ -47,7 +54,7 @@ class LibInfoController {
   }
 }
 
-LibInfoController.$inject = ['$translate', '$mdMedia', '$scope'];
+LibInfoController.$inject = ['$translate', '$mdMedia', '$scope', '$element'];
 
 export let libInfoComponent = {
   name: 'rzs-lib-info',
