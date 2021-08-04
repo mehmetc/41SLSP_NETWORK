@@ -10,23 +10,30 @@ import Primo from './primo';
 import Loader from './loader';
 import MessageService from './factories/messageService';
 import 'primo-explore-eth-archives-getit';
+import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
 
 // standard google analytics tracking code
 (function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function () {
     (i[r].q = i[r].q || []).push(arguments);
-  }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m);
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 (function () {
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   window.Primo = new Primo();
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule']).config(($sceDelegateProvider) => {
-    $sceDelegateProvider.resourceUrlWhitelist([
-      '**'
-    ]);
-  })
+
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule', 'slspEditPersonalDetails']).config(($sceDelegateProvider) => {
+      $sceDelegateProvider.resourceUrlWhitelist([
+        '**'
+      ]);
+    })
     .service('MessageService', MessageService)
     .run(($translate, $rootScope, angularLoad) => {
       angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {
@@ -76,7 +83,7 @@ import 'primo-explore-eth-archives-getit';
             ga('send', 'pageview');
           }
 
-          let bibTipURL = $translate.instant(`nui.customization.bibTip`);          
+          let bibTipURL = $translate.instant(`nui.customization.bibTip`);
           angularLoad.loadScript(bibTipURL).then(function () {
             console.log('bibtip.js loaded');
           });
@@ -84,10 +91,40 @@ import 'primo-explore-eth-archives-getit';
           watcher();
         }
       });
-
+    }).config($httpProvider => {
+      $httpProvider.interceptors.push(($q) => {
+        return {
+          'request': (request) => {
+            return request;
+          },
+          'requestError': (request) => {
+            return $q.reject(request);
+          },
+          'responseError': (response) => {
+            return $q.reject(response);
+          },
+          'response': (response) => {
+            try {
+              if (/primaws\/rest\/priv\/myaccount\/requests/.test(response.config.url)) {
+                console.log(response.data);
+                if (response.status == 200 && response.data.status == "ok") {
+                  //POC rewrite all cancellable holds.
+                  response.data.data.holds.hold.map((m) => {
+                    if (m.cancel == 'Y')
+                      m.cancel = 'N'
+                  });                  
+                }
+              }
+            } catch (error) {
+              console.log(error);
+            }
+            return response;
+          }
+        }
+      })
     });
 
-    //Load components
+  //Load components
   new Loader().load(customType);
   console.log(`Done initializing ${customType}`)
 })();

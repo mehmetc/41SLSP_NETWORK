@@ -1,5 +1,5 @@
 {
-  "name": "41slsp_network",
+  "name": "41SLSP-network",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
@@ -21,48 +21,40 @@
       "tmp": "./tmpPackage"
     }
   },
-  "babel": {
-    "plugins": [
-      "import-directory",
-      "transform-html-import-to-string",
-      "@babel/plugin-transform-runtime"
-    ],
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": "defaults",
-          "sourceMaps": "inline"
-        }
-      ]
-    ]
-  },
   "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
-    "build": "cross-env-shell \"rimraf dist/ && yarn resources && parcel build src/index.js --experimental-scope-hoisting --no-content-hash --no-source-maps --detailed-report --no-minify --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
-    "watch": "cross-env-shell \"rimraf dist/ && yarn resources && parcel watch src/index.js --no-cache --target browser --out-dir dist/$npm_package_primo_institution-$npm_package_primo_vidId/js --out-file custom.js\"",
-    "package_old": "cross-env-shell \"./make_package.sh $npm_package_primo_institution-$npm_package_primo_vidId\"",
-    "package": "node make_package.js",
-    "resources": "cross-env-shell \"rimraf dist/ && mkdir ./dist && mkdir ./dist/$npm_package_primo_institution-$npm_package_primo_vidId && copyfiles -u 1 resources/$npm_package_primo_institution-$npm_package_primo_vidId/**/* ./dist && copyfiles -u 2 resources/general/**/* ./dist/$npm_package_primo_institution-$npm_package_primo_vidId\""
+    "build": "cross-env-shell \"rimraf dist/ && webpack\"",
+    "watch": "webpack --watch",
+    "package": "node make_package.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.14.8",
     "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-env": "^7.14.9",
+    "@webpack-cli/generators": "^2.2.0",
     "adm-zip": "^0.5.4",
+    "babel-loader": "^8.2.2",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-plugin-transform-html-import-to-string": "^0.0.1",
-    "copyfiles": "^2.4.1",
+    "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.2",
+    "css-loader": "^6.2.0",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
-    "parcel-bundler": "^1.12.4",
+    "html-loader": "^2.1.2",
+    "imports-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "prettier": "^2.3.2",
     "primo-explore-eth-archives-getit": "^0.0.15",
     "primo-serve": "^0.0.15",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "angular": "1.8.2"
-  }
+  },
+  "description": "This is a Primo 'CUSTOM_VIEW' package for RZS"
 }
