@@ -11,6 +11,7 @@ import Loader from './loader';
 import MessageService from './factories/messageService';
 import 'primo-explore-eth-archives-getit';
 import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
+import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests';
 
 // standard google analytics tracking code
 (function (i, s, o, g, r, a, m) {
@@ -29,7 +30,7 @@ import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
   let customType = 'viewCustom';
   window.Primo = new Primo();
 
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule', 'slspEditPersonalDetails']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule', 'slspEditPersonalDetails', 'slspHttpInterceptRequests']).config(($sceDelegateProvider) => {
       $sceDelegateProvider.resourceUrlWhitelist([
         '**'
       ]);
@@ -91,37 +92,6 @@ import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
           watcher();
         }
       });
-    }).config($httpProvider => {
-      $httpProvider.interceptors.push(($q) => {
-        return {
-          'request': (request) => {
-            return request;
-          },
-          'requestError': (request) => {
-            return $q.reject(request);
-          },
-          'responseError': (response) => {
-            return $q.reject(response);
-          },
-          'response': (response) => {
-            try {
-              if (/primaws\/rest\/priv\/myaccount\/requests/.test(response.config.url)) {
-                console.log(response.data);
-                if (response.status == 200 && response.data.status == "ok") {
-                  //POC rewrite all cancellable holds.
-                  response.data.data.holds.hold.map((m) => {
-                    if (m.cancel == 'Y')
-                      m.cancel = 'N'
-                  });                  
-                }
-              }
-            } catch (error) {
-              console.log(error);
-            }
-            return response;
-          }
-        }
-      })
     });
 
   //Load components
