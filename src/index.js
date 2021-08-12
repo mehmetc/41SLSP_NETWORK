@@ -10,6 +10,7 @@ import Primo from './primo';
 import Loader from './loader';
 import MessageService from './factories/messageService';
 import 'primo-explore-eth-archives-getit';
+
 import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
 import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests';
 
