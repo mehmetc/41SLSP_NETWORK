@@ -31,7 +31,7 @@ BrowzineController.$inject = ['$scope'];
 export let browzineComponent = {
     name: 'rzs-browzine',  
     enabled: true,
-    appendTo: 'prm-search-result-availability-line-after',
+    appendTo: 'slsp-search-result-availability-line-after',
     enableInView: '.*',
     config:{    bindings: {
         parentCtrl: '<'
