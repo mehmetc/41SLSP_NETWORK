@@ -84,7 +84,7 @@ class SearchAlsoBodyController {
         "img": "https://scholar.google.com/favicon.ico",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.google_scolar",
         mapping: function mapping(search) {
-          return self.searchTerms;
+          return self.parsedQuery[0][2];
         }
       }, {
         "view": "*",
