@@ -12,7 +12,7 @@ export default class Session {
         let data = {            
             email: details.email || '',            
             display_name: uSms.getUserNameForDisplay(),
-            isLoggedIn: () => uSms.getUserName().length > 0,
+            isLoggedIn: (() => uSms.getUserName().length > 0)(),
         };
 
         return data;

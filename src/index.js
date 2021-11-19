@@ -9,6 +9,7 @@
 import Primo from './primo';
 import Loader from './loader';
 import MessageService from './factories/messageService';
+import 'primo-explore-eth-openurl-interlibrary';
 /* import 'primo-explore-eth-archives-getit'; */
 
 /* import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details'; */
@@ -31,7 +32,7 @@ import MessageService from './factories/messageService';
   let customType = 'viewCustom';
   window.Primo = new Primo();
 
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethOpenurlInterlibraryModule']).config(($sceDelegateProvider) => {
       $sceDelegateProvider.resourceUrlWhitelist([
         '**'
       ]);

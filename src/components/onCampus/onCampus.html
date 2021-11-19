@@ -1,0 +1,14 @@
+<!-- 
+    This is a null component meaning you can put this in any HTML and it will be rendered.
+    Look in your VIEW/html/homepage/homepage_xx.html file to see how it is used.
+-->
+<div ng-if='$ctrl.onCampus'>   
+    <div style=" background-color: green;">
+        You are on campus. Good to go!
+    </div>     
+</div>
+<div ng-if='$ctrl.offCampus'> 
+    <div style="background-color: red;">
+        You  are off campus. Use VPN to get the full experience.
+    </div>       
+</div>

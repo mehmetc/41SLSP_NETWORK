@@ -2508,6 +2508,14 @@ figures@^3.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
+file-replace-loader@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/file-replace-loader/-/file-replace-loader-1.4.0.tgz#e433a8ace58ec456aa13a9cb3d81d6fe8dbdfe7d"
+  integrity sha512-qXbFaCuUHXNRWo2elkioNDnGAXHM/hy9brlhjRGiEwo47VxtP4fGFyxF0p6yWK3xS94FLphO/oDB7lGymWIt1w==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^2.7.1"
+
 filelist@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/filelist/-/filelist-1.0.2.tgz#80202f21462d4d1c2e214119b1807c1bc0380e5b"
@@ -3419,6 +3427,15 @@ loader-utils@^1.4.0:
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
+loader-utils@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.2.tgz#d6e3b4fb81870721ae4e0868ab11dd638368c129"
+  integrity sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^3.0.0"
+    json5 "^2.1.2"
+
 localtunnel@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/localtunnel/-/localtunnel-2.0.1.tgz#8f7c593f3005647f7675e6e69af9bf746571a631"
@@ -4114,10 +4131,10 @@ pretty-bytes@^5.2.0:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
   integrity sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==
 
-primo-explore-eth-archives-getit@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/primo-explore-eth-archives-getit/-/primo-explore-eth-archives-getit-0.0.15.tgz#d5ff463f656223ae2db99c450e99f9ca90020606"
-  integrity sha512-MD1xFnUSuipF51KnBB60g131glQ3mcHC3V7FckXWCJPEpqiaz3wqN3fUrCj9BZvLSBUQEu37TlbsxkaRbaPaPA==
+primo-explore-eth-openurl-interlibrary@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/primo-explore-eth-openurl-interlibrary/-/primo-explore-eth-openurl-interlibrary-0.0.4.tgz#e17b2ff34fbc02c32240aa7e9e3ed2ade9763244"
+  integrity sha512-F3kyoh2YeeZKxECwed48bh959VA22U3eZ0nm4aZlYcIkEcE0u4G4iS4mVBu/2nyyW2HnF8y3t+FZxX/zL6stGg==
 
 primo-serve@^0.0.15:
   version "0.0.15"
@@ -4477,7 +4494,7 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-schema-utils@^2.6.5:
+schema-utils@^2.6.5, schema-utils@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.7.1.tgz#1ca4f32d1b24c590c203b8e7a50bf0ea4cd394d7"
   integrity sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==

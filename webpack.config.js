@@ -3,6 +3,7 @@ const PackageJSON = require('./package.json');
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { resolve } = require('path');
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -63,6 +64,18 @@ const config = {
       {
         test: /\.(html)$/i,
         loader: "html-loader",
+      },
+      {
+        test: /eth-openurl-interlibrary\.config/,
+        use: [{
+        loader: 'file-replace-loader',
+        options: {
+          condition: 'if-replacement-exists',
+          replacement: path.resolve(__dirname, 'src/components/openUrlILL/openurl-ill.config.js'),
+          async: true,
+          progress: true
+        }
+      }]
       },
       
       // Add your rules for custom modules here
