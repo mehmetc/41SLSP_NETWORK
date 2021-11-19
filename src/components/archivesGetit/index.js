@@ -8,8 +8,8 @@ class ArchivesGetitController {
 
 export let rzsArchivesComponent = {
     name: 'rzs-archives-getit',  
-    enabled: true,    
-    appendTo: 'prm-alma-viewit-after',
+    enabled: false,    
+    appendTo: 'slsp-alma-viewit-after',
     enableInView: '.*',  
     config: {      
       bindings: {parentCtrl: '<'},

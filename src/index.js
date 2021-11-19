@@ -9,10 +9,10 @@
 import Primo from './primo';
 import Loader from './loader';
 import MessageService from './factories/messageService';
-import 'primo-explore-eth-archives-getit';
+/* import 'primo-explore-eth-archives-getit'; */
 
-import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details';
-import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests';
+/* import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details'; */
+/* import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests'; */
 
 // standard google analytics tracking code
 (function (i, s, o, g, r, a, m) {
@@ -31,7 +31,7 @@ import './swisscovery/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests';
   let customType = 'viewCustom';
   window.Primo = new Primo();
 
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethArchivesGetitModule', 'slspEditPersonalDetails', 'slspHttpInterceptRequests']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad']).config(($sceDelegateProvider) => {
       $sceDelegateProvider.resourceUrlWhitelist([
         '**'
       ]);
