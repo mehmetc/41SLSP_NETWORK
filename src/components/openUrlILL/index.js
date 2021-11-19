@@ -9,7 +9,7 @@ class OpenUrlILLController {
 export let rzsOpenUrlILLComponent = {
     name: 'rzs-openurl-ill',  
     enabled: true,    
-    appendTo: 'alma-htgi-svc-after',
+    appendTo: 'slsp-htgi-svc-after',
     enableInView: '.*',  
     config: {      
       bindings: {parentCtrl: '<'},
