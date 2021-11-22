@@ -6,6 +6,7 @@ class LibInfoContainerLocationController {
     }
 
     $doCheck() {
+
         let locationEl = angular.element(this.element.parent().parent());
         if (locationEl && locationEl.find('rzs-lib-info').length == 0) {
             let placeHolder = locationEl[0].querySelector('div.list-item-actions');
@@ -23,7 +24,9 @@ class LibInfoContainerLocationController {
 
         let locationItemEl = angular.element(document.querySelector('prm-location-items'));
         if (locationItemEl) {
-            let placeHolder2 = locationItemEl[0].querySelector('div.tab-content-header > div.layout-row > div');
+            //let placeHolder2 = locationItemEl[0].querySelector('div.tab-content-header > div.layout-row > div');
+            
+            let placeHolder2 = locationItemEl[0].querySelector('prm-stack-map-after');
             if (placeHolder2) {
                 let locationItemsController = locationItemEl.controller('prm-location-items')
                 if (locationItemsController) {
@@ -33,8 +36,7 @@ class LibInfoContainerLocationController {
                         this.locationItem = currLoc.location;
                         if (locationItemEl.find('rzs-lib-info').length == 0) {
                             let el2 = document.createElement('rzs-lib-info');
-                            el2.setAttribute('location', '$ctrl.locationItem');
-
+                            el2.setAttribute('location', '$ctrl.locationItem');                            
                             placeHolder2.insertBefore(el2, null);
                             this.compile(placeHolder2)(this.scope);
                         }
