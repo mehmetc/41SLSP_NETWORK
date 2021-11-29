@@ -42,6 +42,19 @@ class LibInfoContainerLocationController {
                         }
                     }
                 }
+            } else {
+                
+                let placeHolder3 = angular.element(locationItemEl[0].querySelector('div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end > div.layout-row > div'));
+                if (placeHolder3 && placeHolder3.find('rzs-lib-info').length == 0){
+                    this.location = this.parentCtrl.parentCtrl.loc.location;
+
+                    let el = document.createElement('rzs-lib-info');
+                    el.setAttribute('location', '$ctrl.location');
+                    el.setAttribute('library', this.location.libraryCode);
+    
+                    placeHolder3.append(el);
+                    this.compile(placeHolder3)(this.scope);                    
+                }
             }
         }
     }
