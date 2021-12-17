@@ -45,6 +45,15 @@ class LibInfoContainerLocationController {
             } else {
                 
                 let placeHolder3 = angular.element(locationItemEl[0].querySelector('div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end > div.layout-row > div'));
+                if (placeHolder3 && placeHolder3.find('prm-stack-map').length == 0){
+                    this.location = this.parentCtrl.parentCtrl.loc.location;
+
+                    let el = document.createElement('prm-stack-map');
+    
+                    placeHolder3.append(el);
+                    this.compile(placeHolder3)(this.scope);                     
+                }
+
                 if (placeHolder3 && placeHolder3.find('rzs-lib-info').length == 0){
                     this.location = this.parentCtrl.parentCtrl.loc.location;
 
