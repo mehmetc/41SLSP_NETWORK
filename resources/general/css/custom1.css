@@ -29,6 +29,220 @@ prm-logo .product-logo {
     display: none;
 }
 
+
+/* 20211206 Icons in position in start page für Startseiten*/
+md-card.info md-card-content svg {
+  height: 1em;
+  position: relative;
+  top: 3px;
+  }
+
+/* 20211125 Sammlungen Topbar Hintergrund weiss und Schriftfarbe weiss in Header*/
+.collection-info {
+    color:white !important; 
+  }
+
+prm-explore-main .header .transparent-top-bar:before {
+    background-color: white !important; ;
+}
+
+/* 20220112 */
+button#mainMenuFullCloseButton:focus {
+    color: #ffffff !important;
+}
+
+
+/* 20211125 correction of position libinfo and mediascout on mobile */
+/*
+prm-location-items div.tab-content-header prm-stack-map a.md-button {
+     padding-top: 0.5em;
+}
+*/
+@media (max-width: 999px) {
+  .list-item-actions prm-stack-map {
+    /* display: none; */
+  }
+  prm-location-items div.tab-content-header {
+     display: block;
+  }
+  prm-location-items div.tab-content-header prm-stack-map {
+    margin-top: .5em; 
+  }
+}
+
+/*Back buttons*/
+md-tabs.tabs-as-app .back-button, prm-location-holdings .md-button.button-as-link, prm-location-items .button-link {
+    box-shadow: none;
+    color: #00b2aa !important;
+    background: none !important;
+    line-height: 32px !important;
+    /* border: 1px solid rgba(0, 0, 0, 0.59); */
+    border: none;
+}
+
+.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple  {
+background-color: #F3F3F3 !important; 
+}
+
+.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple:hover  {
+background-color: #ddd !important;
+}
+
+                     
+/* Externe Links in Benutzerkonto. Via Th. Henkel 20210614. gross und lila */
+prm-personal-info-after .md-button.button-link  {
+  color: #00b2aa !important;
+  font-size: large !important;
+  /* font-weight: 500 !important; */
+  /* background-color: #FFF !important; */
+   }
+
+/* extensoion display of fees */
+prm-request-after { display: none !important; } 
+
+/*
+/*Weitere Styles für die Info-box 
+.courier-info.alert-bar {
+    margin: .5em;
+    text-align: center;
+    /*... ev. weitere Anpassungen 
+
+} 
+/* für Anpassungen von feesInfo: 
+.courier-info.alert-bar .info-text  {
+
+}
+/* für Anpassungen des Links: 
+.courier-info.alert-bar .fees-link { 
+
+}
+*/
+
+
+/*Styling für den eigenen Info-Block: */
+.courier-info.bar.alert-bar {
+    height: unset;
+    margin: 6px 8px;
+    padding: .5em .5em 0.25em;
+    text-align: center;
+    /*background-color: #F7EDA3 !important; */
+}
+.courier-info.bar.alert-bar a {
+    color: #44d; /*hier passende Farbe einfügen oder Regel weglassen */
+ }
+
+/* Change order of elements in full view REIHENFOLGE UMSORTIEREN - inkonsistent im Central package und wir wollen Links weiter oben. Update 20210528 */ 
+
+/* Full display: change sections order and distance between sections */ 
+
+#full-view-container >*:first-child { 
+  display: flex; 
+  flex-direction: column;
+} 
+ 
+#brief { 
+  order: 0 !important;  
+}  
+
+
+#citationTrails { 
+  order: 9 !important;  
+}  
+
+#searchWithinJournal { 
+  order: 10 !important;  
+}  
+
+#getit_link1_0 { 
+  order: 1 !important;
+}
+
+#getit_link1_1 { 
+  order: 2 !important;
+}
+
+#action_list { 
+  order: 5 !important;  
+}
+
+#details { 
+  order: 3 !important;
+}
+
+#links { 
+  order: 4 !important;
+} 
+
+#moreFromTheSameCourse { 
+  order: 6 !important; 
+}  
+
+#moreFromTheSameCollection { 
+  order: 7 !important; 
+} 
+
+#virtualBrowse { 
+  order: 8 !important;  
+}
+
+/* Change of links in left navigation bar ENG */ 
+
+[aria-label="Top"] { order: 0 !important; }
+[aria-label="Citations"] { order: 9 !important; } 
+[aria-label="Search inside"] { order: 10 !important; } 
+[aria-label="Online"] { order: 1 !important; }
+[aria-label="Loan and request options"] { order: 2 !important; } 
+[aria-label="Send to"] { order: 5 !important; } 
+[aria-label="Details"] { order: 3 !important; }
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Course"] { order: 6 !important; } 
+[aria-label="Collection"] { order: 7 !important; } 
+[aria-label="Virtual Browse"] { order: 8 !important; }  
+
+/* Change of links in left navigation bar GER */
+
+[aria-label="Nach oben"] { order: 0 !important; } 
+[aria-label="Zitationen"] { order: 9 !important; } 
+[aria-label="Suche innerhalb"] { order: 10 !important; } 
+[aria-label="Online"] { order: 1 !important; }
+[aria-label="Ausleih- und Bestelloptionen"] { order: 2 !important; } 
+[aria-label="Senden an"] { order: 5 !important; } 
+[aria-label="Details"] { order: 3 !important; } 
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Seminar"] { order: 6 !important; }
+[aria-label="Sammlung"] { order: 7 !important; }
+[aria-label="Virtuelles Regal"] { order: 8 !important; }
+
+/* Change of links in left navigation bar FRE */
+
+[aria-label="Haut"] { order: 0 !important; } 
+[aria-label="Citations"] { order: 9 !important; } 
+[aria-label="Rechercher dans"] { order: 10 !important; } 
+[aria-label="Online"] { order: 1 !important; }
+[aria-label="Options de pr&#234;t et de demande"] { order: 2 !important; }  
+[aria-label="Envoyer vers"] { order: 5 !important; } 	
+[aria-label="D&#233;tails"] { order: 3 !important; } 
+[aria-label="Liens"] { order: 4 !important; }
+[aria-label="Cours"] { order: 6 !important; }
+[aria-label="Collection"] { order: 7 !important; }
+[aria-label="Etag&#232;re virtuelle"] { order: 8 !important; }
+ 
+/* Change of links in left navigation bar ITA */
+
+[aria-label="Top"] { order: 0 !important; }
+[aria-label="Citazioni"] { order: 9 !important; } 
+[aria-label="Cerca in"] { order: 10 !important; } 
+[aria-label="Online"] {  order: 1 !important; } 
+[aria-label="Opzioni di prestito e richiesta"]{ order: 2 !important; } 
+[aria-label="Invia a"] { order: 5 !important; }
+[aria-label="Dettagli"] { order: 3 !important; } 
+[aria-label="Link"] { order: 4 !important; }
+[aria-label="Corso"] { order: 6 !important; } 
+[aria-label="Collezione"] { order: 7 !important; } 
+[aria-label="Scorri virtualmente"] { order: 8 !important; }
+
+/* END Change order of elements in full view REIHENFOLGE UMSORTIEREN */ 
+
 /* primary color hook */
 /* through primo studio */
 .md-button {
@@ -674,7 +888,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     
 /* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  display:none;
+  /*display:none;*/
   background-color: #DC143C !important; 
   color: #F0FFFF !important; 
   }
@@ -764,14 +978,6 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
 
 /* primary color hook end*/
 
-.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple  {
-background-color: #F3F3F3 !important; 
-}
-
-.back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple:hover  {
-background-color: #ddd !important;
-}
-
 
 
 /* mehmet/bibtip column right */
@@ -821,44 +1027,6 @@ background-color: #ddd !important;
  .bibtip_bx_style_more_button {
      padding-top: 25px !important;
 }
-
-
-/* extensoion display of fees */
-prm-request-after { display: none !important; } 
-
-
-/*
-/*Weitere Styles für die Info-box 
-.courier-info.alert-bar {
-    margin: .5em;
-    text-align: center;
-    /*... ev. weitere Anpassungen 
-
-} 
-/* für Anpassungen von feesInfo: 
-.courier-info.alert-bar .info-text  {
-
-}
-/* für Anpassungen des Links: 
-.courier-info.alert-bar .fees-link { 
-
-}
-*/
-
-
-/*Styling für den eigenen Info-Block: */
-.courier-info.bar.alert-bar {
-    height: unset;
-    margin: 6px 8px;
-    padding: .5em .5em 0.25em;
-    text-align: center;
-    /*background-color: #F7EDA3 !important; */
-}
-.courier-info.bar.alert-bar a {
-    color: #44d; /*hier passende Farbe einfügen oder Regel weglassen */
- }
-
-
 
 
 /* temporary hide closures  
