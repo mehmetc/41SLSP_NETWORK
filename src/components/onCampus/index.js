@@ -28,6 +28,6 @@ export let onCampusComponent = {
       template: onCampusHTML
     },
     enabled: true,
-    appendTo: null,
-    enableInView: '.*'
+    appendTo: 'slsp-alma-viewit-after',
+    enableInView: '41SLSP_RZS:VU06|41SLSP_RZS:VU07'
   }

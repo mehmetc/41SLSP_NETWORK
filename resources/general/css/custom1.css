@@ -51,6 +51,59 @@ button#mainMenuFullCloseButton:focus {
     color: #ffffff !important;
 }
 
+/* 20220204 link to open ILL form on openURL page */
+.eth-ill-container{
+    justify-content: center;
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #f7eda3;
+    border-color: #ede49e;
+    box-shadow: 0 1px 0 0 rgb(0 0 0 / 3%), 0 5px 5px -3px rgb(0 0 0 / 7%);
+}
+.eth-ill{
+    display:block;
+}
+
+.eth-servicepage prm-alert-bar{
+    display: none;
+}
+
+/*****************************/
+/****** Off campus info ******/
+/*****************************/
+
+.hsg-on-campus-info {
+    margin-top: 1em;
+    padding: 1em 1em 0.5em;
+    background-color: #68EAB8;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
+}
+
+.hsg-on-campus-info>div {
+    margin-left: 1em;
+}
+
+.hsg-on-campus-info a {
+    color: #0030a0;
+}
+
+
+.hsg-off-campus-info {
+    margin-top: 1em;
+    padding: 1em 1em 0.5em;
+    background-color: #f7eda3;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
+}
+
+.hsg-off-campus-info>div {
+    margin-left: 1em;
+}
+
+.hsg-off-campus-info a {
+    color: #0030a0;
+}
 
 /* 20211125 correction of position libinfo and mediascout on mobile */
 /*
@@ -75,15 +128,16 @@ md-tabs.tabs-as-app .back-button, prm-location-holdings .md-button.button-as-lin
     box-shadow: none;
     color: #00b2aa !important;
     background: none !important;
-    line-height: 32px !important;
+   /* line-height: 32px !important;  */
     /* border: 1px solid rgba(0, 0, 0, 0.59); */
     border: none;
 }
 
+/*
 .back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple  {
 background-color: #F3F3F3 !important; 
 }
-
+*/
 .back-button.button-with-icon.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple:hover  {
 background-color: #ddd !important;
 }
@@ -118,6 +172,9 @@ prm-request-after { display: none !important; }
 }
 */
 
+prm-request-services .md-button.button-as-link {
+    line-height: 2em;
+}
 
 /*Styling für den eigenen Info-Block: */
 .courier-info.bar.alert-bar {
@@ -131,7 +188,7 @@ prm-request-after { display: none !important; }
     color: #44d; /*hier passende Farbe einfügen oder Regel weglassen */
  }
 
-/* Change order of elements in full view REIHENFOLGE UMSORTIEREN - inkonsistent im Central package und wir wollen Links weiter oben. Update 20210528 */ 
+/* Change order of elements in full view REIHENFOLGE UMSORTIEREN - inkonsistent im Central package und wir wollen Links weiter oben. Update 20220318 */ 
 
 /* Full display: change sections order and distance between sections */ 
 
@@ -143,7 +200,6 @@ prm-request-after { display: none !important; }
 #brief { 
   order: 0 !important;  
 }  
-
 
 #citationTrails { 
   order: 9 !important;  
@@ -166,11 +222,11 @@ prm-request-after { display: none !important; }
 }
 
 #details { 
-  order: 3 !important;
+  order: 4 !important;
 }
 
 #links { 
-  order: 4 !important;
+  order: 3 !important;
 } 
 
 #moreFromTheSameCourse { 
@@ -193,8 +249,8 @@ prm-request-after { display: none !important; }
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Loan and request options"] { order: 2 !important; } 
 [aria-label="Send to"] { order: 5 !important; } 
-[aria-label="Details"] { order: 3 !important; }
-[aria-label="Links"] { order: 4 !important; }
+[aria-label="Details"] { order: 4 !important; }
+[aria-label="Links"] { order: 3 !important; }
 [aria-label="Course"] { order: 6 !important; } 
 [aria-label="Collection"] { order: 7 !important; } 
 [aria-label="Virtual Browse"] { order: 8 !important; }  
@@ -207,8 +263,8 @@ prm-request-after { display: none !important; }
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Ausleih- und Bestelloptionen"] { order: 2 !important; } 
 [aria-label="Senden an"] { order: 5 !important; } 
-[aria-label="Details"] { order: 3 !important; } 
-[aria-label="Links"] { order: 4 !important; }
+[aria-label="Details"] { order: 4 !important; } 
+[aria-label="Links"] { order: 3 !important; }
 [aria-label="Seminar"] { order: 6 !important; }
 [aria-label="Sammlung"] { order: 7 !important; }
 [aria-label="Virtuelles Regal"] { order: 8 !important; }
@@ -221,8 +277,8 @@ prm-request-after { display: none !important; }
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Options de pr&#234;t et de demande"] { order: 2 !important; }  
 [aria-label="Envoyer vers"] { order: 5 !important; } 	
-[aria-label="D&#233;tails"] { order: 3 !important; } 
-[aria-label="Liens"] { order: 4 !important; }
+[aria-label="D&#233;tails"] { order: 4 !important; } 
+[aria-label="Liens"] { order: 3 !important; }
 [aria-label="Cours"] { order: 6 !important; }
 [aria-label="Collection"] { order: 7 !important; }
 [aria-label="Etag&#232;re virtuelle"] { order: 8 !important; }
@@ -235,8 +291,8 @@ prm-request-after { display: none !important; }
 [aria-label="Online"] {  order: 1 !important; } 
 [aria-label="Opzioni di prestito e richiesta"]{ order: 2 !important; } 
 [aria-label="Invia a"] { order: 5 !important; }
-[aria-label="Dettagli"] { order: 3 !important; } 
-[aria-label="Link"] { order: 4 !important; }
+[aria-label="Dettagli"] { order: 4 !important; } 
+[aria-label="Link"] { order: 3 !important; }
 [aria-label="Corso"] { order: 6 !important; } 
 [aria-label="Collezione"] { order: 7 !important; } 
 [aria-label="Scorri virtualmente"] { order: 8 !important; }
@@ -888,7 +944,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     
 /* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  /*display:none;*/
+  display:none;
   background-color: #DC143C !important; 
   color: #F0FFFF !important; 
   }
