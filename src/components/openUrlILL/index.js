@@ -1,5 +1,3 @@
-import 'primo-explore-eth-openurl-interlibrary';
-
 class OpenUrlILLController {
   constructor() {
     this.mainParentCtrl = this.parentCtrl;

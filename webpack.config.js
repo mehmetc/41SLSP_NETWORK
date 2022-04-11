@@ -77,7 +77,18 @@ const config = {
         }
       }]
       },
-      
+      {
+        test: /eth-openurl-interlibrary\.html/,
+        use: [{
+        loader: 'file-replace-loader',
+        options: {
+          condition: 'if-replacement-exists',          
+          replacement: path.resolve(__dirname, 'src/components/openUrlILL/eth-openurl-interlibrary.html'),
+          async: true,
+          progress: true
+        }
+      }]
+      },      
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
