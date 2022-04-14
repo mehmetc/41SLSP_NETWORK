@@ -1,69 +1,67 @@
-import libInfoHTML from './libInfo.html'
-import libInfoJSON from './libInfo.json'
+import infoHTML from './info.html';
+import infoJSON from './libInfo.json';
 
 class LibInfoController {
-  constructor($translate, $mdMedia, $scope, $element) {
-    let self = this;
-    self.element = $element;
-    self.hideLabel = false;
-    self.mediaQueries = $mdMedia;
-    self.scope = $scope;
-    self.sourceURL = '';
-    self.translate = $translate;
-    self.XSElement = self.element.parent().parent().parent();
-    self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;    
-    
-    self.translate('nui.customizing.idslu.informationicon').then((iconUrl) => {
-      if (iconUrl !== 'informationicon') {
-        self.iconUrl = iconUrl;
+    constructor($element, $scope, $translate) {
+      let self = this;
+      self.element = $element;
+      self.scope = $scope;
+      self.libinfoService = infoJSON;   
+      if (self.code == undefined) {
+        self.code = self.element[0].hasAttribute('code') ? self.element[0].getAttribute('code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
       }
-    });              
 
-    let mediawatcher = $scope.$watch(() => {      
-      return self.mediaQueries('xs') || false;
-    }, (xs) => {
+      self.translate = $translate;      
+      self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;    
 
-      self.hideLabel = xs;          
-      if (self.hideLabel) {
-        self.XSElement.removeClass('layout-row');
-        self.XSElement.removeClass('layout-align-space-between-end');
-        self.XSElement.addClass('layout-column');
-        self.XSElement.addClass('layout-align-space-between-start');
-      } else {
-        self.XSElement.addClass('layout-row');
-        self.XSElement.addClass('layout-align-space-between-end');
-        self.XSElement.removeClass('layout-column');
-        self.XSElement.removeClass('layout-align-space-between-start');
+      self.translate('nui.customizing.idslu.informationicon').then((iconUrl) => {
+        if (iconUrl !== 'informationicon') {
+          self.iconUrl = iconUrl;
+        }
+      }); 
+    }
+  
+    openInfo(e){
+      e.preventDefault();
+      e.stopPropagation();
+      window.open(`${this.libid}`, '_blank');
+    }
+  
+    get info(){
+      let self = this;                    
+      if (Object.keys(self.libinfoService).includes(self.code)) {
+        return {id: self.libinfoService[self.code].url, name: self.libinfoService[self.code].label};
       }
-    });    
+      return null;
+    }
+  
+    get libid(){      
+      let id = this.info.id;
+      if (id) {
+        return id;
+      }
+      return '';
+    }
+    get libname(){
+      let name = this.info.name;
+      if (name) {
+        return name;
+      }
+      return '';
+    }
+  
   }
   
-  $onInit() {
-    if (self.mediaQueries) {
-      self.hideLabel = self.mediaQueries('xs');
-    }
-  }
+  LibInfoController.$inject = ['$element', '$scope', '$translate'];
 
-  $doCheck(){ 
-    if (this.location && this.sourceURL == '') {
-      let location = libInfoJSON[this.location.libraryCode];    
-      if (location) {
-        this.sourceURL = location.url;
-      } 
-    }
-  }
-}
-
-LibInfoController.$inject = ['$translate', '$mdMedia', '$scope', '$element'];
-
-export let libInfoComponent = {
-  name: 'rzs-lib-info',
-  config: {
-    bindings: { location: '<', library: '<' },
-    controller: LibInfoController,
-    template: libInfoHTML
-  },
-  enabled: true,
-  appendTo: null,
-  enableInView: '.*'
-}
+  export let libInfoComponent = {
+    name: 'rsz-lib-info',
+    config: {
+        bindings: {code:'<'},
+        controller: LibInfoController,
+        template: infoHTML
+    },
+    enabled: true,
+    appendTo: null,
+    enableInView: '.*'    
+  }  

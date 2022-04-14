@@ -1,0 +1,477 @@
+[
+    {
+        "code": "ZOOBL",
+        "id": "79",
+        "name": "Alexander Library"
+    },
+    {
+        "code": "ASCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "All Souls College Library"
+    },
+    {
+        "code": "BLLCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Balliol College Library"
+    },
+    {
+        "code": "BODBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/old-library",
+        "name": "Bodleian Library"
+    },
+    {
+        "code": "EDUBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/education",
+        "name": "Bodleian Education Library"
+    },
+    {
+        "code": "HCLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/cairns-library",
+        "name": "Health Care - Cairns"
+    },
+    {
+        "code": "HCLKC",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/knowledge-centre",
+        "name": "Health Care - Knowledge Centre"
+    },
+    {
+        "code": "HFLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/radcliffe-camera",
+        "name": "Bodleian History Faculty Library"
+    },
+    {
+        "code": "BJLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/japanese-library",
+        "name": "Bod Japanese Library"
+    },
+    {
+        "code": "CCLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/china",
+        "name": "China Centre: KB Chen Library"
+    },
+    {
+        "code": "LACBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/lac",
+        "name": "Latin American Centre"
+    },
+    {
+        "code": "LAWBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/law",
+        "name": "Law Library"
+    },
+    {
+        "code": "MUSBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/music",
+        "name": "Music Faculty Library"
+    },
+    {
+        "code": "OILBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/nizami-ganjavi-library",
+        "name": "Oriental Studies: Nizami Ganjavi Library"
+    },
+    {
+        "code": "SSLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/ssl",
+        "name": "Social Science Library"
+    },
+    {
+        "code": "STFBL",
+        "id": "mailto:staff-dev@bodleian.ox.ac.uk",
+        "name": "Bodleian Staff Library"
+    },
+    {
+        "code": "BNCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Brasenose College Library"
+    },
+    {
+        "code": "CAMCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Campion Hall Library"
+    },
+    {
+        "code": "SCABL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/tylor",
+        "name": "Social and Cultural Anthropology Library"
+    },
+    {
+        "code": "CEUHL",
+        "id": "163",
+        "name": "Cancer Epidemiology Unit"
+    },
+    {
+        "code": "CARDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Careers Service Library"
+    },
+    {
+        "code": "MAGCH",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Chantry Library"
+    },
+    {
+        "code": "CHCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Christ Church Library"
+    },
+    {
+        "code": "COMDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Computer Science Library"
+    },
+    {
+        "code": "CCCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Corpus Christi College Library"
+    },
+    {
+        "code": "EARDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Earth Sciences Library"
+    },
+    {
+        "code": "EFLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/english-faculty-library",
+        "name": "English Faculty Library"
+    },
+    {
+        "code": "EXECL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Exeter College Library"
+    },
+    {
+        "code": "GTCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Green Templeton College Library"
+    },
+    {
+        "code": "GRFNU",
+        "id": "122",
+        "name": "Greyfriars Franciscan Library"
+    },
+    {
+        "code": "HMCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Harris Manchester College Library"
+    },
+    {
+        "code": "HERCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Hertford College Library"
+    },
+    {
+        "code": "ICLNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Instituto Camoes Library"
+    },
+    {
+        "code": "ISLNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Islamic Studies Library"
+    },
+    {
+        "code": "JESCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Jesus College Library"
+    },
+    {
+        "code": "KEBCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Keble College Library"
+    },
+    {
+        "code": "KELCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Kellogg College Library"
+    },
+    {
+        "code": "LMHCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Lady Margaret Hall Library"
+    },
+    {
+        "code": "LANDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Language Centre Library"
+    },
+    {
+        "code": "HEBBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/muller",
+        "name": "Hebrew and Jewish Studies Library (Leopold Muller Memorial Library)"
+    },
+    {
+        "code": "LINCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Lincoln College Library"
+    },
+    {
+        "code": "LCRCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Linacre College Library"
+    },
+    {
+        "code": "MAGCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Magdalen College Library"
+    },
+    {
+        "code": "MFONU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Maison Francaise Library"
+    },
+    {
+        "code": "MNSCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Mansfield College Library"
+    },
+    {
+        "code": "DOMDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Materials Library"
+    },
+    {
+        "code": "MATDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Mathematical Institute Library"
+    },
+    {
+        "code": "MERCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Merton College Library"
+    },
+    {
+        "code": "MECDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Middle East Centre Library"
+    },
+    {
+        "code": "MHSDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Museum of the History of Science Library"
+    },
+    {
+        "code": "NEWCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "New College Library"
+    },
+    {
+        "code": "NUFCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Nuffield College Library"
+    },
+    {
+        "code": "ORLCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Oriel College Library"
+    },
+    {
+        "code": "CMSNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Mission Studies Library"
+    },
+    {
+        "code": "IESNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Oxford Institute for Energy Studies"
+    },
+    {
+        "code": "OIIDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Oxford Internet Institute Library"
+    },
+    {
+        "code": "OLIDL",
+        "id": "173",
+        "name": "Centre for Teaching and Learning"
+    },
+    {
+        "code": "OUSNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Oxford Union Society Library"
+    },
+    {
+        "code": "OUMDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Museum of Natural History Library"
+    },
+    {
+        "code": "COSNU",
+        "id": "https://www.oxfordshire.gov.uk/residents/leisure-and-culture/history/oxfordshire-history-centre",
+        "name": "Oxfordshire History Centre"
+    },
+    {
+        "code": "HSCDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Pauling Centre for Human Sciences Library"
+    },
+    {
+        "code": "PEMCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Pembroke College Library"
+    },
+    {
+        "code": "PTFBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/ptfl",
+        "name": "Philosophy & Theology Faculties Library"
+    },
+    {
+        "code": "PHLNU",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Pusey House Library"
+    },
+    {
+        "code": "QUECL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Queen's College Library"
+    },
+    {
+        "code": "RSLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/rsl",
+        "name": "Radcliffe Science Library"
+    },
+    {
+        "code": "REGCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Regent's Park College Library"
+    },
+    {
+        "code": "CEDBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/conted",
+        "name": "Continuing Education Library"
+    },
+    {
+        "code": "RUSDL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Ruskin School Library"
+    },
+    {
+        "code": "ANTRE",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Russian and Eurasian Studies Centre"
+    },
+    {
+        "code": "SACBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/sackler",
+        "name": "Sackler Library"
+    },
+    {
+        "code": "SBSBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/sainsbury",
+        "name": "Saïd Business School Library"
+    },
+    {
+        "code": "PLSBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/sherardian-library",
+        "name": "Sherardian Library"
+    },
+    {
+        "code": "SOMCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Somerville College Library"
+    },
+    {
+        "code": "ANNCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Anne's College Library"
+    },
+    {
+        "code": "ANTCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Antony's College Library"
+    },
+    {
+        "code": "STBCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Benet's Hall Library"
+    },
+    {
+        "code": "CATCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Catherine's College Library"
+    },
+    {
+        "code": "STXCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Cross College Library"
+    },
+    {
+        "code": "SEHCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Edmund Hall Library"
+    },
+    {
+        "code": "HERCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Hertford College Library"
+    },
+    {
+        "code": "HILCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Hilda's College Library"
+    },
+    {
+        "code": "STJCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St John's College Library"
+    },
+    {
+        "code": "HUGCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Hugh's College Library"
+    },
+    {
+        "code": "SPCCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "St Peter's College Library"
+    },
+    {
+        "code": "STADL",
+        "id": "https://www.bodleian.ox.ac.uk/other-libraries-at-oxford",
+        "name": "Statistics Library"
+    },
+    {
+        "code": "TASBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/taylor",
+        "name": "Taylor Slavonic Library"
+    },
+    {
+        "code": "TAYBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/taylor",
+        "name": "Taylor Institution Library"
+    },
+    {
+        "code": "TRICL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Trinity College Library"
+    },
+    {
+        "code": "UNIHL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "University College Library"
+    },
+    {
+        "code": "VHLBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/vhl",
+        "name": "Vere Harmsworth Library"
+    },
+    {
+        "code": "WADCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Wadham College Library"
+    },
+    {
+        "code": "WELBL",
+        "id": "https://www.bodleian.ox.ac.uk/libraries/history-of-medicine",
+        "name": "History of Medicine Library"
+    },
+    {
+        "code": "WOLCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Wolfson College Library"
+    },
+    {
+        "code": "WORCL",
+        "id": "https://libguides.bodleian.ox.ac.uk/colleges",
+        "name": "Worcester College Library"
+    }
+]
