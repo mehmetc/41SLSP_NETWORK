@@ -19,14 +19,16 @@ class LibInfoController {
           self.iconUrl = iconUrl;
         }
       }); 
+
     }
   
-    openInfo(e){
-      e.preventDefault();
-      e.stopPropagation();
-      window.open(`${this.libid}`, '_blank');
+    $doCheck() {
+      
+      // if (self.element.getboundingclientRect().x < 1000) {
+      //   self.code = self.element[0].hasAttribute('code') ? self.element[0].getAttribute('code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
+      // }
     }
-  
+
     get info(){
       let self = this;                    
       if (Object.keys(self.libinfoService).includes(self.code)) {
@@ -57,7 +59,7 @@ class LibInfoController {
   export let libInfoComponent = {
     name: 'rsz-lib-info',
     config: {
-        bindings: {code:'<'},
+        bindings: {code:'=', parentCtrl: '<'},
         controller: LibInfoController,
         template: infoHTML
     },
