@@ -1,10 +1,9 @@
 <div ng-if="$ctrl.openurl" class="layout-row eth-ill-container">
     <div class="eth-ill">
-        <span>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'text')}}</span>
+        <span ng-bind-html="::$ctrl.ethConfigService.getLabel($ctrl.config, 'text')"></span>
         <a href="{{::$ctrl.ethConfigService.getUrl($ctrl.config, 'link')}}{{$ctrl.qs}}" target="_blank" rel="noopener">
             <span>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'linktext')}}</span>
             <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
-        </a>
-        <span>(I can be updated)</span>
+        </a>        
     </div>
 </div>

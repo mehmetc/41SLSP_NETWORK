@@ -2,7 +2,7 @@ export const ethOpenurlInterlibraryConfig = function(){
     return {
         label: {
             text:{
-                de: 'Artikel/Medium in Region Zentralschweiz RZS nicht vorhanden. Suche schweizweit in swisscovery oder kontaktieren Sie ',
+                de: 'Artikel/Medium in Region Zentralschweiz RZS nicht vorhanden. <a href=" https://swisscovery.slsp.ch/discovery/search?vid=41SLSP_NETWORK:VU1_UNION">Suche schweizweit in swisscovery</a> oder kontaktieren Sie ',
                 en: 'Order a copy of the article via'
             },
             linktext:{
