@@ -7,8 +7,8 @@ class LibInfoController {
       self.element = $element;
       self.scope = $scope;
       self.libinfoService = infoJSON;   
-      if (self.code == undefined) {
-        self.code = self.element[0].hasAttribute('code') ? self.element[0].getAttribute('code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
+      if (self.libraryCode == undefined) {
+        self.libraryCode = self.element[0].hasAttribute('library-code') ? self.element[0].getAttribute('library-code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
       }
 
       self.translate = $translate;      
@@ -31,8 +31,8 @@ class LibInfoController {
 
     get info(){
       let self = this;                    
-      if (Object.keys(self.libinfoService).includes(self.code)) {
-        return {id: self.libinfoService[self.code].url, name: self.libinfoService[self.code].label};
+      if (Object.keys(self.libinfoService).includes(self.libraryCode)) {
+        return {id: self.libinfoService[self.libraryCode].url, name: self.libinfoService[self.libraryCode].label};
       }
       return {};
     }
@@ -59,7 +59,7 @@ class LibInfoController {
   export let libInfoComponent = {
     name: 'rsz-lib-info',
     config: {
-        bindings: {code:'=', parentCtrl: '<'},
+        bindings: {libraryCode:'<', parentCtrl: '<'},
         controller: LibInfoController,
         template: infoHTML
     },
