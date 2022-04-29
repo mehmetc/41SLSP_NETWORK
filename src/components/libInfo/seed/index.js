@@ -48,8 +48,13 @@ class LibInfoSeedController {
     addLibInfo(el, ctrl) {
         let self = this;        
         if (el && !el.querySelector('rsz-lib-info')) {                                                
-            //self.code = self.parentCtrl.parentCtrl.loc.location.libraryCode;
-            self.code = ctrl.loc.location.libraryCode;
+            self.code = undefined
+            try {
+                self.code = ctrl.loc.location.libraryCode;
+            } catch(e) {                
+                self.code = undefined;
+            }
+            
             if (self.code != undefined) {                
                 let elInfo = document.createElement('rsz-lib-info'); 
                 elInfo.setAttribute('code', self.code);  
