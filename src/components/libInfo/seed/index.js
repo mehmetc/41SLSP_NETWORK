@@ -22,18 +22,23 @@ class LibInfoSeedController {
             //main page         
             let locationSelector = 'div > div > div > div.list-item-actions';
             let el = self.parentEl.querySelector(locationSelector);
-            if (el) {                
-                self.addLibInfo(el, self.parentCtrl.parentCtrl);
+            if (el) {             
+                let parentCtrl = self.parentCtrl.parentCtrl;
+                let code =  parentCtrl.loc.location.libraryCode  
+                self.addLibInfo(el, parentCtrl, code);
             }
         } 
+        let opacCtrl = angular.element(document.querySelector('prm-opac > md-tabs')).controller('md-tabs') || null;
 
-         if (document.querySelector('prm-location-items').getBoundingClientRect().x < 1000) {            
+         if (document.querySelector('prm-location-items').getBoundingClientRect().x < 1000 && opacCtrl && opacCtrl.selectedIndex == 1) {            
             let locationItemSelector='prm-location-items > div > div > div:first-child';
             if (document.querySelector(locationItemSelector)) {
                 let el = document.querySelector(locationItemSelector);
                 if (el) {   
                     if (!el.querySelector('rsz-lib-info')) {
-                        self.addLibInfo(el, angular.element(document.querySelector('prm-location-items')).controller('prm-location-items'));
+                        let parentCtrl = angular.element(document.querySelector('prm-location-items')).controller('prm-location-items');
+                        let code = parentCtrl.currLoc.location.libraryCode;
+                        self.addLibInfo(el, parentCtrl, code);
                     } 
                 }
             }
@@ -45,22 +50,15 @@ class LibInfoSeedController {
         }
     }
 
-    addLibInfo(el, ctrl) {
+    addLibInfo(el, ctrl, code) {
         let self = this;        
         if (el && !el.querySelector('rsz-lib-info')) {                                                
-            self.code = undefined
-            try {
-                self.code = ctrl.loc.location.libraryCode;
-            } catch(e) {                
-                self.code = undefined;
-            }
             
-            if (self.code != undefined) {                
+            if (code != undefined) {                
                 let elInfo = document.createElement('rsz-lib-info'); 
-                elInfo.setAttribute('code', self.code);  
+                elInfo.setAttribute('code', code);  
                 elInfo.setAttribute('parent-ctrl', '$ctrl');  
                                 
-                //self.element.controller('prm-locations').locations
                 let $elInfo = angular.element(elInfo);
                 let compiledElInfo = self.compile(elInfo);
                                         

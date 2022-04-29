@@ -34,7 +34,7 @@ class LibInfoController {
       if (Object.keys(self.libinfoService).includes(self.code)) {
         return {id: self.libinfoService[self.code].url, name: self.libinfoService[self.code].label};
       }
-      return null;
+      return {};
     }
   
     get libid(){      
