@@ -61,7 +61,7 @@ class SearchAlsoBodyController {
       },
       {
         "view": "41SLSP_RZS:VU07",
-        "name": "swisscovery RZS - ZHB/Uni/PH",
+        "name": "swisscovery RZS - Uni/PH",
         "url": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU07&",
         "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU07/img/vu07_favicon_32x32.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs-zhbuniph",
