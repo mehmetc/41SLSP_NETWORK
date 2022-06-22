@@ -1,0 +1,16 @@
+.eth-journals{
+    display: none;
+}
+.eth-startpage .eth-journals{
+    display: flex;
+}
+.eth-card-journals md-card-content p{
+    margin-bottom: 1em!important;
+}
+.eth-card-journals md-card-content .md-headline{
+    font-size: 1em;
+    font-weight: bold;
+}
+.eth-card-journals ul{
+    margin-top: 0.3em;
+}

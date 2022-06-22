@@ -32,7 +32,7 @@ import 'primo-explore-eth-openurl-interlibrary';
   let customType = 'viewCustom';
   window.Primo = new Primo();
 
-  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethOpenurlInterlibraryModule']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['oc.lazyLoad', 'ngMaterial', 'angularLoad', 'ethOpenurlInterlibraryModule', 'ethJournalsStartpageModule']).config(($sceDelegateProvider) => {
       $sceDelegateProvider.resourceUrlWhitelist([
         '**'
       ]);
