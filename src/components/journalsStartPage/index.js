@@ -12,7 +12,7 @@ class JournalsStartPageController {
       config: {      
         bindings: {parentCtrl: '<'},
         controller: JournalsStartPageController,
-        template: '<eth-journals-startpage-component after-ctrl="$ctrl"></eth-journals-startpage-component>'
+        template: '<eth-journals-startpage-component after-ctrl="$ctrl.mainParentCtrl"></eth-journals-startpage-component>'
       }
     }
   
