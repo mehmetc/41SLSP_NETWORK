@@ -1,9 +1,11 @@
 import onCampusHTML from './onCampus.html'
 
 class OnCampusController {
-    constructor() {
-        let self = this;  
-        this.user();        
+    constructor() {              
+    }
+    
+    $onInit(){
+      this.user();        
     }
 
     async user() {

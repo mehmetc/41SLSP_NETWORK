@@ -1,5 +1,9 @@
 class BrowzineController {
     constructor($scope) {
+        this.$scope = $scope;
+    }
+
+    $onInit() {
         let self = this;
         let item = self.parentCtrl.parentCtrl.result;
 
@@ -9,7 +13,7 @@ class BrowzineController {
             self.recordid = item.pnx.control.recordid[0];
         }
 
-        let browzineWatcher = $scope.$watch(() => {
+        let browzineWatcher = self.$scope.$watch(() => {
             return ((typeof browzine != "undefined") && (typeof browzine.primo === 'object'));            
         }, (n, o) => {
             if (n == true) {

@@ -13,6 +13,12 @@ app.run(($templateCache) => {
 
 class AltMetricController {
   constructor($element, $window, $scope) {
+    this.$element = $element;
+    this.$window = $window;
+    this.$scope = $scope;
+  }
+
+  $onInit() {
     var self = this;
     let item = self.parentCtrl.parentCtrl.item;
 
@@ -34,7 +40,7 @@ class AltMetricController {
     }
 
     //this is a watcher on the local scope and will trigger altmetric
-    let altmetricWatcher = $scope.$watch(() => {
+    let altmetricWatcher = self.$scope.$watch(() => {
       let altmetricLoaded = (typeof window._altmetric_embed_init) === 'function';
       let isbnExists = document.querySelector(`#altmetric-isbn-${self.id}`) != null;
       let doiExists = document.querySelector(`#altmetric-doi-${self.id}`) != null;
@@ -45,8 +51,8 @@ class AltMetricController {
     }, (n, o) => {
       if (n == true) {
         console.log("trigger altmetric for:", self.recordid);
-        $window._altmetric_embed_init(`#altmetric-isbn-${self.id}`);
-        $window._altmetric_embed_init(`#altmetric-doi-${self.id}`);
+        self.$window._altmetric_embed_init(`#altmetric-isbn-${self.id}`);
+        self.$window._altmetric_embed_init(`#altmetric-doi-${self.id}`);
         altmetricWatcher(); //deregister watcher
       }
     }, false);

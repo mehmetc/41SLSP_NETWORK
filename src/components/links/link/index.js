@@ -1,8 +1,10 @@
 import linkHMTL from './link.html'
 
 class LinkController {
-  constructor() {
-    let self = this;  
+  constructor() {        
+  }
+
+  $onInit() {
     this.user();
   }
 

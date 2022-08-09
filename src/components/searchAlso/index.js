@@ -1,8 +1,12 @@
 //facets.facet.facet_search_also
 class SearchAlsoController {
     constructor($scope){
+      this.$scope = $scope;
+    }
+
+    $onInit(){      
       let facetService = this.parentCtrl.parentCtrl.facetService;
-      let searchAsoWatcher = $scope.$watch(() => {        
+      let searchAsoWatcher = this.$scope.$watch(() => {        
           return facetService.results;
       }, (n,o) => {          
           if (facetService.results.filter(f => {return f.name == 'search_also'}).length == 0) {            
