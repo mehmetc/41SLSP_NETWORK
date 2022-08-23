@@ -37,6 +37,9 @@ import 'primo-explore-eth-openurl-interlibrary';
         '**'
       ]);
     })
+    // .config(($compileProvider) => {
+    //   $compileProvider.preAssignBindingsEnabled(true);
+    // })
     .service('MessageService', MessageService)
     .run(($translate, $rootScope, angularLoad) => {
       angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {

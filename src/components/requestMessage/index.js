@@ -1,8 +1,10 @@
 class RequestMessageController {
     constructor($element, $translate) {
         this.element = $element[0];
-        this.translate = $translate;
-        
+        this.translate = $translate;        
+    }
+
+    $onInit(){        
         this.form = angular.element(this.element.parentElement.parentElement.parentElement.parentElement).find('prm-request')[0];
         
         //params with default values:

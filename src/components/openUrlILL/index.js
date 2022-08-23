@@ -1,5 +1,8 @@
 class OpenUrlILLController {
-  constructor() {
+  constructor() {    
+  }
+
+  $onInit() {
     this.mainParentCtrl = this.parentCtrl;
   }
 }

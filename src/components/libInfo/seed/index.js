@@ -5,12 +5,15 @@
 
 class LibInfoSeedController {
     constructor($scope, $element, $compile) {
+        this.element = $element;
+        this.scope = $scope;
+        this.compile = $compile;
+    }
+
+    $onInit(){
         let self = this;
 
         let divs = $element.parent().parent().find('div')
-        self.element = $element;
-        self.scope = $scope;
-        self.compile = $compile;
         self.parentEl = divs[0];
         self.code = '';
         self.tabs = angular.element(document.querySelector('prm-opac > md-tabs')).controller('md-tabs');

@@ -2,6 +2,11 @@ import User from "../../primo/user";
 
 class DotTestController {
     constructor($ocLazyLoad,$injector) {
+        this.$ocLazyLoad = $ocLazyLoad;
+        this.$injector = $injector;
+    }
+
+    $onInit() {
         console.log('constructor');
     }
 }

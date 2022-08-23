@@ -2,12 +2,15 @@ import searchAlsoBodyHTML from './searchAlsoBody.html'
 
 class SearchAlsoBodyController {
   constructor($location) {
+    this.location = $location;
+  }
+  
+  $onInit(){
     let self = this;
     Primo.view.then(v => {
       self.viewCode = v.code;      
       self.targets = self._targets();    
-    });
-    this.location = $location;
+    });    
   }
 
   get search() {

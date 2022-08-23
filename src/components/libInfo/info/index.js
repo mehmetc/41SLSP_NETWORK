@@ -3,31 +3,29 @@ import infoJSON from './libInfo.json';
 
 class LibInfoController {
     constructor($element, $scope, $translate) {
+      this.$element = $element;
+      this.$scope = $scope;
+      this.$translate = $translate;
+    }
+  
+    $onInit(){
+
       let self = this;
-      self.element = $element;
-      self.scope = $scope;
       self.libinfoService = infoJSON;   
       if (self.libraryCode == undefined) {
-        self.libraryCode = self.element[0].hasAttribute('library-code') ? self.element[0].getAttribute('library-code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
+        self.libraryCode = self.$element[0].hasAttribute('library-code') ? self.$element[0].getAttribute('library-code') : self.$scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
       }
-
-      self.translate = $translate;      
+      
       self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;    
 
-      self.translate('nui.customizing.idslu.informationicon').then((iconUrl) => {
+      self.$translate('nui.customizing.idslu.informationicon').then((iconUrl) => {
         if (iconUrl !== 'informationicon') {
           self.iconUrl = iconUrl;
         }
       }); 
 
     }
-  
-    $doCheck() {
-      
-      // if (self.element.getboundingclientRect().x < 1000) {
-      //   self.code = self.element[0].hasAttribute('code') ? self.element[0].getAttribute('code') : self.scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
-      // }
-    }
+
 
     get info(){
       let self = this;                    

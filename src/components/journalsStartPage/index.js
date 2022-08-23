@@ -1,5 +1,9 @@
 class JournalsStartPageController {
     constructor() {
+    
+    }
+
+    $onInit() {
       this.mainParentCtrl = this.parentCtrl;
     }
   }

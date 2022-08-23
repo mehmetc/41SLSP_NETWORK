@@ -1,6 +1,12 @@
 class AlertMessageController {
   constructor($scope, MessageService) {
-    MessageService.show('', $scope);
+    this.$scope = $scope;
+    this.MessageService = MessageService;    
+  }
+
+  $onInit() {
+    let self = this;
+    self.MessageService.show('', self.$scope);
   }
 }
 
