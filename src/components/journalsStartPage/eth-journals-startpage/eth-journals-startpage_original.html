@@ -1,0 +1,49 @@
+<div class="eth-journals" layout-gt-sm="row" flex="100" layout-padding layout-align="center start">
+    <div flex-gt-sm="50" flex="100" layout="column">
+        <md-card class="default-card eth-card eth-card-journals">
+            <md-card-title flex="none" class="eth-card-title">
+                <md-card-title-text>
+                    <span class="md-headline" role="heading" aria-level="2">{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'heading')}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'p1')}}
+                </p>
+                <md-card-title-text>
+                    <span class="md-headline" role="heading" aria-level="3">{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'h3')}}</span>
+                </md-card-title-text>
+                <ul>
+                    <li>
+                        <strong>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option1a')}}</strong>
+                        <br>
+                        {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option1b')}}
+                        <a target="_blank" href="{{::$ctrl.ethConfigService.getUrl($ctrl.config, 'ill')}}" class="arrow-link" rel="external">
+                            {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'ill')}}
+                            <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+                        </a>.
+                    </li>
+                    <li>
+                        <strong>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option2a')}}</strong>
+                        <br>
+                        {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option2b')}}
+                    </li>
+                    <li>
+                        <strong>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option3a')}}</strong>
+                        <br>
+                        {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option3b')}}
+                    </li>
+                    <li>
+                        <strong>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option4a')}}</strong>
+                        <br>
+                        {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option4b')}}
+                        <a target="_blank" href="{{::$ctrl.ethConfigService.getUrl($ctrl.config, 'ill')}}" class="arrow-link" rel="external">
+                            {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'ill')}}
+                            <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+                        </a>.
+                    </li>
+                </ul>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>
