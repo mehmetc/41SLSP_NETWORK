@@ -13,7 +13,7 @@ class LibInfoSeedController {
     $onInit(){
         let self = this;
 
-        let divs = $element.parent().parent().find('div')
+        let divs = this.element.parent().parent().find('div')
         self.parentEl = divs[0];
         self.code = '';
         self.tabs = angular.element(document.querySelector('prm-opac > md-tabs')).controller('md-tabs');
