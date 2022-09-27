@@ -6,6 +6,6 @@ export let linksContainerEComponent = {
     template:linksContainerHTML
   },
   enabled: true,
-  appendTo: 'prm-alma-viewit-items-after',
+  appendTo: 'slsp-alma-viewit-items-after',
   enableInView: '.*',
 }
