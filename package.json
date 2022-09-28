@@ -5,10 +5,8 @@
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
-  "primo": {
+  "primo_rapido": {
     "url": "https://dev01-euf.primo.exlibrisgroup.com",
-    "url2": "https://iluplus.hosted.exlibrisgroup.com",
-    "url3": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution2": "41SLSP_RZS",
     "vidId2": "VU07",
     "institution": "41SLSP_ETH",
@@ -25,8 +23,7 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo2": {
-    "url2": "https://iluplus.hosted.exlibrisgroup.com",
+  "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
     "vidId": "VU07",
@@ -42,6 +39,22 @@
       "tmp": "./tmpPackage"
     }
   },  
+  "primo_production": {
+    "url": "https://iluplus.hosted.exlibrisgroup.com",    
+    "institution": "41SLSP_RZS",
+    "vidId": "VU07",
+    "build": {
+      "views": [
+        "VU06",
+        "VU07",
+        "VU15"
+      ],
+      "dist": "./dist",
+      "resources": "./resources",
+      "package": "./package",
+      "tmp": "./tmpPackage"
+    }
+  },   
   "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
     "build": "cross-env-shell \"rimraf dist/ && webpack\"",
