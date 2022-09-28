@@ -64,8 +64,14 @@ class LibInfoSeedController {
 
             } else {
                 if (document.querySelector('prm-location-items rsz-lib-info')) {
-                    angular.element(document.querySelector('prm-location-items rsz-lib-info')).controller('rsz-lib-info').scope.$destroy();
-                    angular.element(document.querySelector('prm-location-items rsz-lib-info')).remove();
+                    let component = angular.element(document.querySelector('prm-location-items rsz-lib-info'));
+                    if (component) {
+                        let controller = component.controller('rsz-lib-info');
+                        if (controller && controller.scope) {
+                            controller.scope.$destroy();
+                        }
+                        component.remove();
+                    }                                        
                 }
             }
         }

@@ -38,9 +38,9 @@
       "package": "./package",
       "tmp": "./tmpPackage"
     }
-  },  
+  },
   "primo_production": {
-    "url": "https://iluplus.hosted.exlibrisgroup.com",    
+    "url": "https://iluplus.hosted.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
     "vidId": "VU07",
     "build": {
@@ -54,7 +54,7 @@
       "package": "./package",
       "tmp": "./tmpPackage"
     }
-  },   
+  },
   "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
     "build": "cross-env-shell \"rimraf dist/ && webpack\"",
@@ -82,6 +82,7 @@
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
     "primo-explore-eth-openurl-interlibrary": "^0.0.4",
+    "primo-explore-eth-person-card": "^0.0.4",
     "primo-serve": "^0.0.15",
     "rimraf": "^3.0.2",
     "style-loader": "^3.2.1",

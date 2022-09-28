@@ -4136,6 +4136,11 @@ primo-explore-eth-openurl-interlibrary@^0.0.4:
   resolved "https://registry.yarnpkg.com/primo-explore-eth-openurl-interlibrary/-/primo-explore-eth-openurl-interlibrary-0.0.4.tgz#e17b2ff34fbc02c32240aa7e9e3ed2ade9763244"
   integrity sha512-F3kyoh2YeeZKxECwed48bh959VA22U3eZ0nm4aZlYcIkEcE0u4G4iS4mVBu/2nyyW2HnF8y3t+FZxX/zL6stGg==
 
+primo-explore-eth-person-card@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/primo-explore-eth-person-card/-/primo-explore-eth-person-card-0.0.4.tgz#688a36c97485ef635137b2f94fa6264c73225302"
+  integrity sha512-gjYTxiO256gUJiXCGRDaYPy8uS3oBr0s8QmcmISxnfgQSCf56Cstwpt/MXvQJBw2eeK8vM444tQlte29PmHsKw==
+
 primo-serve@^0.0.15:
   version "0.0.15"
   resolved "https://registry.yarnpkg.com/primo-serve/-/primo-serve-0.0.15.tgz#9dd3906953fce3234aa7d90ad5d5b2389ea6eb3d"
