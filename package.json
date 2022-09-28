@@ -6,6 +6,26 @@
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
   "primo": {
+    "url": "https://dev01-euf.primo.exlibrisgroup.com",
+    "url2": "https://iluplus.hosted.exlibrisgroup.com",
+    "url3": "https://slsp-rzs.primo.exlibrisgroup.com",
+    "institution2": "41SLSP_RZS",
+    "vidId2": "VU07",
+    "institution": "41SLSP_ETH",
+    "vidId": "VU1",
+    "build": {
+      "views": [
+        "VU06",
+        "VU07",
+        "VU15"
+      ],
+      "dist": "./dist",
+      "resources": "./resources",
+      "package": "./package",
+      "tmp": "./tmpPackage"
+    }
+  },
+  "primo2": {
     "url2": "https://iluplus.hosted.exlibrisgroup.com",
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
@@ -21,7 +41,7 @@
       "package": "./package",
       "tmp": "./tmpPackage"
     }
-  },
+  },  
   "scripts": {
     "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
     "build": "cross-env-shell \"rimraf dist/ && webpack\"",
