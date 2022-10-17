@@ -406,7 +406,12 @@ prm-request-services .md-button.button-as-link {
     display: inline-block; }
     .md-button.button-with-icon > prm-icon md-icon {
       position: relative;
-      top: -2px; }
+      top: -2px; 
+      /* 17.10.22 icon of libinfo the same as mediascout*/
+      height: 20px;
+      width: 20px;
+      min-height: 20px;
+      min-width: 20px; }
     .md-button.button-with-icon > prm-icon + span {
       display: inline-block;
       margin-left: 3px;
@@ -944,7 +949,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     
 /* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  display:none;
+  /* display:none;  */
   background-color: #DC143C !important; 
   color: #F0FFFF !important; 
   }

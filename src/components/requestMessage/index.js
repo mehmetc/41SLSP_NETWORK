@@ -62,7 +62,7 @@ RequestMessageController.$inject = ['$element', '$translate'];
 
 export let requestMessagecomponent = {
     name: 'rzs-request-message',
-    enabled: true,
+    enabled: false,
     appendTo: 'prm-request-services-after',
     enableInView: '.*',
     config: {
