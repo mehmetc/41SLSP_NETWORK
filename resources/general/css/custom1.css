@@ -142,6 +142,12 @@ background-color: #F3F3F3 !important;
 background-color: #ddd !important;
 }
 
+/* 19.10.2022 get rid of min-width */
+div>md-content>prm-locations>div.padding-left-medium>md-list>md-list-item>prm-location>div>div.layout-align-space-between-center.layout-row.flex-100>div>div {
+    width: auto !important;
+    min-width: 0 !important;
+}
+
                      
 /* Externe Links in Benutzerkonto. Via Th. Henkel 20210614. gross und lila */
 prm-personal-info-after .md-button.button-link  {
