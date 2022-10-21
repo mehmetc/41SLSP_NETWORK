@@ -1100,3 +1100,30 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
 .idslu-closures {
   display:none; }
   */
+
+  /* Galleries: Display Author in box*/
+prm-gallery-item-after {
+  padding: 20px 15px;
+  display: block;
+  margin-top: -30px;}
+  
+prm-gallery-item-after div {margin-top: -30px;}
+.is-grid-view prm-gallery-item .collection-element {
+              background: #fff;
+font-size: 0.9em ; 
+              padding: 15px;}
+
+/* linkfarbe titel blau, brauchen wir nicht */ 
+/* color: #005bbb}  */
+prm-gallery-item .collection-element .item-title {
+              background: none;
+padding-top: 10px;
+              padding-bottom: 30px;
+font-size: 1.1em ; 
+              }  
+
+/* schriftfarbe ressource type */ 
+prm-gallery-item .collection-element .resource-type {
+              color: #685E5E  ;
+              background: none;}
+/* Galleries: Display Author in box END */
