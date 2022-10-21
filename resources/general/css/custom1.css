@@ -68,6 +68,167 @@ button#mainMenuFullCloseButton:focus {
     display: none;
 }
 
+
+/* person card */
+.eth-person__facts{
+    padding: 1em;
+    margin:2em 0 2em 0.5em;
+    background-color: #D7DEDA;
+    border: 1px solid #356947;
+}
+@media screen and (min-width: 600px) {
+    .eth-person__facts{
+        padding: 2em;
+    }
+}
+.eth-person__facts md-card{
+    margin:0;
+    background-color: #D7DEDA;
+}
+.eth-person__facts a{
+    color: #345E7F;
+}
+.eth-person__facts-title{
+    padding: 0 0 1em 0;
+}
+.eth-person__facts-title .md-headline{
+    font-weight: 400;
+    font-size: 28px;
+}
+.eth-person__facts-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+.eth-person__image-container{
+    flex:1 1 30%;
+    max-height:100%;
+    max-width:100%;
+    height:auto!important;
+    width:auto;
+    padding-right: 2em;
+}
+.eth-person__image{
+    max-width: 300px;
+}
+.eth-person__facts-text{
+    flex:1 1 70%;
+    align-self: flex-start;
+}
+.eth-person__facts-text md-card-content{
+    padding-top: 1em;
+    padding-left: 0;
+    padding-bottom: 1em;
+}
+@media screen and (min-width: 600px) {
+    .eth-person__facts-text md-card-content{
+        padding-top: 0;
+    }
+}
+.eth-person__subhead {
+    font-weight: 600;
+    margin-top: 1em;
+}
+.eth-person__subhead-first {
+    margin-top: 0;
+}
+/* search options precision/recall */
+.eth-person__searchprecision{
+    background-color: #D7DEDA;
+    border: 1px solid #356947;
+    padding: 2em;
+    margin:2em 0 2em 0.5em;
+}
+.eth-person-anchor{
+    display: block;
+}
+.eth-person__searchprecision__intro{
+    margin-bottom: 1.5em;
+}
+.eth-person__searchprecision h2{
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 0.5em;
+}
+.eth-person__searchprecision h3{
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.07em;
+}
+.eth-person__searchprecision__gnd1{
+    color: #fff;
+    background-color: #3d6e94;
+    padding: 0 0.3em;
+}
+.eth-person__searchprecision__options >div{
+    margin-bottom: 1em;
+}
+.eth-person__searchprecision .md-button{
+    color: #345E7F;
+    text-transform: none;
+}
+.eth-person__searchprecision .md-button:first-of-type{
+    margin: 0;
+}
+.eth-person__searchprecision .md-button[active='true']{
+    color: #fff;
+    background-color: #3d6e94;
+}
+.eth-person__searchprecision .md-button + p{
+    margin-left: 3em;
+    margin-bottom: 1em;
+}
+.eth-person__searchprecision__option-gnd{
+    display: none;
+}
+.eth-person__searchprecision-option span{
+    font-weight: bold;
+}
+.eth-person__searchprecision ul{
+    margin: 0;
+}
+.eth-person__links-hint{
+   padding-bottom: 0.5em;
+}
+/* small person info (student, teacher) */
+.eth-person__small a{
+    display:flex;
+    align-items:center;
+}
+.eth-person__small a:hover, .eth-person__small a:focus{
+    box-shadow: none;
+}
+.eth-person__small a:hover .eth-person__small__text, .eth-person__small a:focus .eth-person__small__text{
+    box-shadow: inset 0 -2px 0 0 #53738c;
+}
+.eth-person__small .eth-person__small__imagecontainer{
+    flex: 0 0 100px;
+}
+.eth-person__small img{
+    max-height:100px;
+    width: auto;
+}
+.eth-person__small-with-image .eth-person__small__text{
+    margin-left: 1em;
+}
+.eth-personpage-link-row{
+    display: flex;
+    justify-content: flex-start;
+}
+.eth-personpage-link-label{
+    margin-right: 1em;
+}
+.eth-personpage-link{
+    padding: 3px 6px;
+    margin-top: 0.2em;
+    color: #FFF;
+    background-color: #356947;
+}
+.eth-personpage-link:hover, .eth-personpage-link:focus{
+    background-color: #3d6e94;
+}
+
+
 /*****************************/
 /****** Off campus info ******/
 /*****************************/
@@ -142,6 +303,12 @@ background-color: #F3F3F3 !important;
 background-color: #ddd !important;
 }
 
+/* 19.10.2022 get rid of min-width */
+div>md-content>prm-locations>div.padding-left-medium>md-list>md-list-item>prm-location>div>div.layout-align-space-between-center.layout-row.flex-100>div>div {
+    width: auto !important;
+    min-width: 0 !important;
+}
+
                      
 /* Externe Links in Benutzerkonto. Via Th. Henkel 20210614. gross und lila */
 prm-personal-info-after .md-button.button-link  {
@@ -202,11 +369,11 @@ prm-request-services .md-button.button-as-link {
 }  
 
 #citationTrails { 
-  order: 9 !important;  
+  order: 10 !important;  
 }  
 
 #searchWithinJournal { 
-  order: 10 !important;  
+  order: 11 !important;  
 }  
 
 #getit_link1_0 { 
@@ -217,87 +384,98 @@ prm-request-services .md-button.button-as-link {
   order: 2 !important;
 }
 
+#rapidoOffer {
+    order: 3 !important;
+}
+
 #action_list { 
-  order: 5 !important;  
+  order: 6 !important;  
 }
 
 #details { 
-  order: 4 !important;
+  order: 5 !important;
 }
 
 #links { 
-  order: 3 !important;
+  order: 4 !important;
 } 
 
 #moreFromTheSameCourse { 
-  order: 6 !important; 
+  order: 7 !important; 
 }  
 
 #moreFromTheSameCollection { 
-  order: 7 !important; 
+  order: 8 !important; 
 } 
 
 #virtualBrowse { 
-  order: 8 !important;  
+  order: 9 !important;  
 }
 
 /* Change of links in left navigation bar ENG */ 
 
 [aria-label="Top"] { order: 0 !important; }
-[aria-label="Citations"] { order: 9 !important; } 
-[aria-label="Search inside"] { order: 10 !important; } 
+[aria-label="Citations"] { order: 10 !important; } 
+[aria-label="Search inside"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Loan and request options"] { order: 2 !important; } 
-[aria-label="Send to"] { order: 5 !important; } 
-[aria-label="Details"] { order: 4 !important; }
-[aria-label="Links"] { order: 3 !important; }
-[aria-label="Course"] { order: 6 !important; } 
-[aria-label="Collection"] { order: 7 !important; } 
-[aria-label="Virtual Browse"] { order: 8 !important; }  
+[aria-label="Pick up on site"] { order: 2 !important; } 
+[aria-label="Further request options"] {order: 3 !important; }
+[aria-label="Send to"] { order: 6 !important; } 
+[aria-label="Details"] { order: 5 !important; }
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Course"] { order: 7 !important; } 
+[aria-label="Collection"] { order: 8 !important; } 
+[aria-label="Virtual Browse"] { order: 9 !important; }  
 
 /* Change of links in left navigation bar GER */
 
 [aria-label="Nach oben"] { order: 0 !important; } 
-[aria-label="Zitationen"] { order: 9 !important; } 
-[aria-label="Suche innerhalb"] { order: 10 !important; } 
+[aria-label="Zitationen"] { order: 10 !important; } 
+[aria-label="Suche innerhalb"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Ausleih- und Bestelloptionen"] { order: 2 !important; } 
-[aria-label="Senden an"] { order: 5 !important; } 
-[aria-label="Details"] { order: 4 !important; } 
-[aria-label="Links"] { order: 3 !important; }
-[aria-label="Seminar"] { order: 6 !important; }
-[aria-label="Sammlung"] { order: 7 !important; }
-[aria-label="Virtuelles Regal"] { order: 8 !important; }
+[aria-label="Abholung vor Ort"] { order: 2 !important; } 
+[aria-label="Weitere Bestelloptionen"] { order: 3 !important; }
+[aria-label="Senden an"] { order: 6 !important; } 
+[aria-label="Details"] { order: 5 !important; } 
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Seminar"] { order: 7 !important; }
+[aria-label="Sammlung"] { order: 8 !important; }
+[aria-label="Virtuelles Regal"] { order: 9 !important; }
 
 /* Change of links in left navigation bar FRE */
 
 [aria-label="Haut"] { order: 0 !important; } 
-[aria-label="Citations"] { order: 9 !important; } 
-[aria-label="Rechercher dans"] { order: 10 !important; } 
+[aria-label="Citations"] { order: 10 !important; } 
+[aria-label="Rechercher dans"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Options de pr&#234;t et de demande"] { order: 2 !important; }  
-[aria-label="Envoyer vers"] { order: 5 !important; } 	
-[aria-label="D&#233;tails"] { order: 4 !important; } 
-[aria-label="Liens"] { order: 3 !important; }
-[aria-label="Cours"] { order: 6 !important; }
-[aria-label="Collection"] { order: 7 !important; }
-[aria-label="Etag&#232;re virtuelle"] { order: 8 !important; }
+[aria-label="Retrait sur place"] { order: 2 !important; }
+[aria-label="Options de demande suppl&#233;mentaires"] { order: 3 !important; }
+[aria-label="Envoyer vers"] { order: 6 !important; } 	
+[aria-label="D&#233;tails"] { order: 5 !important; } 
+[aria-label="Liens"] { order: 4 !important; }
+[aria-label="Cours"] { order: 7 !important; }
+[aria-label="Collection"] { order: 8 !important; }
+[aria-label="Etag&#232;re virtuelle"] { order: 9 !important; }
  
 /* Change of links in left navigation bar ITA */
 
 [aria-label="Top"] { order: 0 !important; }
-[aria-label="Citazioni"] { order: 9 !important; } 
-[aria-label="Cerca in"] { order: 10 !important; } 
+[aria-label="Citazioni"] { order: 10 !important; } 
+[aria-label="Cerca in"] { order: 11 !important; } 
 [aria-label="Online"] {  order: 1 !important; } 
-[aria-label="Opzioni di prestito e richiesta"]{ order: 2 !important; } 
-[aria-label="Invia a"] { order: 5 !important; }
-[aria-label="Dettagli"] { order: 4 !important; } 
-[aria-label="Link"] { order: 3 !important; }
-[aria-label="Corso"] { order: 6 !important; } 
-[aria-label="Collezione"] { order: 7 !important; } 
-[aria-label="Scorri virtualmente"] { order: 8 !important; }
+[aria-label="Ritiro locale"]{ order: 2 !important; } 
+[aria-label="Altre opzioni di richiesta"] { order: 3 !important; }
+[aria-label="Invia a"] { order: 6 !important; }
+[aria-label="Dettagli"] { order: 5 !important; } 
+[aria-label="Link"] { order: 4 !important; }
+[aria-label="Corso"] { order: 7 !important; } 
+[aria-label="Collezione"] { order: 8 !important; } 
+[aria-label="Scorri virtualmente"] { order: 9 !important; }
 
 /* END Change order of elements in full view REIHENFOLGE UMSORTIEREN */ 
+
+
+
 
 /* primary color hook */
 /* through primo studio */
