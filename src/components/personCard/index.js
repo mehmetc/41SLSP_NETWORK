@@ -8,7 +8,7 @@ class PersonCardController {
 
 export let rzsPersonCardComponent = {
     name: 'rzs-person-card',  
-    enabled: true,    
+    enabled: false,
     appendTo: 'prm-service-details-after',
     enableInView: '.*',  
     config: {      
