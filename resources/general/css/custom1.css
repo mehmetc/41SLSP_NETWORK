@@ -1127,3 +1127,7 @@ prm-gallery-item .collection-element .resource-type {
               color: #685E5E  ;
               background: none;}
 /* Galleries: Display Author in box END */
+
+.hideEl {
+  display: none;
+}
