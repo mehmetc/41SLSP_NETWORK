@@ -5,7 +5,7 @@
   "repository": "https://github.com/mehmetc/41SLSP_NETWORK",
   "author": "Mehmet Celik <mehmet@celik.be>",
   "license": "MIT",
-  "primo": {
+  "primo_test": {
     "url": "https://dev01-euf.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
     "vidId": "rapdio_view",
@@ -19,7 +19,7 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo_test": {
+  "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
     "vidId": "VU07",

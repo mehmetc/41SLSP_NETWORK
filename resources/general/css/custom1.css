@@ -273,9 +273,9 @@ prm-location-items div.tab-content-header prm-stack-map a.md-button {
 }
 */
 @media (max-width: 999px) {
-  .list-item-actions prm-stack-map {
+  /*.list-item-actions prm-stack-map { */
     /* display: none; */
-  }
+  /*} */
   prm-location-items div.tab-content-header {
      display: block;
   }
@@ -418,7 +418,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Citations"] { order: 10 !important; } 
 [aria-label="Search inside"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Pick up on site"] { order: 2 !important; } 
+[aria-label="Pick up on site (Region Zentralschweiz)"] { order: 2 !important; } 
 [aria-label="Further request options"] {order: 3 !important; }
 [aria-label="Send to"] { order: 6 !important; } 
 [aria-label="Details"] { order: 5 !important; }
@@ -433,7 +433,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Zitationen"] { order: 10 !important; } 
 [aria-label="Suche innerhalb"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Abholung vor Ort"] { order: 2 !important; } 
+[aria-label="Abholung in der Region Zentralschweiz"] { order: 2 !important; } 
 [aria-label="Weitere Bestelloptionen"] { order: 3 !important; }
 [aria-label="Senden an"] { order: 6 !important; } 
 [aria-label="Details"] { order: 5 !important; } 
@@ -448,7 +448,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Citations"] { order: 10 !important; } 
 [aria-label="Rechercher dans"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Retrait sur place"] { order: 2 !important; }
+[aria-label="Retrait sur place (Region Zentralschweiz)"] { order: 2 !important; }
 [aria-label="Options de demande suppl&#233;mentaires"] { order: 3 !important; }
 [aria-label="Envoyer vers"] { order: 6 !important; } 	
 [aria-label="D&#233;tails"] { order: 5 !important; } 
@@ -463,7 +463,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Citazioni"] { order: 10 !important; } 
 [aria-label="Cerca in"] { order: 11 !important; } 
 [aria-label="Online"] {  order: 1 !important; } 
-[aria-label="Ritiro locale"]{ order: 2 !important; } 
+[aria-label="Ritiro locale (Region Zentralschweiz)"]{ order: 2 !important; } 
 [aria-label="Altre opzioni di richiesta"] { order: 3 !important; }
 [aria-label="Invia a"] { order: 6 !important; }
 [aria-label="Dettagli"] { order: 5 !important; } 
