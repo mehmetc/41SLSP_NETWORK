@@ -309,7 +309,451 @@ div>md-content>prm-locations>div.padding-left-medium>md-list>md-list-item>prm-lo
     min-width: 0 !important;
 }
 
-                     
+/* 20221123 Loading spinner und exclude from rapido pickup list */
+/* rapido: loading spinner*/
+[translate='rapido.tiles.placeholder.text']:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-top: 1.5em;
+  border-radius: 50%;
+  border: 4px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: rapido-load 1.2s linear infinite;
+}
+@keyframes rapido-load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* exclude from rapido pickup list:*/
+/* Hochdorf (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007807780005505"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+/* Luzern ZHB Speicherbibliothek */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112054640005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Mediothek XUND */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112051600005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Schwyz, Standort Goldau */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112050940005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Schwyz, Standort Pfäffikon */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112051270005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Zug */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112050610005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PMZ Luzern*/
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112049720005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Schüpfheim (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808000005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Sursee (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808220005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Willisau (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808440005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+
+/* andere IZs */
+
+/* Ausgeblendete Abholorte UBS, ticket 19978 */
+
+/* UBH Fernleihe */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="12900830000231"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Aaarau */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074320005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+/* Swiss TPH */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112070130005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+/* BZG Gesundheit */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112073630005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+          }
+/* Mission 21 */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112058770005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+/* Ges. f. Volkskunde */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112056850005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+/* Autographensammlung Geigy-Hagenbach */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="11304577870005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+/* Anglistik */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062250005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+/* Maiengasse */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112067110005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                      }
+/* Gender studies */                
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074910005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                          }
+                
+/* Geographie */                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112068850005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                              }
+                    
+/* Kulturwissenschaft */                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062530005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Mathematik */ 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057620005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+
+/* Slavistik */ 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112071430005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+                              
+/* Soziologie  */                               
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061840005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Studienberatung */                               
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074090005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Frauenfeld */                               
+ #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112068670005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                          }
+                                          
+/* Schaulager */                                       
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112075370005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                  }
+/* St Gallen Stift */                
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061200005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                      }
+/* St Gallen Vadiana */                                                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063910005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                          }
+/* Trogen */                        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112066290005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                              }
+/* Zofingen */                                                        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112067340005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                                  }
+
+/* Ausgeblendete Abholorte UBE */
+
+/* PH Mediothek */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061070005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* BEWI */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112056880005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Geographie */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061350005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* JFB */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062500005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Medizingeschichte */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062730005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Muesmatt */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061810005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Pflanzenwissenschaft */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112060560005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Public Health */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063750005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Speichermagazin */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063420005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Sportwissenschaft */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057320005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Vetsuisse  */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062040005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Weiterbildung ZUW */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057550005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Wirschaftswissenschaften */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112060330005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Zahnmedizin */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062270005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+            /*
+--------------------------------------------------------------------------------
+Hide pickup locations Alexandria
+--------------------------------------------------------------------------------
+*/
+
+/* Musikautomaten  */
+
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13298420001791"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+  }
+  
+  /* Vela  */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294580001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* RUAG */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13293660001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* SECO */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13293890001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* BAR */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13295770001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* IGE */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297690001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  
+  /* CMM */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297000001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* BWO */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13296770001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* swisstopo */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297960001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* SWR */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294350001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* DEZA */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="2237435119010001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* Oskar */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294120001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* ZHAW */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13298650001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }                                                      
+
+/* Ende andere IZs */
+
+
+/* Ende Rapido - related adaptations */ 
+   
 /* Externe Links in Benutzerkonto. Via Th. Henkel 20210614. gross und lila */
 prm-personal-info-after .md-button.button-link  {
   color: #00b2aa !important;
