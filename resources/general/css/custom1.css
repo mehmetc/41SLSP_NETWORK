@@ -1,6 +1,6 @@
 /* ----- slsp iz rzs */
 /* ----- view vu06 hslu vu07 zhb */
-
+/* check commit */
 /* colours */ 
 /* through primo studio */
 /*
@@ -68,6 +68,167 @@ button#mainMenuFullCloseButton:focus {
     display: none;
 }
 
+
+/* person card */
+.eth-person__facts{
+    padding: 1em;
+    margin:2em 0 2em 0.5em;
+    background-color: #D7DEDA;
+    border: 1px solid #356947;
+}
+@media screen and (min-width: 600px) {
+    .eth-person__facts{
+        padding: 2em;
+    }
+}
+.eth-person__facts md-card{
+    margin:0;
+    background-color: #D7DEDA;
+}
+.eth-person__facts a{
+    color: #345E7F;
+}
+.eth-person__facts-title{
+    padding: 0 0 1em 0;
+}
+.eth-person__facts-title .md-headline{
+    font-weight: 400;
+    font-size: 28px;
+}
+.eth-person__facts-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+.eth-person__image-container{
+    flex:1 1 30%;
+    max-height:100%;
+    max-width:100%;
+    height:auto!important;
+    width:auto;
+    padding-right: 2em;
+}
+.eth-person__image{
+    max-width: 300px;
+}
+.eth-person__facts-text{
+    flex:1 1 70%;
+    align-self: flex-start;
+}
+.eth-person__facts-text md-card-content{
+    padding-top: 1em;
+    padding-left: 0;
+    padding-bottom: 1em;
+}
+@media screen and (min-width: 600px) {
+    .eth-person__facts-text md-card-content{
+        padding-top: 0;
+    }
+}
+.eth-person__subhead {
+    font-weight: 600;
+    margin-top: 1em;
+}
+.eth-person__subhead-first {
+    margin-top: 0;
+}
+/* search options precision/recall */
+.eth-person__searchprecision{
+    background-color: #D7DEDA;
+    border: 1px solid #356947;
+    padding: 2em;
+    margin:2em 0 2em 0.5em;
+}
+.eth-person-anchor{
+    display: block;
+}
+.eth-person__searchprecision__intro{
+    margin-bottom: 1.5em;
+}
+.eth-person__searchprecision h2{
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 0.5em;
+}
+.eth-person__searchprecision h3{
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.07em;
+}
+.eth-person__searchprecision__gnd1{
+    color: #fff;
+    background-color: #3d6e94;
+    padding: 0 0.3em;
+}
+.eth-person__searchprecision__options >div{
+    margin-bottom: 1em;
+}
+.eth-person__searchprecision .md-button{
+    color: #345E7F;
+    text-transform: none;
+}
+.eth-person__searchprecision .md-button:first-of-type{
+    margin: 0;
+}
+.eth-person__searchprecision .md-button[active='true']{
+    color: #fff;
+    background-color: #3d6e94;
+}
+.eth-person__searchprecision .md-button + p{
+    margin-left: 3em;
+    margin-bottom: 1em;
+}
+.eth-person__searchprecision__option-gnd{
+    display: none;
+}
+.eth-person__searchprecision-option span{
+    font-weight: bold;
+}
+.eth-person__searchprecision ul{
+    margin: 0;
+}
+.eth-person__links-hint{
+   padding-bottom: 0.5em;
+}
+/* small person info (student, teacher) */
+.eth-person__small a{
+    display:flex;
+    align-items:center;
+}
+.eth-person__small a:hover, .eth-person__small a:focus{
+    box-shadow: none;
+}
+.eth-person__small a:hover .eth-person__small__text, .eth-person__small a:focus .eth-person__small__text{
+    box-shadow: inset 0 -2px 0 0 #53738c;
+}
+.eth-person__small .eth-person__small__imagecontainer{
+    flex: 0 0 100px;
+}
+.eth-person__small img{
+    max-height:100px;
+    width: auto;
+}
+.eth-person__small-with-image .eth-person__small__text{
+    margin-left: 1em;
+}
+.eth-personpage-link-row{
+    display: flex;
+    justify-content: flex-start;
+}
+.eth-personpage-link-label{
+    margin-right: 1em;
+}
+.eth-personpage-link{
+    padding: 3px 6px;
+    margin-top: 0.2em;
+    color: #FFF;
+    background-color: #356947;
+}
+.eth-personpage-link:hover, .eth-personpage-link:focus{
+    background-color: #3d6e94;
+}
+
+
 /*****************************/
 /****** Off campus info ******/
 /*****************************/
@@ -112,9 +273,9 @@ prm-location-items div.tab-content-header prm-stack-map a.md-button {
 }
 */
 @media (max-width: 999px) {
-  .list-item-actions prm-stack-map {
+  /*.list-item-actions prm-stack-map { */
     /* display: none; */
-  }
+  /*} */
   prm-location-items div.tab-content-header {
      display: block;
   }
@@ -148,7 +309,451 @@ div>md-content>prm-locations>div.padding-left-medium>md-list>md-list-item>prm-lo
     min-width: 0 !important;
 }
 
-                     
+/* 20221123 Loading spinner und exclude from rapido pickup list */
+/* rapido: loading spinner*/
+[translate='rapido.tiles.placeholder.text']:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-top: 1.5em;
+  border-radius: 50%;
+  border: 4px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: rapido-load 1.2s linear infinite;
+}
+@keyframes rapido-load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* exclude from rapido pickup list:*/
+/* Hochdorf (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007807780005505"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+/* Luzern ZHB Speicherbibliothek */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112054640005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Mediothek XUND */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112051600005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Schwyz, Standort Goldau */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112050940005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Schwyz, Standort Pfäffikon */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112051270005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PH Zug */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112050610005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* PMZ Luzern*/
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112049720005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Schüpfheim (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808000005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Sursee (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808220005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+/* Willisau (PMZ-Kurier Dienstag) */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="1007808440005505"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+}
+
+/* andere IZs */
+
+/* Ausgeblendete Abholorte UBS, ticket 19978 */
+
+/* UBH Fernleihe */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="12900830000231"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Aaarau */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074320005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+/* Swiss TPH */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112070130005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+/* BZG Gesundheit */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112073630005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+          }
+/* Mission 21 */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112058770005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+/* Ges. f. Volkskunde */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112056850005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+/* Autographensammlung Geigy-Hagenbach */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="11304577870005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+/* Anglistik */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062250005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+/* Maiengasse */        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112067110005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                      }
+/* Gender studies */                
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074910005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                          }
+                
+/* Geographie */                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112068850005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                              }
+                    
+/* Kulturwissenschaft */                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062530005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Mathematik */ 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057620005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+              }
+
+/* Slavistik */ 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112071430005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                  }
+                              
+/* Soziologie  */                               
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061840005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Studienberatung */                               
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112074090005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+      }
+
+/* Frauenfeld */                               
+ #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112068670005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                          }
+                                          
+/* Schaulager */                                       
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112075370005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                  }
+/* St Gallen Stift */                
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061200005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                      }
+/* St Gallen Vadiana */                                                 
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063910005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                          }
+/* Trogen */                        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112066290005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                              }
+/* Zofingen */                                                        
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112067340005504"] { 
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+                                                                  }
+
+/* Ausgeblendete Abholorte UBE */
+
+/* PH Mediothek */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061070005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* BEWI */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112056880005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Geographie */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061350005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* JFB */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062500005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Medizingeschichte */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062730005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Muesmatt */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112061810005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Pflanzenwissenschaft */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112060560005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Public Health */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063750005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Speichermagazin */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112063420005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Sportwissenschaft */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057320005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Vetsuisse  */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062040005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Weiterbildung ZUW */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112057550005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Wirschaftswissenschaften */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112060330005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+
+/* Zahnmedizin */
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="112062270005511"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+}
+            /*
+--------------------------------------------------------------------------------
+Hide pickup locations Alexandria
+--------------------------------------------------------------------------------
+*/
+
+/* Musikautomaten  */
+
+#prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13298420001791"] {
+  margin: 0px;
+  max-height: 0px;
+  visibility: collapse; 
+  }
+  
+  /* Vela  */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294580001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* RUAG */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13293660001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* SECO */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13293890001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* BAR */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13295770001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* IGE */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297690001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  
+  /* CMM */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297000001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* BWO */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13296770001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* swisstopo */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13297960001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* SWR */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294350001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* DEZA */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="2237435119010001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* Oskar */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13294120001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }
+  
+  /* ZHAW */
+  
+  #prm_nui\.ngrs\.pickup\.information\.pickupLibrary[value="13298650001791"] {
+    margin: 0px;
+    max-height: 0px;
+    visibility: collapse; 
+  }                                                      
+
+/* Ende andere IZs */
+
+
+/* Ende Rapido - related adaptations */ 
+   
 /* Externe Links in Benutzerkonto. Via Th. Henkel 20210614. gross und lila */
 prm-personal-info-after .md-button.button-link  {
   color: #00b2aa !important;
@@ -208,11 +813,11 @@ prm-request-services .md-button.button-as-link {
 }  
 
 #citationTrails { 
-  order: 9 !important;  
+  order: 10 !important;  
 }  
 
 #searchWithinJournal { 
-  order: 10 !important;  
+  order: 11 !important;  
 }  
 
 #getit_link1_0 { 
@@ -223,87 +828,98 @@ prm-request-services .md-button.button-as-link {
   order: 2 !important;
 }
 
+#rapidoOffer {
+    order: 3 !important;
+}
+
 #action_list { 
-  order: 5 !important;  
+  order: 6 !important;  
 }
 
 #details { 
-  order: 4 !important;
+  order: 5 !important;
 }
 
 #links { 
-  order: 3 !important;
+  order: 4 !important;
 } 
 
 #moreFromTheSameCourse { 
-  order: 6 !important; 
+  order: 7 !important; 
 }  
 
 #moreFromTheSameCollection { 
-  order: 7 !important; 
+  order: 8 !important; 
 } 
 
 #virtualBrowse { 
-  order: 8 !important;  
+  order: 9 !important;  
 }
 
 /* Change of links in left navigation bar ENG */ 
 
 [aria-label="Top"] { order: 0 !important; }
-[aria-label="Citations"] { order: 9 !important; } 
-[aria-label="Search inside"] { order: 10 !important; } 
+[aria-label="Citations"] { order: 10 !important; } 
+[aria-label="Search inside"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Loan and request options"] { order: 2 !important; } 
-[aria-label="Send to"] { order: 5 !important; } 
-[aria-label="Details"] { order: 4 !important; }
-[aria-label="Links"] { order: 3 !important; }
-[aria-label="Course"] { order: 6 !important; } 
-[aria-label="Collection"] { order: 7 !important; } 
-[aria-label="Virtual Browse"] { order: 8 !important; }  
+[aria-label="Pick up on site (Region Zentralschweiz)"] { order: 2 !important; } 
+[aria-label="Further request options"] {order: 3 !important; }
+[aria-label="Send to"] { order: 6 !important; } 
+[aria-label="Details"] { order: 5 !important; }
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Course"] { order: 7 !important; } 
+[aria-label="Collection"] { order: 8 !important; } 
+[aria-label="Virtual Browse"] { order: 9 !important; }  
 
 /* Change of links in left navigation bar GER */
 
 [aria-label="Nach oben"] { order: 0 !important; } 
-[aria-label="Zitationen"] { order: 9 !important; } 
-[aria-label="Suche innerhalb"] { order: 10 !important; } 
+[aria-label="Zitationen"] { order: 10 !important; } 
+[aria-label="Suche innerhalb"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Ausleih- und Bestelloptionen"] { order: 2 !important; } 
-[aria-label="Senden an"] { order: 5 !important; } 
-[aria-label="Details"] { order: 4 !important; } 
-[aria-label="Links"] { order: 3 !important; }
-[aria-label="Seminar"] { order: 6 !important; }
-[aria-label="Sammlung"] { order: 7 !important; }
-[aria-label="Virtuelles Regal"] { order: 8 !important; }
+[aria-label="Abholung in der Region Zentralschweiz"] { order: 2 !important; } 
+[aria-label="Weitere Bestelloptionen"] { order: 3 !important; }
+[aria-label="Senden an"] { order: 6 !important; } 
+[aria-label="Details"] { order: 5 !important; } 
+[aria-label="Links"] { order: 4 !important; }
+[aria-label="Seminar"] { order: 7 !important; }
+[aria-label="Sammlung"] { order: 8 !important; }
+[aria-label="Virtuelles Regal"] { order: 9 !important; }
 
 /* Change of links in left navigation bar FRE */
 
 [aria-label="Haut"] { order: 0 !important; } 
-[aria-label="Citations"] { order: 9 !important; } 
-[aria-label="Rechercher dans"] { order: 10 !important; } 
+[aria-label="Citations"] { order: 10 !important; } 
+[aria-label="Rechercher dans"] { order: 11 !important; } 
 [aria-label="Online"] { order: 1 !important; }
-[aria-label="Options de pr&#234;t et de demande"] { order: 2 !important; }  
-[aria-label="Envoyer vers"] { order: 5 !important; } 	
-[aria-label="D&#233;tails"] { order: 4 !important; } 
-[aria-label="Liens"] { order: 3 !important; }
-[aria-label="Cours"] { order: 6 !important; }
-[aria-label="Collection"] { order: 7 !important; }
-[aria-label="Etag&#232;re virtuelle"] { order: 8 !important; }
+[aria-label="Retrait sur place (Region Zentralschweiz)"] { order: 2 !important; }
+[aria-label="Options de demande suppl&#233;mentaires"] { order: 3 !important; }
+[aria-label="Envoyer vers"] { order: 6 !important; } 	
+[aria-label="D&#233;tails"] { order: 5 !important; } 
+[aria-label="Liens"] { order: 4 !important; }
+[aria-label="Cours"] { order: 7 !important; }
+[aria-label="Collection"] { order: 8 !important; }
+[aria-label="Etag&#232;re virtuelle"] { order: 9 !important; }
  
 /* Change of links in left navigation bar ITA */
 
 [aria-label="Top"] { order: 0 !important; }
-[aria-label="Citazioni"] { order: 9 !important; } 
-[aria-label="Cerca in"] { order: 10 !important; } 
+[aria-label="Citazioni"] { order: 10 !important; } 
+[aria-label="Cerca in"] { order: 11 !important; } 
 [aria-label="Online"] {  order: 1 !important; } 
-[aria-label="Opzioni di prestito e richiesta"]{ order: 2 !important; } 
-[aria-label="Invia a"] { order: 5 !important; }
-[aria-label="Dettagli"] { order: 4 !important; } 
-[aria-label="Link"] { order: 3 !important; }
-[aria-label="Corso"] { order: 6 !important; } 
-[aria-label="Collezione"] { order: 7 !important; } 
-[aria-label="Scorri virtualmente"] { order: 8 !important; }
+[aria-label="Ritiro locale (Region Zentralschweiz)"]{ order: 2 !important; } 
+[aria-label="Altre opzioni di richiesta"] { order: 3 !important; }
+[aria-label="Invia a"] { order: 6 !important; }
+[aria-label="Dettagli"] { order: 5 !important; } 
+[aria-label="Link"] { order: 4 !important; }
+[aria-label="Corso"] { order: 7 !important; } 
+[aria-label="Collezione"] { order: 8 !important; } 
+[aria-label="Scorri virtualmente"] { order: 9 !important; }
 
 /* END Change order of elements in full view REIHENFOLGE UMSORTIEREN */ 
+
+
+
 
 /* primary color hook */
 /* through primo studio */
