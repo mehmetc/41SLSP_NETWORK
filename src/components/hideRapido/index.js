@@ -37,7 +37,7 @@ export let hideRapidoConfig = {
         controller: HideRapidoController,
         template: ''
     },
-    enabled: true,
+    enabled: false,
     appendTo: 'slsp-full-view-after',
     enableInView: '.*'
 }
