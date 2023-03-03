@@ -16,6 +16,7 @@ import './modules/altmetric';
 import './modules/google';
 import './modules/bibtip';
 import './modules/browzine'
+import './modules/remoteUrl';
 
 /* import 'primo-explore-eth-archives-getit'; */
 
@@ -26,17 +27,11 @@ import './modules/browzine'
 (function () {
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
-  window.Primo = new Primo();
+  let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 
+                    'google', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 
+                    'ethJournalsStartpageModule', 'ethPersonCardModule'];
 
-  let app = angular.module(customType, ['pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 'google', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 'ethJournalsStartpageModule', 'ethPersonCardModule']).config(($sceDelegateProvider) => {
-      $sceDelegateProvider.resourceUrlWhitelist([
-        '**'
-      ]);
-    })
-    // .config(($compileProvider) => {
-    //   $compileProvider.preAssignBindingsEnabled(true);
-    // })
-    .service('MessageService', MessageService);
+  let app = angular.module(customType, moduleList).service('MessageService', MessageService);
 
   //Load components
   new Loader().load(customType);

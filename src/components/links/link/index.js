@@ -1,4 +1,5 @@
 import linkHMTL from './link.html'
+import Session from '../../../primo/session';
 
 class LinkController {
   constructor() {        
@@ -10,12 +11,13 @@ class LinkController {
 
   async user() {
     let self = this;
-    let user = await new Primo.user
-    self.isOnCampus = user.isOnCampus();
-    self.isLoggedIn = user.isLoggedIn();
-    self.allFines =  {
-      count: user.fines.length,
-      sum: (user.fines ? user.fines.map(f => parseFloat(f.finesum)).reduce((p,c)=> p+c, 0) : 0)
+    
+    let fines = await Session.user.fines;
+    self.isOnCampus = Session.user.isOnCampus;
+    self.isLoggedIn = Session.user.isLoggedIn;
+    self.allFines =  {      
+      count: fines.length,
+      sum: (fines ? fines.map(f => parseFloat(f.finesum)).reduce((p,c)=> p+c, 0) : 0)
     }
   }
 

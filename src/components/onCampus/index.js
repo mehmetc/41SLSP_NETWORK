@@ -1,26 +1,17 @@
+import Session from '../../primo/session'
 import onCampusHTML from './onCampus.html'
 
 class OnCampusController {
     constructor() {              
     }
     
-    $onInit(){
-      this.user();        
+    get onCampus() {
+      return Session.user.isOnCampus;
     }
 
-    async user() {
-        let self = this;
-        let user = await new Primo.user
-        self.isOnCampus = user.isOnCampus();
-      }
-      
-      get onCampus() {
-        return this.isOnCampus;
-      }
-
-      get offCampus() {
-        return !this.isOnCampus;
-      }    
+    get offCampus() {
+      return !Session.user.isOnCampus;
+    }  
 }
 
 export let onCampusComponent = {
