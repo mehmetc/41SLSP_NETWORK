@@ -45,8 +45,8 @@ class SearchAlsoBodyController {
       {
         "view": "41SLSP_RZS:VU15",
         "name": "swisscovery RZS",
-        "url": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU15&",
-        "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU15/img/vu15_favicon_32x32.png",
+        "url": "https://rzs.swisscovery.org/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU15&",
+        "img": "https://rzs.swisscovery.org/discovery/custom/41SLSP_RZS-VU15/img/vu15_favicon_32x32.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs",
         mapping: function mapping(search) {
           return self.searchTerms;
@@ -55,8 +55,8 @@ class SearchAlsoBodyController {
       {
         "view": "41SLSP_RZS:VU06",
         "name": "swisscovery RZS - HSLU",
-        "url": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU06&",
-        "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU06/img/vu06_favicon_32x32.png",
+        "url": "https://rzs.swisscovery.org/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU06&",
+        "img": "https://rzs.swisscovery.org/discovery/custom/41SLSP_RZS-VU06/img/vu06_favicon_32x32.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs-hslu",
         mapping: function mapping(search) {
           return self.searchTerms;
@@ -65,8 +65,8 @@ class SearchAlsoBodyController {
       {
         "view": "41SLSP_RZS:VU07",
         "name": "swisscovery RZS - Uni/PH",
-        "url": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU07&",
-        "img": "https://slsp-rzs.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU07/img/vu07_favicon_32x32.png",
+        "url": "https://rzs.swisscovery.org/discovery/search?&tab=41SLSP_RZS_MyInst_and_CI&search_scope=MyInst_and_CI&vid=41SLSP_RZS:VU07&",
+        "img": "https://rzs.swisscovery.org/discovery/custom/41SLSP_RZS-VU07/img/vu07_favicon_32x32.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery-rzs-zhbuniph",
         mapping: function mapping(search) {
           return self.searchTerms;
@@ -74,8 +74,8 @@ class SearchAlsoBodyController {
       }, {
         "view": "41SLSP_NETWORK:VU1_UNION",
         "name": "swisscovery",
-        "url": "https://slsp-network.primo.exlibrisgroup.com/discovery/search?&tab=41SLSP_NETWORK&search_scope=DN_and_CI&vid=41SLSP_NETWORK:VU1_UNION&",
-        "img": "https://slsp-network.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU15/img/slsp_favicon_weiss.png",
+        "url": "https://swisscovery.slsp.ch/discovery/search?&tab=41SLSP_NETWORK&search_scope=DN_and_CI&vid=41SLSP_NETWORK:VU1_UNION&",
+        "img": "https://swisscovery.slsp.ch/discovery/custom/41SLSP_RZS-VU15/img/slsp_favicon_weiss.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.swisscovery",
         mapping: function mapping(search) {
           return self.searchTerms;
@@ -93,7 +93,7 @@ class SearchAlsoBodyController {
         "view": "*",
         "name": "Worldcat",
         "url": "https://www.worldcat.org/search?q=",
-        "img": "https://slsp-network.primo.exlibrisgroup.com/discovery/custom/41SLSP_RZS-VU15/img/favicon_worldcat.png",
+        "img": "https://rzs.swisscovery.org/discovery/custom/41SLSP_RZS-VU15/img/favicon_worldcat.png",
         "tooltip": "nui.customizing.idslu.search_also.tooltip.worldcat",
         mapping: function mapping(search) {
           var type_mappings = {
