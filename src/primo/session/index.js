@@ -7,14 +7,14 @@ export default class Session {
     static get user() {            
         let isLoggedIn = Common.jwt.signedIn == null ? false : true;
         let onCampus = Common.jwt.onCampus == 'false' ? false : true;        
-
+        let userFines = this.#userFines()
         return {            
             email: Common.jwt.email || '',            
             display_name: Common.userSession.getUserNameForDisplay(),
             user_name: Common.jwt.userName,
             isLoggedIn: isLoggedIn,
             isOnCampus: onCampus,
-            userFines: this.#userFines()
+            fines: userFines
         };
     }
 
@@ -34,7 +34,7 @@ export default class Session {
     }
 
     static async #userFines() {
-        let userFines = await this.http.get(`${Common.restBaseURLs.myAccountBaseURL}/fines`);
+        let userFines = await Common.http.get(`${Common.restBaseURLs.myAccountBaseURL}/fines`);
     
         try {
           let data = userFines.data;

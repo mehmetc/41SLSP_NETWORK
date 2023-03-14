@@ -112,4 +112,16 @@ export default class Common {
     static get restBaseURLs() {
         return this.injector.get('restBaseURLs')
       }
+
+      static get http() {
+        let injector = this.injector;
+        if (injector) {
+          let h = injector.get('$http');
+          if (h) {
+            return h;
+          }
+        }
+    
+        return null;
+      }      
 }
