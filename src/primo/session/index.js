@@ -6,7 +6,8 @@ export default class Session {
      */
     static get user() {            
         let isLoggedIn = Common.jwt.signedIn == null ? false : true;
-        let onCampus = Common.jwt.onCampus == 'false' ? false : true;        
+        let onCampus = Common.jwt.onCampus == 'false' ? false : true;
+
         let userFines = this.#userFines()
         return {            
             email: Common.jwt.email || '',            

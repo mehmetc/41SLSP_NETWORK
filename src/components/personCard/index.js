@@ -11,15 +11,18 @@ class PersonCardController {
     let self = this;
     //self.mainParentCtrl = self.parentCtrl;
 
-    self.#injectContainer();
+    self.#injectContainer('div.full-view-spacer');
    
   }
 
-  #injectContainer() {
+  #injectContainer(inElement) {
     let self = this;
+    let el = document.querySelector(inElement);
+    if (!el) {
+      return null
+    }
 
-    let placeHolder = document.createElement('rsz-person-card-container');
-    let el = document.querySelector('div.full-view-spacer');
+    let placeHolder = document.createElement('rsz-person-card-container');    
     placeHolder.innerHTML='<eth-person-card-component after-ctrl="$ctrl"></eth-person-card-component>'
     let $placeHolder = angular.element(placeHolder);
     let compiledPlaceHolder = self.compile($placeHolder);

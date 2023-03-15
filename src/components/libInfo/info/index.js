@@ -27,8 +27,8 @@ class LibInfoController {
 
     get info(){
       let self = this;                    
-      if (Object.keys(self.libinfoService).includes(self.#libraryCode)) {
-        return {id: self.libinfoService[self.#libraryCode].url, name: self.libinfoService[self.#libraryCode].label};
+      if (Object.keys(self.libinfoService).includes(self.libCode)) {
+        return {id: self.libinfoService[self.libCode].url, name: self.libinfoService[self.libCode].label};
       }
       return {};
     }
@@ -48,7 +48,7 @@ class LibInfoController {
       return '';
     }
 
-    get #libraryCode() {
+    get libCode() {
       let code = '';
       let self = this;
       switch (self.type) {

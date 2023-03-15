@@ -1,36 +1,41 @@
 class LibInfoSeedController {
-    constructor($scope, $element, $compile) {
+    constructor($scope, $element, $compile, $timeout) {
         let self = this;
         let divs = $element.parent().parent().find('div')
 
         self.element = $element;
         self.scope = $scope;
         self.compile = $compile;
+        self.timeout = $timeout;
         self.parentEl = divs[0];
+
+    }
+  
+    #addLibraryInfo() {
+        let self = this;
+
+        let libraryElements = Primo.record.current.library.allAsElement;
+        if (libraryElements) {
+            libraryElements.forEach((el, i, a) => {
+                let selector = 'prm-stack-map';
+                //self.addChevron(el)
+                if (el.query(selector) && !el.query('rsz-lib-info')) {
+                    let libraryCode = Primo.record.current.library.all[i].lib.split(':')[0];
+                    self.addLibInfo(el.query(selector)[0], i, libraryCode, 'library');
+                }
+            });
+        }
     }
 
-    $doCheck() {
-        let self = this;
-        if (Primo.record.current.library.elementVisible()) {
-            if (Primo.record.current.library.allAsElement) {
-                let selector = 'prm-stack-map';
-                Primo.record.current.library.allAsElement.forEach((el, i, a) => {
-                    //self.addChevron(el)
-                    if (el.query(selector) && !el.query('rsz-lib-info')) {
-                        let libraryCode = Primo.record.current.library.all[i].lib.split(':')[0];
-                        self.addLibInfo(el.query(selector)[0], i, libraryCode, 'library');
-                    }
-                });
-            }
-        }
-
+    #addLocationInfo() {
+        let self = this;        
         if (Primo.record.current.location.elementVisible()) {
-            if (Primo.record.current.location.allAsElement) {                
-                let fallbackSelector = 'div > div.layout-row > div';
-                Primo.record.current.location.allAsElement.forEach((el, i, a) => {
+            let locationElements = Primo.record.current.location.allAsElement;
+            if (locationElements && (locationElements.length != document.querySelectorAll('prm-location rsz-lib-info').length)) {
+                locationElements.forEach((el, i, a) => {
                     let selector = 'prm-stack-map';
-                    if (!el.query(selector)) {
-                        selector = fallbackSelector;
+                    if (!el.query(selector)) {                        
+                        selector = 'div > div.layout-row > div';//fallback selector
                     }
 
                     if (el.query(selector) && !el.query('rsz-lib-info')) {
@@ -40,16 +45,17 @@ class LibInfoSeedController {
                 });
             }
         }
+    }
 
+    #addItemInfo() {
+        let self = this;
         if (Primo.record.current.location.item.elementVisible()) {
             if (Primo.record.current.location.item.allAsElement) {
-                let fallbackSelector = 'div > div.layout-row > div';
                 Primo.record.current.location.item.allAsElement.forEach((el, i, a) => {                    
                     let selector = 'prm-stack-map';
                     if (!el.query(selector)) {
-                        selector = fallbackSelector;
-                    }
-
+                        selector = 'div > div.layout-row > div';//fallback selector
+                    }                    
                     if (el.query(selector) && !el.query('rsz-lib-info')) {
                         let libraryCode = Primo.record.current.location.item.all[i].loc.location.libraryCode;
                         self.addLibInfo(el.query(selector)[0], i, libraryCode, 'location');
@@ -57,6 +63,89 @@ class LibInfoSeedController {
                 });
             }
         }
+    }
+
+    $onInit() {
+        let self = this;
+        let libraryWatcher = self.scope.$watch(() => {
+            let el = document.querySelector('prm-library h3');
+            if (el) {
+                return !(window.getComputedStyle(el).visibility == 'hidden');
+            }
+            return false;
+        }, (n, o) => {
+            if (n == true) {
+                try {
+                    console.log("trigger libary for:", Primo.record.current.library.allAsElement)
+
+                    Primo.record.current.library.allAsElement.map((m) => {
+                        if (m.query('rsz-lib-info')) {
+                            console.log("\tUpdating current library");
+                            m.query('rsz-lib-info')[0].remove()
+                        }
+                    })
+                } catch (e) {
+                    console.log(e);
+                }
+
+                self.timeout(() => self.#addLibraryInfo());
+                //libraryWatcher();
+            }
+        })
+
+
+        let locationWatcher = self.scope.$watch(() => {
+            let el = document.querySelector('prm-location h3');
+            if (el) {
+                return !(window.getComputedStyle(el).visibility == 'hidden' && el.length != document.querySelectorAll('prm-location rsz-lib-info'));
+            }
+
+            return false;
+        }, (n, o) => {
+            if (n == true) {
+                try {
+                    console.log("trigger location for:", Primo.record.current.location.allAsElement)
+                    Primo.record.current.location.allAsElement.map((m) => {
+                        if (m.query('rsz-lib-info')) {
+                            console.log("\tUpdating current location");
+                            m.query('rsz-lib-info')[0].remove()
+                        }
+                    })
+                } catch (e) {
+                    console.log(e);
+                }
+
+                self.timeout(() => self.#addLocationInfo());
+                //locationWatcher();
+            }
+        })
+
+        let itemWatcher = self.scope.$watch(() => {
+            let el = document.querySelector('prm-location-items h4');
+            if (el) {
+                return !(window.getComputedStyle(el).visibility == 'hidden');
+            }
+
+            return false
+        }, (n, o) => {
+            if (n == true) {
+                try {
+                    console.log("trigger item for:", Primo.record.current.location.item.allAsElement)
+                    Primo.record.current.location.item.allAsElement.map((m) => {
+                        if (m.query('rsz-lib-info')) {
+                            console.log("\tUpdating current items");
+                            m.query('rsz-lib-info')[0].remove()
+                        }
+                    })
+                } catch (e) {
+                    console.log(e);
+                }
+
+                self.timeout(() => self.#addItemInfo());
+                //itemWatcher();
+            }
+        })
+
 
     }
 
@@ -65,6 +154,7 @@ class LibInfoSeedController {
         if (el && !el.querySelector('rsz-lib-info') && libraryCode) {
             if (libraryCode != undefined) {
                 let elInfo = document.createElement('rsz-lib-info');
+                elInfo.setAttribute('code', libraryCode);
                 elInfo.setAttribute('index', index);
                 elInfo.setAttribute('type', type);
 
@@ -99,7 +189,7 @@ class LibInfoSeedController {
     }
 }
 
-LibInfoSeedController.$inject = ['$scope', '$element', '$compile'];
+LibInfoSeedController.$inject = ['$scope', '$element', '$compile', '$timeout'];
 
 export let libInfoSeedComponent = {
     name: 'rsz-seed-lib-info',
