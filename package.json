@@ -22,10 +22,10 @@
   "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
-    "vidId": "test_WD",
+    "vidId": "VU07",
     "build": {
       "views": [
-        "test_WD"
+        "VU07"
       ],
       "dist": "./dist",
       "resources": "./resources",

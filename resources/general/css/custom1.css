@@ -19,6 +19,73 @@ notice #ffcc66 vanilla
      color: #009991 !important;
 } */
 
+/* Digitization supply time label */
+
+div[ng-if="$ctrl.digitalTileVisible"] .delivered_in span.bold_text,
+div#digitalGetItRequest .offer_detail .second_line {
+    display: none;
+    /* color: #3BBFAD; */
+}
+
+span[translate="rapido.tiles.digital_chapter.best_offer.line_2.first_part"]>span,
+span[translate="rapido.tiles.digital.best_offer.line_2.first_part"]>span {
+    font-weight: bold;
+}
+
+span[translate="nui.ngrs.search.brief.digital.getAChapter"],
+span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 122px;
+}
+
+span[translate="nui.ngrs.search.brief.digital.getAChapter"] span,
+span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+span[translate="nui.ngrs.search.brief.digital.getAChapter"] span strong,
+span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span strong {
+    font-size: 30px;
+    display: flex;
+    padding: 0 5px;
+    font-weight: 700 !important;
+    align-items: center;
+}
+
+span[translate="nui.ngrs.search.brief.digital.getAChapter"] span b,
+span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span b {
+    font-size: 16px;
+    font-weight: bold !important;
+    text-align: left;
+}
+
+@media only screen and (min-width: 766px) {
+    div#digitalGetItRequest prm-offer-details-tile .offer_detail {
+        width: 100%;
+        padding-right: 16px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    div#digitalGetItRequest prm-offer-details-tile .first_line {
+        display: flex !important;
+        justify-content: center;
+    }
+    div#digitalGetItRequest prm-offer-details-tile .first_line_s {
+        display: none;
+    }
+    span[translate="nui.ngrs.search.brief.digital.getAChapter"],
+    span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
 /* display library logo bigger */
 prm-logo .product-logo {
     padding: 0em !important;
