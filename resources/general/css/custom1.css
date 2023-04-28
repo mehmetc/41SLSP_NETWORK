@@ -19,73 +19,6 @@ notice #ffcc66 vanilla
      color: #009991 !important;
 } */
 
-/* Digitization supply time label */
-
-div[ng-if="$ctrl.digitalTileVisible"] .delivered_in span.bold_text,
-div#digitalGetItRequest .offer_detail .second_line {
-    display: none;
-    /* color: #3BBFAD; */
-}
-
-span[translate="rapido.tiles.digital_chapter.best_offer.line_2.first_part"]>span,
-span[translate="rapido.tiles.digital.best_offer.line_2.first_part"]>span {
-    font-weight: bold;
-}
-
-span[translate="nui.ngrs.search.brief.digital.getAChapter"],
-span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    min-width: 122px;
-}
-
-span[translate="nui.ngrs.search.brief.digital.getAChapter"] span,
-span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-span[translate="nui.ngrs.search.brief.digital.getAChapter"] span strong,
-span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span strong {
-    font-size: 30px;
-    display: flex;
-    padding: 0 5px;
-    font-weight: 700 !important;
-    align-items: center;
-}
-
-span[translate="nui.ngrs.search.brief.digital.getAChapter"] span b,
-span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span b {
-    font-size: 16px;
-    font-weight: bold !important;
-    text-align: left;
-}
-
-@media only screen and (min-width: 766px) {
-    div#digitalGetItRequest prm-offer-details-tile .offer_detail {
-        width: 100%;
-        padding-right: 16px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    div#digitalGetItRequest prm-offer-details-tile .first_line {
-        display: flex !important;
-        justify-content: center;
-    }
-    div#digitalGetItRequest prm-offer-details-tile .first_line_s {
-        display: none;
-    }
-    span[translate="nui.ngrs.search.brief.digital.getAChapter"],
-    span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] {
-        flex-direction: row;
-        align-items: center;
-    }
-}
-
-
 /* display library logo bigger */
 prm-logo .product-logo {
     padding: 0em !important;
@@ -135,164 +68,173 @@ button#mainMenuFullCloseButton:focus {
     display: none;
 }
 
-
-/* person card */
-.eth-person__facts{
-    padding: 1em;
-    margin:2em 0 2em 0.5em;
-    background-color: #D7DEDA;
-    border: 1px solid #356947;
+/*****************************/
+/****** ETH person card  ******/
+/*****************************/
+.eth-personcard-anchor{
+  display: block;
 }
-@media screen and (min-width: 600px) {
-    .eth-person__facts{
-        padding: 2em;
-    }
+/* person card container*/
+.eth-person__facts{
+  padding: 1em;
+  margin:2em 0 2em 0.5em;
+  /* background-color: #D7DEDA; */
+  border: 1px solid #00b2aa;
+ /* display: none; */
+  position: relative;
+}
+@media screen and (min-width: 800px) {
+  .eth-person__facts{
+      padding: 2em;
+  }
+}
+.eth-person__facts-visible{
+  display: block;
 }
 .eth-person__facts md-card{
-    margin:0;
-    background-color: #D7DEDA;
+  margin:0;
+  /* background-color: #D7DEDA; */
+  background-color: inherit!important;
 }
 .eth-person__facts a{
-    color: #345E7F;
+  color: #345E7F;
 }
 .eth-person__facts-title{
-    padding: 0 0 1em 0;
+  padding: 0 0 1em 0;
 }
 .eth-person__facts-title .md-headline{
-    font-weight: 400;
-    font-size: 28px;
+  font-weight: 400;
+  font-size: 28px;
 }
 .eth-person__facts-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .eth-person__facts-content{
+      flex-direction: row;
+  }
 }
 .eth-person__image-container{
-    flex:1 1 30%;
-    max-height:100%;
-    max-width:100%;
-    height:auto!important;
-    width:auto;
-    padding-right: 2em;
+  flex:1 1 30%;
+  max-height:100%;
+  max-width:100%;
+  height:auto!important;
+  width:auto;
+  padding-right: 2em;
 }
 .eth-person__image{
-    max-width: 300px;
+  max-width: 300px;
 }
 .eth-person__facts-text{
-    flex:1 1 70%;
-    align-self: flex-start;
+  flex:1 1 70%;
+  align-self: flex-start;
 }
 .eth-person__facts-text md-card-content{
-    padding-top: 1em;
-    padding-left: 0;
-    padding-bottom: 1em;
+  padding-top: 1em;
+  padding-left: 0;
+  padding-bottom: 1em;
 }
-@media screen and (min-width: 600px) {
-    .eth-person__facts-text md-card-content{
-        padding-top: 0;
-    }
+@media screen and (min-width: 800px) {
+  .eth-person__facts-text md-card-content{
+      padding-top: 0;
+  }
 }
 .eth-person__subhead {
-    font-weight: 600;
-    margin-top: 1em;
+  font-weight: 600;
+  margin-top: 1em;
 }
 .eth-person__subhead-first {
-    margin-top: 0;
-}
-/* search options precision/recall */
-.eth-person__searchprecision{
-    background-color: #D7DEDA;
-    border: 1px solid #356947;
-    padding: 2em;
-    margin:2em 0 2em 0.5em;
-}
-.eth-person-anchor{
-    display: block;
-}
-.eth-person__searchprecision__intro{
-    margin-bottom: 1.5em;
-}
-.eth-person__searchprecision h2{
-    font-weight: 400;
-    font-size: 28px;
-    margin-bottom: 0.5em;
-}
-.eth-person__searchprecision h3{
-    font-weight: 600;
-    margin-bottom: 0;
-    font-size: 1.07em;
-}
-.eth-person__searchprecision__gnd1{
-    color: #fff;
-    background-color: #3d6e94;
-    padding: 0 0.3em;
-}
-.eth-person__searchprecision__options >div{
-    margin-bottom: 1em;
-}
-.eth-person__searchprecision .md-button{
-    color: #345E7F;
-    text-transform: none;
-}
-.eth-person__searchprecision .md-button:first-of-type{
-    margin: 0;
-}
-.eth-person__searchprecision .md-button[active='true']{
-    color: #fff;
-    background-color: #3d6e94;
-}
-.eth-person__searchprecision .md-button + p{
-    margin-left: 3em;
-    margin-bottom: 1em;
-}
-.eth-person__searchprecision__option-gnd{
-    display: none;
-}
-.eth-person__searchprecision-option span{
-    font-weight: bold;
-}
-.eth-person__searchprecision ul{
-    margin: 0;
+  margin-top: 0;
 }
 .eth-person__links-hint{
-   padding-bottom: 0.5em;
+ padding-bottom: 0.5em;
 }
-/* small person info (student, teacher) */
-.eth-person__small a{
-    display:flex;
-    align-items:center;
+/* link to person card*/
+.eth-personcard-link-row{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.eth-person__small a:hover, .eth-person__small a:focus{
-    box-shadow: none;
+.eth-personcard-link{
+  margin-top: 0;
+  padding: 0 2px;
+  min-height:inherit;
+  line-height:normal;
+  text-align: start;
 }
-.eth-person__small a:hover .eth-person__small__text, .eth-person__small a:focus .eth-person__small__text{
-    box-shadow: inset 0 -2px 0 0 #53738c;
+@media screen and (min-width: 800px) {
+  .eth-personcard-link-row{
+      flex-direction: row;
+  }
+  .eth-personcard-link{
+      margin-left: 2em;
+      text-align: center;
+  }
 }
-.eth-person__small .eth-person__small__imagecontainer{
-    flex: 0 0 100px;
+.eth-personcard-link span{
+  text-transform:none;
+  color: #00b2aa;
+  font-size: 15px;
 }
-.eth-person__small img{
-    max-height:100px;
-    width: auto;
+.eth-personcard-link:hover, .eth-personcard-link:focus{
+  box-shadow: inset 0 -2px 0 0 #00b2aa;
+  background-color: inherit!important;
 }
-.eth-person__small-with-image .eth-person__small__text{
-    margin-left: 1em;
+.eth-personcard-link:hover span, .eth-personcard-link:focus span{
+  color: #00b2aa!important;
 }
-.eth-personpage-link-row{
-    display: flex;
-    justify-content: flex-start;
+.eth-personcard-link-opened,
+.eth-personcard-link-opened:hover, .eth-personcard-link-opened:focus{
+  background-color: #00b2a90e!important;
+  display: flex;
+  align-items: center;
 }
-.eth-personpage-link-label{
-    margin-right: 1em;
+.eth-personcard-link-opened span,
+.eth-personcard-link-opened:hover span, .eth-personcard-link-opened:focus span{
+  color: #00b2aa!important;
+ /* color: rgba(34, 190, 164, 0.199)!important; */
 }
-.eth-personpage-link{
-    padding: 3px 6px;
-    margin-top: 0.2em;
-    color: #FFF;
-    background-color: #356947;
+/* arrow right or down */
+/* https://fonts.google.com/icons?selected=Material+Icons&icon.query=chevron */
+.eth-personcard-link prm-icon{
+  /* color: #00b2aa; */
+  color: #00b2a93d;
 }
-.eth-personpage-link:hover, .eth-personpage-link:focus{
-    background-color: #3d6e94;
+.eth-personcard-link .personcard-link__down{
+  display: none;
+  color: #00b2aa!important;
+}
+.eth-personcard-link-opened .personcard-link__down{
+  display: inline-block;
+  margin-top: 1px;
+  height: 18px;
+  width: 18px;
+  background-image: url('../img/chevron_down.png');
+}
+.eth-personcard-link-opened prm-icon{
+  display: none;
+}
+/* close button in person card */
+.eth-personcard__close{
+  display: none;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 24px;
+  min-height: 24px;
+  width: 24px;
+  min-width: 24px;
+  margin: 0;
+  background-image: url('../img/close1.png');
+}
+.eth-personcard__close:hover, .eth-personcard__close:focus{
+  display: none;
+  background-image:url('../img/close2.png');
+  text-decoration: none;
+  background-color: #00b2aa!important;
 }
 
 
@@ -685,7 +627,11 @@ prm-request-services .md-button.button-as-link {
     .md-button.button-with-icon > prm-icon + span {
       display: inline-block;
       margin-left: 3px;
-      padding-right: 0.5em; }
+      padding-right: 0.5em; 
+          /* 28.04.2023 - links auf medienstandort und bibliotheksinfo*/
+          color: #00b2aa;
+    }
+
       [dir=rtl] .md-button.button-with-icon > prm-icon + span {
         padding-right: 0;
         padding-left: 0.5em; }
