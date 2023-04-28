@@ -627,11 +627,7 @@ prm-request-services .md-button.button-as-link {
     .md-button.button-with-icon > prm-icon + span {
       display: inline-block;
       margin-left: 3px;
-      padding-right: 0.5em; 
-          /* 28.04.2023 - links auf medienstandort und bibliotheksinfo*/
-          color: #00b2aa;
-    }
-
+      padding-right: 0.5em; }
       [dir=rtl] .md-button.button-with-icon > prm-icon + span {
         padding-right: 0;
         padding-left: 0.5em; }
