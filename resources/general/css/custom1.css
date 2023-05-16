@@ -51,6 +51,16 @@ button#mainMenuFullCloseButton:focus {
     color: #ffffff !important;
 }
 
+/* 20230516 - Apply Filters button hover in multi-facet selection */
+prm-facet .multiselect-submit.is-active .md-primary.button-large.md-button.md-ink-ripple.md-primoExplore-theme:hover {
+  background-color: #129700;
+}
+ 
+/* 20230516 - Apply Filters button in multi-facet selection */ 
+prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"] {
+        color: white;
+}
+
 /* 20220204 link to open ILL form on openURL page */
 .eth-ill-container{
     justify-content: center;
