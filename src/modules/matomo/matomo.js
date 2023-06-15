@@ -1,7 +1,6 @@
-angular.module('matomo', ['angularLoad']).run(['$rootScope','$translate', function ($rootScope, $translate) {
+angular.module('matomo', ['angularLoad']).run(['angularLoad','$rootScope','$translate', function (angularLoad, $rootScope, $translate) {
 
   let watcher = $rootScope.$watch(() => {
-    console.log(`TRANSLATE: ${$translate.isReady()}`);
     try {
       if ($translate.instant(`nui.customization.analytics.matomo.${window.appConfig.vid}.id`) == `nui.customization.analytics.matomo.${window.appConfig.vid}.id`) {
         return false;
@@ -21,15 +20,14 @@ angular.module('matomo', ['angularLoad']).run(['$rootScope','$translate', functi
 
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
+      _paq.push(['setTrackerUrl', `${matomoURL}matomo.php`]);
+      _paq.push(['setSiteId', matomoID]);
 
-      (function () {
-        _paq.push(['setTrackerUrl', matomoURL + 'matomo.php']);
-        _paq.push(['setSiteId', matomoID]);
-        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript'; g.async = true; g.src = matomoURL + 'matomo.js'; s.parentNode.insertBefore(g, s);
-      })();
+      angularLoad.loadScript(`${matomoURL}matomo.js`).then(function () {
+        console.log('matomo.js loaded');
+      });      
 
-      watcher();
+      watcher();      
     }
   });
 }]);
