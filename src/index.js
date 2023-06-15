@@ -13,7 +13,7 @@ import 'primo-explore-eth-openurl-interlibrary';
 import 'primo-explore-eth-person-card';
 import './modules/pubSubInterceptor';
 import './modules/altmetric';
-import './modules/google';
+import './modules/matomo';
 import './modules/bibtip';
 import './modules/browzine'
 import './modules/remoteUrl';
@@ -28,7 +28,7 @@ import './modules/remoteUrl';
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
   let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 
-                    'google', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 
+                    'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 
                     'ethJournalsStartpageModule', 'ethPersonCardModule'];
 
   let app = angular.module(customType, moduleList).service('MessageService', MessageService);
