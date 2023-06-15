@@ -51,6 +51,16 @@ button#mainMenuFullCloseButton:focus {
     color: #ffffff !important;
 }
 
+/* 20230516 - Apply Filters button hover in multi-facet selection */
+prm-facet .multiselect-submit.is-active .md-primary.button-large.md-button.md-ink-ripple.md-primoExplore-theme:hover {
+  background-color: #129700;
+}
+ 
+/* 20230516 - Apply Filters button in multi-facet selection */ 
+prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"] {
+        color: white;
+}
+
 /* 20220204 link to open ILL form on openURL page */
 .eth-ill-container{
     justify-content: center;
@@ -67,7 +77,6 @@ button#mainMenuFullCloseButton:focus {
 .eth-servicepage prm-alert-bar{
     display: none;
 }
-
 
 /*****************************/
 /****** ETH person card  ******/
@@ -94,7 +103,8 @@ button#mainMenuFullCloseButton:focus {
 }
 .eth-person__facts md-card{
   margin:0;
- /*  background-color: #D7DEDA; */
+  /* background-color: #D7DEDA; */
+  background-color: inherit!important;
 }
 .eth-person__facts a{
   color: #345E7F;
@@ -215,7 +225,7 @@ button#mainMenuFullCloseButton:focus {
   background-image: url('../img/chevron_down.png');
 }
 .eth-personcard-link-opened prm-icon{
-  /* display: none; */
+  display: none;
 }
 /* close button in person card */
 .eth-personcard__close{
@@ -236,6 +246,7 @@ button#mainMenuFullCloseButton:focus {
   text-decoration: none;
   background-color: #00b2aa!important;
 }
+
 
 /*****************************/
 /****** Off campus info ******/
