@@ -16,7 +16,7 @@ angular.module('matomo', ['angularLoad']).run(['angularLoad','$rootScope','$tran
       var matomoURL = $translate.instant(`nui.customization.analytics.matomo.${window.appConfig.vid}.url`);      
       var _paq = window._paq = window._paq || [];
 
-      matomoURL = 'https://' + matomoURL + '/';
+      matomoURL = 'https://' + matomoURL + '/'; //Maybe put complete URL in labels
 
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
