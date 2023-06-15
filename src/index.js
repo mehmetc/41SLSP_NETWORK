@@ -14,6 +14,7 @@ import 'primo-explore-eth-person-card';
 import './modules/pubSubInterceptor';
 import './modules/altmetric';
 import './modules/google';
+import './modules/matomo';
 import './modules/bibtip';
 import './modules/browzine'
 
@@ -28,7 +29,7 @@ import './modules/browzine'
   let customType = 'viewCustom';
   window.Primo = new Primo();
 
-  let app = angular.module(customType, ['pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 'google', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 'ethJournalsStartpageModule', 'ethPersonCardModule']).config(($sceDelegateProvider) => {
+  let app = angular.module(customType, ['pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 'matomo', 'google', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 'ethJournalsStartpageModule', 'ethPersonCardModule']).config(($sceDelegateProvider) => {
       $sceDelegateProvider.resourceUrlWhitelist([
         '**'
       ]);
