@@ -308,7 +308,7 @@ md-tabs.tabs-as-app .back-button, prm-location-holdings .md-button.button-as-lin
     box-shadow: none;
     color: #00b2aa !important;
     background: none !important;
-   /* line-height: 32px !important;  */
+    line-height: 24px !important; 
     /* border: 1px solid rgba(0, 0, 0, 0.59); */
     border: none;
 }
