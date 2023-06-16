@@ -1,0 +1,92 @@
+[{
+    "name": "Luzern ZHB Sempacherstrasse",
+    "code": "LUSBI",
+    "is_open": true,
+    "library_class": "bcu",
+    "library_type": [
+        {"library_type": "Bibliothèque de lecture publique"},
+        {"library_type": "Bibliothèque scientifique"},
+        {"library_type": "Bibliothèque de l'Université"},
+        {"library_type": "Bibliothèque membre BiblioFR"}
+    ],
+    "street": "Sempacherstrasse 10",
+    "addition": "CP",
+    "postcode": "6002",
+    "place": "Luzern",
+    "phone": "041 349 75 00",
+    "phone_2": "",
+    "email": "info@zhbluzern.ch",
+    "url": "https://www.zhbluzern.ch/",
+    "GPS": "46.8032625,7.1455338",
+    "image": "https://svw-uo1061bcu.unifr.ch/bcu_api/libraries/getLibraryImage/BCU",
+    "note": "La Bibliothèque cantonale et universitaire (BCU) de Fribourg est un lieu ouvert d\u2019apprentissage, de valorisation du savoir et de ré-création.\r\n Au service de la population du canton de Fribourg et de la communauté universitaire, la BCU contribue à l\u2019épanouissement de la vie intellectuelle et culturelle. Fondée en 1848, elle se compose d\u2019une bibliothèque centrale ainsi que de 19 bibliothèques décentralisées sises à l\u2019Université, et accessibles à l\u2019ensemble des usagers.\r\n En 1976, le bâtiment de la BCU-Centrale datant de 1910 fait l\u2019objet d\u2019une première extension, qui à l\u2019heure actuelle ne répond plus aux besoins croissants de la population estudiantine et du canton.",
+    "current_alerts": [],
+    "openings": [
+        {
+            "date": "2022-08-09",
+            "weekday": 1,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "22:00"
+                }
+            ]
+        },
+        {
+            "date": "2022-08-10",
+            "weekday": 2,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "22:00"
+                }
+            ]
+        },
+        {
+            "date": "2022-08-11",
+            "weekday": 3,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "22:00"
+                }
+            ]
+        },
+        {
+            "date": "2022-08-12",
+            "weekday": 4,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "22:00"
+                }
+            ]
+        },
+        {
+            "date": "2022-08-13",
+            "weekday": 5,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "16:00"
+                }
+            ]
+        },
+        {
+            "date": "2022-08-14",
+            "weekday": 6,
+            "times": []
+        },
+        {
+            "date": "2022-08-15",
+            "weekday": 0,
+            "times": [
+                {
+                    "open": "08:00",
+                    "closed": "08:00",
+                    "exception": "partly closed"
+                }
+            ]
+        }
+    ]
+}]

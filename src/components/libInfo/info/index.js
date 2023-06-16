@@ -1,5 +1,6 @@
 import infoHTML from './info.html';
 import infoJSON from './libInfo.json';
+import Record from '../../../primo/record';
 
 class LibInfoController {
     constructor($element, $scope, $translate) {
@@ -12,9 +13,6 @@ class LibInfoController {
 
       let self = this;
       self.libinfoService = infoJSON;   
-      if (self.libraryCode == undefined) {
-        self.libraryCode = self.$element[0].hasAttribute('library-code') ? self.$element[0].getAttribute('library-code') : self.$scope.$parent.$parent.$ctrl.parentCtrl.loc.location.libraryCode;
-      }
       
       self.iconUrl = `custom/41SLSP_NETWORK-CENTRAL_PACKAGE/img/information.png`;    
 
@@ -29,8 +27,8 @@ class LibInfoController {
 
     get info(){
       let self = this;                    
-      if (Object.keys(self.libinfoService).includes(self.libraryCode)) {
-        return {id: self.libinfoService[self.libraryCode].url, name: self.libinfoService[self.libraryCode].label};
+      if (Object.keys(self.libinfoService).includes(self.libCode)) {
+        return {id: self.libinfoService[self.libCode].url, name: self.libinfoService[self.libCode].label};
       }
       return {};
     }
@@ -49,6 +47,29 @@ class LibInfoController {
       }
       return '';
     }
+
+    get libCode() {
+      let code = '';
+      let self = this;
+      switch (self.type) {
+        case 'library':
+          try {
+            code = Record.current.library.all[self.index].lib.split(':')[0];
+          } catch (e) {
+            code = ''
+          }
+          break;
+        case 'location':
+          try {
+            code = Record.current.location.all[self.index].loc.location.libraryCode;
+          } catch (e) {
+            code = ''
+          }
+          break;
+      }
+  
+      return code;
+    }    
   
   }
   
@@ -57,7 +78,7 @@ class LibInfoController {
   export let libInfoComponent = {
     name: 'rsz-lib-info',
     config: {
-        bindings: {libraryCode:'<', parentCtrl: '<'},
+        bindings: { index: '@', type: '@', parentCtrl: '<'},
         controller: LibInfoController,
         template: infoHTML
     },
