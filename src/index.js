@@ -1,8 +1,8 @@
 /*
   General entry to Primo custom methods
 
-  (c)2020 KULeuven/LIBIS 
-  Mehmet Celik  
+  (c)2020 KULeuven/LIBIS
+  Mehmet Celik
 */
 
 "use strict"
@@ -27,8 +27,8 @@ import './modules/remoteUrl';
 (function () {
   //let customType = 'centralCustom';
   let customType = 'viewCustom';
-  let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad', 
-                    'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule', 
+  let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad',
+                    'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule',
                     'ethJournalsStartpageModule', 'ethPersonCardModule'];
 
   let app = angular.module(customType, moduleList).service('MessageService', MessageService);
