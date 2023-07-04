@@ -1171,7 +1171,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     
 /* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  display:none;
+  /* display:none; */
   background-color: #DC143C !important; 
   color: #F0FFFF !important; 
   }
