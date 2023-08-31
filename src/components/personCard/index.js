@@ -12,7 +12,8 @@ class PersonCardController {
 export let rzsPersonCardComponent = {
     name: 'rzs-person-card',  
     enabled: true,
-    appendTo: 'prm-service-details-after',
+    // appendTo: 'prm-service-details-after', 30.08.23
+    appendTo: 'slsp-service-details-after',
     enableInView: '.*',  
     config: {      
       bindings: {parentCtrl: '<'},
