@@ -2,8 +2,7 @@
 
 pubSub.subscribe('after-ILSServicesBaseURL', (reqRes) => {
     reqRes.data.data.itemInfo.locations.forEach(location => {        
-        items = location.items.map(item => {item.itempolicy = item.itempolicy.replace(/^\d* /,''); return item});
-        location.items = items;            
+        location.items.forEach(item => {item.itempolicy = item.itempolicy.replace(/^\d* /,'')});        
     });
     return reqRes;    
 })
