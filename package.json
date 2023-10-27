@@ -19,7 +19,7 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo": {
+  "primo_test": {
     "url": "https://slsp-rzs-psb.primo.exlibrisgroup.com/",
     "institution": "41SLSP_RZS",
     "vidId": "VU06",
@@ -33,13 +33,13 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo_production": {
+  "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
-    "vidId": "VU06",
+    "vidId": "VU15",
     "build": {
       "views": [
-        "VU06"
+        "VU15"
       ],
       "dist": "./dist",
       "resources": "./resources",
