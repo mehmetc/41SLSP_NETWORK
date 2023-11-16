@@ -78,56 +78,6 @@ prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"
     display: none;
 }
 
-
-/****************************************/
-/****** CSS of alert message UNISG ******/
-/****************************************/
-
-.unisg-alert {
-  background-color: #f7c0aa ;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin: 8px; 
-  padding: 10px;
-  position: relative;
-  opacity: 1;
-}
-
-.unisg-alert a {
-  color: #000;
-  text-decoration: underline;
-}
-
-.unisg-alert-close {
-  margin-left: 15px;
-  color: #000;
-  float: left;
-  cursor: pointer;
-}
-
-.unisg-alert-close:hover {
-  color: #00802F;
-}
-
-.unisg-no-margin {
-  margin: 0px;
-}
-
-.unisg-alert-hidden {
-  max-height: 0px;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.2s linear, max-height 0.2s linear;
-}
-
-.unisg-alert-voila {
-  max-height: 1000px;
-  transform: scaleY(1);
-  transform-origin: top;
-  transition: transform 0.2s linear, max-height 0.2s linear;
-}
-
-
-
 /*****************************/
 /****** ETH person card  ******/
 /*****************************/
@@ -1220,9 +1170,8 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     border-color: #ede49e; }
     
 /* temporary hide mehmets alert-bar */
-/* temporary hide mehmets alert-bar */
 .alert-bar.lbs-message-service {
-  /* display:none; */ 
+  display:none;
   /*background-color: #DC143C !important; */
   /* background-color: #8fa4df !important;  */
   background-color: #e05c27 !important; 
