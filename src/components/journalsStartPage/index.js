@@ -10,7 +10,7 @@ class JournalsStartPageController {
   
   export let journalsStartPageComponent = {
       name: 'rzs-journal-start-page',  
-      enabled: false,    
+      enabled: true,    
       appendTo: 'prm-journals-after',
       enableInView: '.*',  
       config: {      

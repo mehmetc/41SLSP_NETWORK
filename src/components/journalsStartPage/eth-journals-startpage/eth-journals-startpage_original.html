@@ -10,17 +10,10 @@
                 <p>
                     {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'p1')}}
                 </p>
-                <p>
-                    {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'p2')}}
-                    <a target="_blank" href="{{::$ctrl.ethConfigService.getUrl($ctrl.config, 'ill')}}" class="arrow-link" rel="external">
-                        {{::$ctrl.ethConfigService.getLabel($ctrl.config, 'ill')}}
-                        <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
-                    </a>.   
-                </p>
-                <!--md-card-title-text>
+                <md-card-title-text>
                     <span class="md-headline" role="heading" aria-level="3">{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'h3')}}</span>
-                </md-card-title-text-->
-                <!--ul>
+                </md-card-title-text>
+                <ul>
                     <li>
                         <strong>{{::$ctrl.ethConfigService.getLabel($ctrl.config, 'option1a')}}</strong>
                         <br>
@@ -49,7 +42,7 @@
                             <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
                         </a>.
                     </li>
-                </ul -->
+                </ul>
             </md-card-content>
         </md-card>
     </div>
