@@ -303,14 +303,15 @@ prm-location-items div.tab-content-header prm-stack-map a.md-button {
   }
 }
 
+/* 20240131 - mit schwarzem Rahmen */
 /*Back buttons*/
 md-tabs.tabs-as-app .back-button, prm-location-holdings .md-button.button-as-link, prm-location-items .button-link {
     box-shadow: none;
     color: #00b2aa !important;
     background: none !important;
-    line-height: 24px !important; 
-    /* border: 1px solid rgba(0, 0, 0, 0.59); */
-    border: none;
+    /*line-height: 24px !important; */
+    border: 1px solid rgba(0, 0, 0, 0.59);
+    /* border: none; */
 }
 
 /*
