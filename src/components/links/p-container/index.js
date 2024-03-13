@@ -6,6 +6,7 @@ export let linksContainerPComponent = {
     template:linksContainerHTML
   },
   enabled: true,
-  appendTo: 'prm-opac-after',
+  /* appendTo: 'prm-opac-after', */
+  appendTo: 'slsp-opac-after',
   enableInView: '.*',
 }

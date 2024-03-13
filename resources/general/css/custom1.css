@@ -19,6 +19,19 @@ notice #ffcc66 vanilla
      color: #009991 !important;
 } */
 
+/*****************************/
+/*********12.03.2024************/
+/*Hide the "Open Knowledge Maps" link fully (facet group and okm link) (from central package)*/
+
+.okm-full {
+  display: none;
+}
+
+/*Hide the "Open Knowledge Maps" link in the facet group (from central package)*/
+eth-okm-link-component {
+  display: none;
+}
+/*****************************/
 /* display library logo bigger */
 prm-logo .product-logo {
     padding: 0em !important;
