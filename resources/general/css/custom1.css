@@ -298,6 +298,7 @@ prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"
     color: #0030a0;
 }
 
+/*****************************/
 /* 20211125 correction of position libinfo and mediascout on mobile */
 /*
 prm-location-items div.tab-content-header prm-stack-map a.md-button {
@@ -478,7 +479,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Pick up on site (Region Zentralschweiz)"] { order: 2 !important; } 
 [aria-label="Further request options"] {order: 3 !important; }
-[aria-label="Send to"] { order: 6 !important; } 
+[aria-label="Export Options"] { order: 6 !important; } 
 [aria-label="Details"] { order: 5 !important; }
 [aria-label="Links"] { order: 4 !important; }
 [aria-label="Course"] { order: 7 !important; } 
@@ -493,7 +494,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Abholung in der Region Zentralschweiz"] { order: 2 !important; } 
 [aria-label="Weitere Bestelloptionen"] { order: 3 !important; }
-[aria-label="Senden an"] { order: 6 !important; } 
+[aria-label="Exportoptionen"] { order: 6 !important; } 
 [aria-label="Details"] { order: 5 !important; } 
 [aria-label="Links"] { order: 4 !important; }
 [aria-label="Seminar"] { order: 7 !important; }
@@ -508,7 +509,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Online"] { order: 1 !important; }
 [aria-label="Retrait sur place (Region Zentralschweiz)"] { order: 2 !important; }
 [aria-label="Options de demande suppl&#233;mentaires"] { order: 3 !important; }
-[aria-label="Envoyer vers"] { order: 6 !important; } 	
+[aria-label="Exporter"] { order: 6 !important; } 	
 [aria-label="D&#233;tails"] { order: 5 !important; } 
 [aria-label="Liens"] { order: 4 !important; }
 [aria-label="Cours"] { order: 7 !important; }
@@ -523,7 +524,7 @@ prm-request-services .md-button.button-as-link {
 [aria-label="Online"] {  order: 1 !important; } 
 [aria-label="Ritiro locale (Region Zentralschweiz)"]{ order: 2 !important; } 
 [aria-label="Altre opzioni di richiesta"] { order: 3 !important; }
-[aria-label="Invia a"] { order: 6 !important; }
+[aria-label="Esportare"] { order: 6 !important; }
 [aria-label="Dettagli"] { order: 5 !important; } 
 [aria-label="Link"] { order: 4 !important; }
 [aria-label="Corso"] { order: 7 !important; } 
