@@ -9,16 +9,18 @@ class SearchAlsoController {
       let searchAsoWatcher = this.$scope.$watch(() => {        
           return facetService.results;
       }, (n,o) => {          
-          if (facetService.results.filter(f => {return f.name == 'search_also'}).length == 0) {            
-            facetService.results.unshift({
+          if (facetService.results.filter(f => {return f.name == 'search_also'}).length == 0) {                  
+            //BOTTOM
+            facetService.results.push({
+            //TOP 
+            //facetService.results.unshift({
               name: 'search_also',
               displayedType: 'exact',
               limitCount: 0,
               facetGroupCollapsed: false,
               values: undefined
             });
-            //console.log('--------->SEEALSO count',facetService.results.filter(f => {return f.name == 'search_also'}).length);
-            //searchAsoWatcher();
+//            searchAsoWatcher();
           }
       });
       

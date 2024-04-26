@@ -8,7 +8,11 @@ export default class Session {
         let isLoggedIn = Common.jwt.signedIn == null ? false : true;
         let onCampus = Common.jwt.onCampus == 'false' ? false : true;
 
-        let userFines = this.#userFines()
+          let userFines = [];
+          if (!Primo.state.get('finesLoading')) {
+            userFines = (async () => {return await this.#userFines()})();
+          }
+
         return {            
             email: Common.jwt.email || '',            
             display_name: Common.userSession.getUserNameForDisplay(),
@@ -34,20 +38,24 @@ export default class Session {
         }
     }
 
-    static async #userFines() {
+    static async #userFines() {      
+      Primo.state.set('finesLoading', true);
         let userFines = await Common.http.get(`${Common.restBaseURLs.myAccountBaseURL}/fines`);
     
         try {
-          let data = userFines.data;
+          let data = userFines.data;          
           if (data.status == 'ok') {
             let fines = data.data.fines;
+            Primo.state.set('fines', fines.fine);            
             return fines.fine;
           } else {
-            console.log('No fines');
+            console.log('No fines');            
+            Primo.state.set('fines', []);
             return [];
           }
         }
-        catch (error) {
+        catch (error) {          
+          Primo.state.set('fines', []);
           return [];
         }
       }

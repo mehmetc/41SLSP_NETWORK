@@ -119,7 +119,6 @@ export let searchAlsoBodyComponent = {
     template: searchAlsoBodyHTML
   },
   enabled: true,
- /* appendTo: 'prm-facet-exact-after', */
   appendTo: 'slsp-facet-exact-after',
   enableInView: '.*'
 }
