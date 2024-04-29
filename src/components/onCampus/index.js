@@ -20,7 +20,7 @@ export let onCampusComponent = {
       controller: OnCampusController,
       template: onCampusHTML
     },
-    enabled: false,
+    enabled: true,
     appendTo: 'slsp-alma-viewit-after',
     enableInView: '41SLSP_RZS:VU06|41SLSP_RZS:VU07'
   }

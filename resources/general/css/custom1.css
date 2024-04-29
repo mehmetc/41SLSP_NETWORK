@@ -14,10 +14,36 @@ negative #808080 mid grey
 notice #ffcc66 vanilla
  */
 
+
+/* 17.04.2024 Hiding the Language Menu - but only for XUND View*/
+
+/*
+bcu-lang-switch-component {
+  display: none !important;
+}
+
+*/
+
 /* change icon colour */
 /* prm-icon md-icon.md-primoExplore-theme svg, prm-icon md-icon svg {
      color: #009991 !important;
 } */
+
+/* 12.04.2024 zwei Korrekturen in Produktion */
+/* issue 34 in SLSL Liste Primo Problems */
+[ng-if="!$ctrl.isLocationsFilterVisible"] {
+  display: none !important;
+}
+
+/* added HOVER for subtitles in full menu, by j. cavelti  20210324 */
+/* text color of the signin window and the fullscreen navigation ACHTUNG betrifft login UND erweitertes hauptmenu overlay */
+/* ein paar anweisungen deaktiviert, in der hoffnung, den log in screen zu flicken ..*/ 
+/* .light-on-dark-dialog .md-button.button-as-link, .light-on-dark-dialog .md-button.button-confirm,  */
+prm-main-menu[menu-type=full] .md-button .md-headline, prm-main-menu[menu-type=full] .overlay-menu-item .md-headline, 
+prm-main-menu[menu-type="full"] a:hover span
+ {
+    color: #fff !important;
+}
 
 /*****************************/
 /*********12.03.2024************/
@@ -31,6 +57,42 @@ notice #ffcc66 vanilla
 eth-okm-link-component {
   display: none;
 }
+
+/*****************************/
+/* 22.03.2024 CSS tests for facetts and full view */
+
+/* Signatur in Full View  */
+prm-location-items div.tab-content-header span[ng-if="$ctrl.currLoc.location.callNumber"] {
+  color: #050104 !important;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+
+
+/* Set the font of the facets to normal, not bold */
+
+.section-content .md-chips .md-chip.wrapping-chip strong.facet-title.layout-row {
+  font-weight: normal !important;
+  }
+
+
+/* Change the colour and hover of ‘Show More’ */
+/* Also influences ‘Remember all filters’ and ‘Save query’ */
+.md-button.button-as-link.link-alt-color {
+  color: #006A6F !important;
+  font-size: 100% !important;
+  }
+   
+  .button-as-link.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+  background-color: #DDD !important;
+  }
+/**/
+/**/
+/**/
+/**/
+
+
 /*****************************/
 /* display library logo bigger */
 prm-logo .product-logo {
@@ -260,7 +322,6 @@ prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"
   background-color: #00b2aa!important;
 }
 
-
 /*****************************/
 /****** Off campus info ******/
 /*****************************/
@@ -280,23 +341,146 @@ prm-facet .multiselect-submit.is-active span[translate="nui.facets.applyfilters"
 .hsg-on-campus-info a {
     color: #0030a0;
 }
+/*
+/*
+/*.hsg-off-campus-info {
+/*    margin-top: 1em;
+/*    padding: 1em 1em 0.5em;
+/*    background-color: #f7eda3;
+/*    color: black;
+/*    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
+/*}
+/*
+/*.hsg-off-campus-info>div {
+/*    margin-left: 1em;
+/*}
+
+/*.hsg-off-campus-info a {
+/*    color: #0030a0;
+/*}
+*/
 
 
-.hsg-off-campus-info {
-    margin-top: 1em;
-    padding: 1em 1em 0.5em;
-    background-color: #f7eda3;
-    color: black;
-    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
+.rzs-off-campus-info {
+  background-color: #ffc062;
 }
 
-.hsg-off-campus-info>div {
-    margin-left: 1em;
+
+.rzs-on-campus-info {
+  background-color: #9ec628 !important;
+}
+
+
+
+
+/*****************************/
+/****** Off campus info ******/
+/*****************************/
+
+.hsg-off-campus-info {
+  margin-top: 1em;
+  padding: 1em 1em 0.5em;
+  background-color: #ffc062;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px;
+  border-radius: 3px;
+}
+
+.hsg-off-campus-info > div {
+  margin-left: 1em;
+}
+
+.hsg-off-campus-info p {
+  font-weight: 600;
 }
 
 .hsg-off-campus-info a {
-    color: #0030a0;
+  color: #0030a0;
+  font-weight: normal;
 }
+
+.hsg-off-campus-info > svg {
+  width: 55px;
+  margin-top: -8px;
+}
+
+md-card.default-card._md.md-primoExplore-theme.hsg-on-campus {
+background-color: #49cb90 !important;
+}
+
+md-card.default-card._md.md-primoExplore-theme.hsg-not-on-campus {
+background-color: #ff9900 !important;
+}
+
+md-card.default-card._md.md-primoExplore-theme.hsg-on-campus-unkown {
+background-color: #fff !important;
+}
+
+.hsg-on-campus-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.hsg-on-campus-icon {
+min-width: 55px;
+max-width: 55px;
+margin-right: 15px;
+}
+
+.hsg-on-campus-icon-hidden {
+display: none;
+}
+
+.hsg-on-campus-check {
+align-self: end;
+opacity: 0.3;
+}
+
+.hsg-on-campus-check:hover {
+opacity: 1;
+background-color: transparent !important;
+}
+
+.hsg-on-campus-check-running {
+animation: rotation 2s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+from {
+  transform: rotate(359deg);
+}
+
+to {
+  transform: rotate(0deg);
+}
+}
+
+
+/* von BCU Fribourg */
+
+md-card.alert-list md-list {
+  background-color: #ffc062 !important;
+  color: black;
+}
+
+md-card.success-list md-list {
+  background-color: #9ec628 !important;
+  color: black;
+}
+
+md-card.on-campus md-list {
+  padding-top: 0.5em;
+}
+
+md-card.on-campus {
+  min-height: 90px;
+}
+
+
+
 
 /*****************************/
 /* 20211125 correction of position libinfo and mediascout on mobile */
