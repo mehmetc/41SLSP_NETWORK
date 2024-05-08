@@ -17,12 +17,12 @@ notice #ffcc66 vanilla
 
 /* 17.04.2024 Hiding the Language Menu - but only for XUND View*/
 
-/*
+
 bcu-lang-switch-component {
   display: none !important;
 }
 
-*/
+
 
 /* change icon colour */
 /* prm-icon md-icon.md-primoExplore-theme svg, prm-icon md-icon svg {

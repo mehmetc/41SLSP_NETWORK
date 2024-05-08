@@ -17,7 +17,7 @@ import './modules/matomo';
 import './modules/bibtip';
 import './modules/browzine'
 import './modules/remoteUrl';
-import './modules/userlike';
+/* import './modules/userlike'; */
 
 /* import 'primo-explore-eth-archives-getit'; */
 
@@ -30,7 +30,10 @@ import './modules/userlike';
   let customType = 'viewCustom';
   let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad',
                     'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule',
-                    'userlike', 'ethJournalsStartpageModule', 'ethPersonCardModule'];
+                    , 'ethJournalsStartpageModule', 'ethPersonCardModule'];
+  /* let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad',
+                    'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule',
+                    'userlike', 'ethJournalsStartpageModule', 'ethPersonCardModule'];                 */   
 
   let app = angular.module(customType, moduleList).service('MessageService', MessageService);
 
