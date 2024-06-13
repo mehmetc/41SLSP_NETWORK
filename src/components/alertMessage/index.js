@@ -15,7 +15,8 @@ AlertMessageController.$inject = ['$scope', 'MessageService'];
 export let alertMessagecomponent = {
   name: 'rzs-alert-message',  
   enabled: true,
-  appendTo: 'prm-top-bar-before',
+ // appendTo: 'prm-top-bar-before', 
+  appendTo: 'slsp-top-bar-before',
   enableInView: '.*',  
   config: {
     bindings: {parentCtrl: '<'},
