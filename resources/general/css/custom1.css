@@ -40,6 +40,13 @@ prm-main-menu[menu-type="full"] a:hover span
 }
 
 /*****************************/
+/*********25.06.2024 - hide border around save favorites above result list (comes with CP)************/
+prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple {
+  border:none !important;
+}
+
+
+/*****************************/
 /*********12.03.2024************/
 /*Hide the "Open Knowledge Maps" link fully (facet group and okm link) (from central package)*/
 
