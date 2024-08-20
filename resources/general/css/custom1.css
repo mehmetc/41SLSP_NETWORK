@@ -24,6 +24,12 @@ bcu-lang-switch-component {
 
 */
 
+/* 20.08.2024. display logo auf login Seite */
+
+.login-header {
+  display: block !important;
+}
+
 /* change icon colour */
 /* prm-icon md-icon.md-primoExplore-theme svg, prm-icon md-icon svg {
      color: #009991 !important;
