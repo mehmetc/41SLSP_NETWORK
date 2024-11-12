@@ -44,10 +44,23 @@ prm-main-menu[menu-type="full"] a:hover span
 }
 
 /*****************************/
-/*********25.06.2024 - hide border around save favorites above result list (comes with CP)************/
-prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple {
-  border:none !important;
+/*********25.06.2024 - hide border around save favorites above result list (comes with CP) - 12.11.2024 display border only for mobile ************/
+@media screen and (min-width: 955px) {
+  prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple {
+    border:none !important;
+  }
 }
+
+/*********12.11.2024 - Icon Element Suchanfrage speichern nicht türkis above result ist, wenn eingeloggt*/
+prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.button-as-link.link-alt-color.md-primoExplore-theme.md-ink-ripple {
+  color: black !important;
+}
+
+/*********12.11.2024 - align Element Suchanfrage speichern above result ist, wenn eingeloggt*/
+prm-search-result-tool-bar .search-toolbar-title.hide-xs.layout-row {
+  margin-bottom: 0px !important;
+}
+
 
 /*****************************/
 /*********12.03.2024************/
@@ -745,8 +758,10 @@ prm-request-services .md-button.button-as-link {
     color: #00b2aa; }
     .md-button.md-primary:hover:not([disabled]), .md-button.md-primary:focus:not([disabled]), .md-button.md-primary.hovered:not([disabled]), .md-button.md-primary.md-focused:not([disabled]), .md-button.md-primary._md-focused:not([disabled]) {
       color: #004c49;
-     /* 29.04.2024 Button Weitere anzeigen*/
-      background-color: #fff }
+    /* 29.04.2024 Button Weitere anzeigen -*/
+    /* 12.11.2024 Für Hintergrund Element unter erweiterter Suche */
+     background-color: lightgrey;
+    } 
   .md-button.md-secondary {
     color: #a9a9a9; }
     .md-button.md-secondary:hover:not([disabled]), .md-button.md-secondary:focus:not([disabled]), .md-button.md-secondary.hovered:not([disabled]), .md-button.md-secondary.md-focused:not([disabled]), .md-button.md-secondary._md-focused:not([disabled]) {

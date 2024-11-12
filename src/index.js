@@ -15,7 +15,7 @@ import './modules/pubSubInterceptor';
 import './modules/altmetric';
 import './modules/matomo';
 import './modules/bibtip';
-import './modules/browzine'
+import './modules/browzine';
 import './modules/remoteUrl';
 import './modules/userlike';
 
