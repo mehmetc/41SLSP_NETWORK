@@ -43,18 +43,18 @@ export default class Session {
         let userFines = await Common.http.get(`${Common.restBaseURLs.myAccountBaseURL}/fines`);
     
         try {
-          let data = userFines.data;          
+          let data = userFines.data;
           if (data.status == 'ok') {
             let fines = data.data.fines;
             Primo.state.set('fines', fines.fine);            
             return fines.fine;
           } else {
-            console.log('No fines');            
+            console.log('No fines');
             Primo.state.set('fines', []);
             return [];
           }
         }
-        catch (error) {          
+        catch (error) {
           Primo.state.set('fines', []);
           return [];
         }
