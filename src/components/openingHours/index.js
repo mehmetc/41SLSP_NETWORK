@@ -85,7 +85,7 @@ export let openingHoursComponent = {
       controller: OpeningHoursController,
       template: openingHoursHTML
     },
-    enabled: true,
+    enabled: false,
     appendTo: 'slsp-location-items-after',
     enableInView: '.*'
   }
