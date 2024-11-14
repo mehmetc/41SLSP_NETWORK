@@ -47,7 +47,7 @@ class OpeningHoursController {
         let self = this; 
         let weekday = new Date().getDay();
         
-        return (self.hasData() && (self.data.current[weekday].hours.length > 0))
+        return (self.hasData() && ((self.data.current[weekday].hours.length > 0) && (self.data.current[weekday].hours[0].open.length > 0)))
      }
 
      hasData() {
@@ -85,7 +85,7 @@ export let openingHoursComponent = {
       controller: OpeningHoursController,
       template: openingHoursHTML
     },
-    enabled: false,
+    enabled: true,
     appendTo: 'slsp-location-items-after',
     enableInView: '.*'
   }
