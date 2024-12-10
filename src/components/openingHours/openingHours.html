@@ -10,9 +10,12 @@
     }
 </style>
 
-
+<!-- if the location is visible show next block  -->
 <div ng-show="$ctrl.visible" aria-hidden="false" class="" style="padding-top: 1.5em;">
+    <!-- if the button was not clicked then show next block -->
     <div ng-if="!$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">        
+        <!-- $ctrl.toggle wil flip the boolean from true <-> false -->
+         <!-- when the service return data then show occupancy when available-->
         <button ng-if="$ctrl.hasData()" ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
             <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
                 Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum}}
@@ -21,6 +24,7 @@
                 Opening Hours
             </span>                    
         </button>
+        <!-- when the service dit NOT return data then show next message-->
         <button ng-if="!$ctrl.hasData()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
             <span>
                 No opening hours data found
@@ -28,14 +32,15 @@
         </button>
     </div>
 
+    <!-- if the button was clicked (toggle button) then show next block -->
     <div ng-if="$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
         <div flex="100" class="flex-100"><h4>{{ $ctrl.data.name }}</h4></div>
         <div flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
-            <button ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button" ng-if="$ctrl.isOpen" style="">
+            <button ng-if="$ctrl.isOpen" ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button" style="">
                 <span>Library is open</span>
             </button>
 
-            <button ng-click="$ctrl.toggle()" class="button-warn md-button md-primoExplore-theme md-ink-ripple" type="button" ng-if="!$ctrl.isOpen" style="">
+            <button ng-if="!$ctrl.isOpen" ng-click="$ctrl.toggle()" class="button-warn md-button md-primoExplore-theme md-ink-ripple" type="button" style="">
                 <span>Library is closed</span>
             </button>
 
@@ -72,8 +77,10 @@
                     </a>
                 </span>
             </p>
+            <!-- render the opening hours-->
             <div class="openings">
                 <p><strong>Opening Hours for week #{{$ctrl.data.week.number}} // <br>{{$ctrl.data.week.start}} through {{$ctrl.data.week.end}} </strong></p>
+                <!-- render the opening hour for a day in the current data object-->
                 <p ng-repeat="day in $ctrl.data.current">
                     <span class="day">{{$ctrl.weekdayText(day.date)}}</span>
                     <span ng-repeat="time in day.hours" ng-if="day.hours.length>0 && day.hours[0].open != ''">
