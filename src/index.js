@@ -30,10 +30,10 @@ import './modules/remoteUrl';
   let customType = 'viewCustom';
   let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad',
                     'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule',
-                    , 'ethJournalsStartpageModule', 'ethPersonCardModule']; 
+                    , 'ethJournalsStartpageModule', 'ethPersonCardModule'];
   /* let moduleList = ['remoteUrl', 'pubSubInterceptor', 'oc.lazyLoad', 'ngMaterial', 'angularLoad',
                     'matomo', 'browzine', 'altmetric', 'bibtip', 'ethOpenurlInterlibraryModule',
-                    'userlike', 'ethJournalsStartpageModule', 'ethPersonCardModule'];  */                
+                    'userlike', 'ethJournalsStartpageModule', 'ethPersonCardModule']; */
 
   let app = angular.module(customType, moduleList).service('MessageService', MessageService);
 

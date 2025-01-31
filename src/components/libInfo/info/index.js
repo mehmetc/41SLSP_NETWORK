@@ -82,7 +82,7 @@ class LibInfoController {
         controller: LibInfoController,
         template: infoHTML
     },
-    enabled: true,
+    enabled: false,
     appendTo: null,
     enableInView: '.*'    
   }  
