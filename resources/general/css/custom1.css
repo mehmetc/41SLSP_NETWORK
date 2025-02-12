@@ -49,9 +49,14 @@ rzs-opening-hours button.md-button.libinfo svg {
 rzs-opening-hours div#libinfo {
   background-color: white;
   padding: 1em;
+  padding-top: 1.5em;
   -webkit-box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px;
   box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px;
   margin-bottom: 5px;
+}
+
+rzs-opening-hours div#libinfo .hours {
+  line-height: 95%;
 }
 
 rzs-opening-hours div#libinfo .day {
@@ -63,6 +68,14 @@ rzs-opening-hours div#libinfo .opening {
   display: inline-block;
   width: 120px;
   font-weight: bold;
+  margin: 0;
+}
+
+rzs-opening-hours div#libinfo .openings {
+  margin: 6px 0;
+}
+
+rzs-opening-hours div#libinfo .openings p {
   margin: 0;
 }
 
@@ -81,15 +94,7 @@ rzs-opening-hours button.md-button.button-confirm:hover:not([disabled]) {
 
 rzs-opening-hours button.md-button.button-notice,
 rzs-opening-hours button.md-button.button-notice:hover:not([disabled]) {
-  background-color: #b84d00;
-}
-
-rzs-opening-hours div#libinfo .openings {
-  margin: 6px 0;
-}
-
-rzs-opening-hours div#libinfo .openings p {
-  margin: 0;
+  background-color: #df7b1e;
 }
 
 rzs-opening-hours div#libinfo img {
@@ -99,7 +104,23 @@ rzs-opening-hours div#libinfo img {
 
 rzs-opening-hours svg {
   height: 11px;
+  width:1em;
 }
+
+
+rzs-opening-hours .occupancy {
+  line-height: 95%;
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 5px 5px 5px 5px;
+  /* outline: 1px solid #00b2aa; */
+  outline: 1px solid black;
+  /* display: inline-block; */
+  padding: 10px;
+  /* border: 1px solid #00b2aa; */
+  /* border: 1px solid black; */
+}
+
 /*****************************/
 
 
