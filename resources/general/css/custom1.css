@@ -57,6 +57,8 @@ rzs-opening-hours div#libinfo {
 
 rzs-opening-hours div#libinfo .hours {
   line-height: 95%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 rzs-opening-hours div#libinfo .day {
@@ -112,11 +114,11 @@ rzs-opening-hours .occupancy {
   line-height: 95%;
   display: inline-flex;
   flex-direction: column;
-  border-radius: 5px 5px 5px 5px;
+  /* border-radius: 5px 5px 5px 5px; */
   /* outline: 1px solid #00b2aa; */
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
   /* display: inline-block; */
-  padding: 10px;
+  /* padding: 10px; */
   /* border: 1px solid #00b2aa; */
   /* border: 1px solid black; */
 }
