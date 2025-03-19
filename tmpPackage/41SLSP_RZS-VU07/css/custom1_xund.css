@@ -17,150 +17,10 @@ notice #ffcc66 vanilla
 
 /* 17.04.2024 Hiding the Language Menu - but only for XUND View*/
 
-/*
+
 bcu-lang-switch-component {
   display: none !important;
 }
-
-*/
-
-/*****************************/
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-  background-color: #ddd;
-  color: #3d6e94;
-} 
-
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple {
-  background-color: white;
-  color: #00b2aa;
-  border: none;
-  font-size: 18px;
-  position: fixed;
-  top: 2rem;
-  margin-left: -2rem;
-  box-shadow: none;
-}
-
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-  background-color: #ddd;
-  color: #3d6e94;
-}
-
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover #chevron-right_cache340 {
-  margin-left: 0.5rem; 
-}
-
-#chevron-right_cache340 {
-  transition: margin-left 0.3s ease;
-  margin-top: .3rem;
-}
-
-#library-info{
-  transform: scale(1.2);
-  margin-right: 0.5rem; 
-
-}
-
-/* rzs-opening-hours */
-
-rzs-opening-hours button.md-button.libinfo,
-rzs-opening-hours button.md-button.libinfo:focus {
-  padding-left: 1em;
-  height: 30px;
-  color: #ffffff;
-  background-color: #3bbfad;
-  border: 1px solid #3bbfad;
-  margin-left: 0;
-}
-
-rzs-opening-hours button.md-button.libinfo:hover {
-  background-color: transparent;
-  color: #3bbfad;
-}
-
-rzs-opening-hours button.md-button.libinfo svg {
-  height: 20px;
-}
-
-rzs-opening-hours div#libinfo {
-  background-color: white;
-  padding: 1em;
-  padding-top: 1.5em;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px;
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px;
-  margin-bottom: 5px;
-}
-
-rzs-opening-hours div#libinfo .hours {
-  line-height: 95%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-rzs-opening-hours div#libinfo .day {
-  display: inline-block;
-  width: 80px;
-}
-
-rzs-opening-hours div#libinfo .opening {
-  display: inline-block;
-  width: 120px;
-  font-weight: bold;
-  margin: 0;
-}
-
-rzs-opening-hours div#libinfo .openings {
-  margin: 6px 0;
-}
-
-rzs-opening-hours div#libinfo .openings p {
-  margin: 0;
-}
-
-/* rzs-opening-hours div#libinfo button {
-  width: 70%;
-  margin-left: 0;
-  margin-top: 0;
-  color: #fff !important;
-  cursor: default;
-} */
-
-rzs-opening-hours button.md-button.button-confirm,
-rzs-opening-hours button.md-button.button-confirm:hover:not([disabled]) {
-  background-color: #0f7d00;
-}
-
-rzs-opening-hours button.md-button.button-notice,
-rzs-opening-hours button.md-button.button-notice:hover:not([disabled]) {
-  background-color: #df7b1e;
-}
-
-rzs-opening-hours div#libinfo img {
-  height: 100%;
-  width: 100%;
-}
-
-rzs-opening-hours svg {
-  height: 11px;
-  width:1em;
-}
-
-
-rzs-opening-hours .occupancy {
-  line-height: 95%;
-  display: inline-flex;
-  flex-direction: column;
-  /* border-radius: 5px 5px 5px 5px; */
-  /* outline: 1px solid #00b2aa; */
-  /* outline: 1px solid black; */
-  /* display: inline-block; */
-  /* padding: 10px; */
-  /* border: 1px solid #00b2aa; */
-  /* border: 1px solid black; */
-}
-
-/*****************************/
-
 
 /* 20.08.2024. display logo auf login Seite */
 
@@ -200,6 +60,7 @@ prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.b
 prm-search-result-tool-bar .search-toolbar-title.hide-xs.layout-row {
   margin-bottom: 0px !important;
 }
+
 
 /*****************************/
 /*********12.03.2024************/
@@ -650,7 +511,7 @@ prm-location-items div.tab-content-header prm-stack-map a.md-button {
      padding-top: 0.5em;
 }
 */
-@media screen and (max-width: 999px) {
+@media (max-width: 999px) {
   /*.list-item-actions prm-stack-map { */
     /* display: none; */
   /*} */
