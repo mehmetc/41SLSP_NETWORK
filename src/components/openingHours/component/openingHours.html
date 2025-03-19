@@ -50,17 +50,17 @@
 
 
             <!-- Infobutton when open -->
-<!--             <button ng-if="$ctrl.isOpen" ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <button ng-if="$ctrl.isOpen" ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Bibliothek ist offen fast immer</span>
-            </button> -->
+            </button> 
             <!-- Infobutton when closed -->
-<!--             <button ng-if="!$ctrl.isOpen && $ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-warn md-button md-primoExplore-theme md-ink-ripple" type="button">
+             <button ng-if="!$ctrl.isOpen && $ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-warn md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Bibliothek ist geschlossen</span>
-            </button> -->
+            </button> 
             <!-- Infobutton when no opening hours data in database -->
-<!--             <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
+             <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Öffnungszeiten auf Anfrage</span>
-            </button> -->
+            </button> 
 
             <p ng-if='$ctrl.data.data.address'>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
             <p>
@@ -136,10 +136,10 @@
             </div>   
 
         </div>
-        <!--div ng-if='$ctrl.data.data.image' flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
+        <div ng-if='$ctrl.data.data.image' flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
             <img style="width:90%;" src="{{$ctrl.data.data.image.value[$ctrl.language]}}">            
-        </div-->
-        <!--div ng-if="$ctrl.data.data.occupancy.value.maximum > 0" flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100" >
+        </div>
+        <div ng-if="$ctrl.data.data.occupancy.value.maximum > 0" flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100" >
             <div>
                 <p><strong>Auslastung Arbeitsplätze: {{$ctrl.data.data.occupancy.value.current}} von {{$ctrl.data.data.occupancy.value.maximum}}</strong></p>
                 <p><a href="https://rauminfo.zhbluzern.ch/" target="_blank">Rauminfo ZHB Luzern</a></p>
@@ -150,6 +150,6 @@
             </button>
             </div>
         
-        </div-->   
+        </div>   
     </div>
 </div>

@@ -37,6 +37,40 @@ import './modules/remoteUrl';
 
   let app = angular.module(customType, moduleList).service('MessageService', MessageService);
 
+//   app.config(function($provide) {
+//     $provide.decorator('slspIButton', function($delegate) {
+//         var directive = $delegate[0];
+//         directive.template = '<div>New overridden template!</div>';
+//         return $delegate;
+//     });
+// });
+
+//   app.config(['$provide', function($provide) {
+
+//     // monkey-patches $templateCache to have a keys() method
+//     $provide.decorator('$templateCache', [
+//         '$delegate', function($delegate) {
+//             let keys = [];
+//             let origPut = $delegate.put;
+
+//             $delegate.put = function(key, value) {
+//                 origPut(key, value);
+//                 keys.push(key);
+//             };
+
+//             $delegate.keys = function() {
+//                 return keys;
+//             };
+
+//             $delegate.data = function() {
+//               return data;
+//             }
+
+//             return $delegate;
+//         }
+//     ]);
+// }]);
+
   //Load components
   new Loader().load(customType);
   console.log(`Done initializing ${customType}`)
