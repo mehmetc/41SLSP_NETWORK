@@ -20,12 +20,17 @@ class openingHoursSeedController {
             
             if (target) {
                 let elInfo = document.createElement('rzs-opening-hours');
+                
                 let $elInfo = angular.element(elInfo);
                 let compiledElInfo = self.compile($elInfo);
 
                 //add new scope
                 compiledElInfo(self.scope.$parent.$new());
-                target.append(elInfo);            
+                
+                if (Array.isArray(Array.from(target))) {
+                    target = target[0];
+                }
+                target.prepend(elInfo);            
             }
         }                
     }
