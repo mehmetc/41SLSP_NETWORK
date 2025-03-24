@@ -25,6 +25,42 @@ bcu-lang-switch-component {
 */
 
 /*****************************/
+.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+  background-color: #ddd;
+  color: #3d6e94;
+} 
+
+.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple {
+  background-color: white;
+  color: #00b2aa;
+  border: none;
+  font-size: 18px;
+  position: fixed;
+  top: 2rem;
+  margin-left: -2rem;
+  box-shadow: none;
+}
+
+.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+  background-color: #ddd;
+  color: #3d6e94;
+}
+
+.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover #chevron-right_cache340 {
+  margin-left: 0.5rem; 
+}
+
+#chevron-right_cache340 {
+  transition: margin-left 0.3s ease;
+  margin-top: .3rem;
+}
+
+#library-info{
+  transform: scale(1.2);
+  margin-right: 0.5rem; 
+
+}
+
 /* rzs-opening-hours */
 
 rzs-opening-hours button.md-button.libinfo,
