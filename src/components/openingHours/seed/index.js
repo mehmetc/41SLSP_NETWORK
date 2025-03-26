@@ -16,7 +16,7 @@ class openingHoursSeedController {
         let el = self.parentEl.querySelector('rzs-opening-hours');
 
         if (!el) {
-            let target = self.element.parent().parent().parent().find('prm-location-holdings-after');
+            let target = self.element.parent()
             
             if (target) {
                 let elInfo = document.createElement('rzs-opening-hours');
