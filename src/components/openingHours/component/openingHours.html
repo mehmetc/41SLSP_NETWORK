@@ -82,8 +82,8 @@
              <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Öffnungszeiten auf Anfrage</span>
             </button> 
-
-            <p ng-if='$ctrl.data.data.address'>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+            <p ng-if='$ctrl.data.data.address'>{{$ctrl.data.name}} <br>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+          
             <p>
                 <span ng-if='$ctrl.data.data.phone'>
                     <a href="tel:{{ $ctrl.data.data.phone.value }}" class="md-primoExplore-theme">
