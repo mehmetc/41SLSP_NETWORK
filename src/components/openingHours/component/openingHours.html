@@ -1,14 +1,13 @@
 <!-- if the location is visible show next block  -->
 <div ng-show="$ctrl.visible" aria-hidden="false" id="libinfo">
     <!-- if the button was not clicked then show next block -->
-     <!-- divke rond ? -->
     <div ng-if="!$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
         <!-- $ctrl.toggle wil flip the boolean from true <-> false -->
          <!-- when the service return data then show occupancy when available-->
             <button ng-if="$ctrl.hasData()" ng-click="$ctrl.toggle()" class="libinfo md-raised md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <!--span translate='nui.customizing.idslu.informationtooltip'></span-->
-                <span>{{ $ctrl.data.name }} </span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.5rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
+                <span> Opening Hours</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.2rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
                     <g>
                         <path d="M50,95C25.187,95,5,74.813,5,50C5,25.187,25.187,5,50,5c24.813,0,45,20.187,45,45C95,74.813,74.813,95,50,95z M50,10.625   c-21.711,0-39.375,17.664-39.375,39.375c0,21.711,17.664,39.375,39.375,39.375c21.712,0,39.375-17.664,39.375-39.375   C89.375,28.289,71.712,10.625,50,10.625z"></path>
                     </g>
@@ -23,25 +22,12 @@
                 </svg>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
                     Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
-                    <!-- <i class="fa fa-chevron-right" id="" ></i> -->
-                    <svg id="chevron-right_cache340" width="100%" height="100%" viewBox="0 0 20 20" y="384" xmlns="http://www.w3.org/2000/svg"  fill="#3bbfad" fit="" preserveAspectRatio="xMidYMid meet" focusable="false" >
-                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
-                    </svg>
                 </span>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum == 0">
                     Opening Hours
                 </span--> 
 
             </button>
-            <!-- dont show link -->
-            <div ng-if="$ctrl.hasData()">
-                <style>
-                    div.i-button.neutralized-button.arrow-link-button.md-button.md-primoExplore-theme.md-ink-ripple > a.md-primoExplore-theme {
-                        display: none;
-                    }
-                </style>  
-
-            </div> 
             <!-- when the service dit NOT return data then show next message-->
             <button ng-if="!$ctrl.hasData()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>
@@ -55,8 +41,8 @@
         <div flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
             <button ng-click="$ctrl.toggle()" class="libinfo md-raised md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <!--span translate='nui.customizing.idslu.informationtooltip'></span-->
-                <span>{{ $ctrl.data.name }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.5rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
+                <span>Opening Hours</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.2rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
                     <g>
                         <path d="M50,95C25.187,95,5,74.813,5,50C5,25.187,25.187,5,50,5c24.813,0,45,20.187,45,45C95,74.813,74.813,95,50,95z M50,10.625   c-21.711,0-39.375,17.664-39.375,39.375c0,21.711,17.664,39.375,39.375,39.375c21.712,0,39.375-17.664,39.375-39.375   C89.375,28.289,71.712,10.625,50,10.625z"></path>
                     </g>
@@ -71,10 +57,7 @@
                 </svg>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
                     Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
-                    <!-- added roation 90degrees to have chevron downwords -->
-                    <svg id="chevron-right_cache340" width="100%" height="100%" viewBox="0 0 20 20" y="384" xmlns="http://www.w3.org/2000/svg" fill="#3bbfad" fit="" preserveAspectRatio="xMidYMid meet" focusable="false" transform="rotate(90)" >
-                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
-                    </svg>
+                   
                 </span>
             </button>
 
@@ -98,8 +81,8 @@
              <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Öffnungszeiten auf Anfrage</span>
             </button> 
-
-            <p ng-if='$ctrl.data.data.address'>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+            <p ng-if='$ctrl.data.data.address'>{{$ctrl.data.name}} <br>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+          
             <p>
                 <span ng-if='$ctrl.data.data.phone'>
                     <a href="tel:{{ $ctrl.data.data.phone.value }}" class="md-primoExplore-theme">
@@ -163,9 +146,7 @@
                     <p><strong>Auslastung Arbeitsplätze: {{$ctrl.data.data.occupancy.value.current}} von {{$ctrl.data.data.occupancy.value.maximum}}</strong></p>
                     <p><a href="https://rauminfo.zhbluzern.ch/" target="_blank">Rauminfo ZHB Luzern</a></p>
                 </div>
-            
             </div>   
-
         </div>
         <div ng-if='$ctrl.data.data.image' flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
             <img style="width:90%;" src="{{$ctrl.data.data.image.value[$ctrl.language]}}">            
