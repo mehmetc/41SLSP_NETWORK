@@ -1,7 +1,6 @@
 <!-- if the location is visible show next block  -->
 <div ng-show="$ctrl.visible" aria-hidden="false" id="libinfo">
     <!-- if the button was not clicked then show next block -->
-     <!-- divke rond ? -->
     <div ng-if="!$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
         <!-- $ctrl.toggle wil flip the boolean from true <-> false -->
          <!-- when the service return data then show occupancy when available-->
@@ -147,9 +146,7 @@
                     <p><strong>Auslastung Arbeitsplätze: {{$ctrl.data.data.occupancy.value.current}} von {{$ctrl.data.data.occupancy.value.maximum}}</strong></p>
                     <p><a href="https://rauminfo.zhbluzern.ch/" target="_blank">Rauminfo ZHB Luzern</a></p>
                 </div>
-            
             </div>   
-
         </div>
         <div ng-if='$ctrl.data.data.image' flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
             <img style="width:90%;" src="{{$ctrl.data.data.image.value[$ctrl.language]}}">            
