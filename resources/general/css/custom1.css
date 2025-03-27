@@ -33,22 +33,22 @@ bcu-lang-switch-component {
 /* .libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple span {
   margin-top: -2rem;
 } */
-
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple {
+/* ///////test */
+/* .libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple { */
   /* background-color: white; */
   /* color: #00b2aa; */
   /* border: none; */
-  font-size: 16px;
+  /* font-size: 16px; */
   /* position: fixed; */
   /* top: 2rem; */
-  margin-left: 0rem;
-  display: flex;
-  align-items: center;
+  /* margin-left: 0rem; */
+  /* display: flex; */
+  /* align-items: center; */
   /* padding-top: -1rem; */
   /* box-shadow: none; */
-}
+/* } */
 
-.libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+/* .libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover {
   background-color: #ddd;
   color: #3d6e94;
 }
@@ -56,20 +56,20 @@ bcu-lang-switch-component {
 .libinfo.md-raised.md-button.md-primoExplore-theme.md-ink-ripple:hover #chevron-right_cache340 {
   margin-left: 0.5rem;
    
-}
-
+} */
+/* 
 #chevron-right_cache340 {
   transition: margin-left 0.3s ease;
   margin-top: .3rem;
-}
+} */
 
-#library-info{
+/* #library-info{
   transform: scale(1.2);
   margin-right: 0.5rem; 
   display: flex;
   align-items: center;
   color : red
-}
+} */
 
 /* rzs-opening-hours */
 

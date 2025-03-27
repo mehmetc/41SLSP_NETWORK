@@ -74,7 +74,8 @@ class OpeningHoursController {
                 const response = await fetch(`https://services.libis.be/opening_hours/41SLSP/${institution}/${library}`, {headers: {Accept: 'application/json'}});        
                 
                 if (response.ok) {
-                    self.data = await response.json();    
+                    self.data = await response.json();  
+                    Primo.components.get('slsp-i-button-component')[0].style['pointer-events']='none'
                 } else {
                     self.data = {};
                 }   
