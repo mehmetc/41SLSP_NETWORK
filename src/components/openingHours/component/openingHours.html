@@ -35,7 +35,6 @@
                 </span>                     
             </button>
     </div>
-
     <!-- if the button was clicked (toggle button) then show next block -->
     <div ng-if="$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
         <div flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
@@ -72,7 +71,7 @@
              <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Öffnungszeiten auf Anfrage</span>
             </button> 
-            <p ng-if='$ctrl.data.data.address'>{{$ctrl.data.name}} <br>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+            <p ng-if='$ctrl.data.data.address'>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
           
             <p>
                 <span ng-if='$ctrl.data.data.phone'>
