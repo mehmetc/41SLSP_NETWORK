@@ -76,6 +76,7 @@ class OpeningHoursController {
                 if (response.ok) {
                     self.data = await response.json();  
                     Primo.components.get('slsp-i-button-component')[0].style['pointer-events']='none'
+                    Primo.components.get('prm-location-items-after')[1].style['display']='none'
                 } else {
                     self.data = {};
                 }   
