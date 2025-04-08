@@ -106,8 +106,10 @@
                         <span class="opening" ng-if="time.open">{{time.open}} - {{time.closed}}</span>
                        
                     </span>           
+                    <!-- current day closed / Alma label for translation?-->
                     <span ng-if="day.hours.length==0 || (day.hours.length>0 && day.hours[0].open == '')" class="opening">Geschlossen</span>
-                    <!--span ng-if="{{ $ctrl.exceptions.description.value[$ctrl.language] }}">{{ $ctrl.exceptions.description.value[$ctrl.language] }}</span-->
+                    <!-- description reason why closed / so far only single language as defined in backend-->
+                    <span ng-if="day.description.length>0"> {{ day.description }}</span>
                 </p>                
             </div>
             <div>
@@ -141,9 +143,11 @@
                     </span>           
                 </span>
             </div>                     
+            <!-- occupancy - only if used -->
             <div ng-if="$ctrl.data.data.occupancy.value.maximum > 0" class="occupancy">
                 <div>
                     <hr>
+                    <!-- multilingual label from Alma?-->
                     <p><strong>Auslastung Arbeitsplätze: {{$ctrl.data.data.occupancy.value.current}} von {{$ctrl.data.data.occupancy.value.maximum}}</strong></p>
                     <p><a href="https://rauminfo.zhbluzern.ch/" target="_blank">Rauminfo ZHB Luzern</a></p>
                 </div>
