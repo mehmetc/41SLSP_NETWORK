@@ -23,6 +23,38 @@ bcu-lang-switch-component {
 }
 
 */
+
+/* info button weg*/ 
+slsp-i-button-component>div>a>svg {
+ display: none !important;
+}
+
+/* chevron pfeil rechts weg*/ 
+slsp-i-button-component>div>a>prm-icon>md-icon>svg {
+  display: none !important;
+ }
+ 
+ /* link farbe schwarz */ 
+slsp-i-button-component>div>a>span {
+  color: #3a3a3a !important;
+}
+ 
+
+ /* link farbe schwarz in Nachricht  */ 
+slsp-i-button-component>div>span>a {
+  color: black !important;
+}
+
+
+ /* link farbe türkis für alma other members */ 
+ prm-alma-other-members>md-tabs>md-tabs-content-wrapper>md-tab-content>div>prm-opac>md-tabs>md-tabs-content-wrapper>md-tab-content>div>md-content>prm-location-items>div>div>prm-location-holdings>prm-location-holdings-after>slsp-i-button-component>div>a>span {
+  color: #00b2aa !important;
+}
+
+
+
+
+
 /*****************************/
 /* rzs-opening-hours */
 
@@ -216,6 +248,10 @@ eth-okm-link-component {
 /**/
 /**/
 
+/* 18.03.2025 - Exclude facets shown by default in CP. Background colour needs to be white */
+.available-facets .section-content .md-chips .md-chip .md-button:before {
+  background-color: #ffffff !important;
+}
 
 /*****************************/
 /* display library logo bigger */
