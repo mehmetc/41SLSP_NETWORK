@@ -1,0 +1,147 @@
+<!-- if the location is visible show next block  -->
+<div ng-show="$ctrl.visible" aria-hidden="false" id="libinfo">
+    <!-- if the button was not clicked then show next block -->
+    <div ng-if="!$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
+        <!-- $ctrl.toggle wil flip the boolean from true <-> false -->
+         <!-- when the service return data then show occupancy when available-->
+            <button ng-if="$ctrl.hasData()" ng-click="$ctrl.toggle()" class="libinfo md-raised md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <!--span translate='nui.customizing.idslu.informationtooltip'></span-->
+                <span> Opening Hours</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.2rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
+                    <g>
+                        <path d="M50,95C25.187,95,5,74.813,5,50C5,25.187,25.187,5,50,5c24.813,0,45,20.187,45,45C95,74.813,74.813,95,50,95z M50,10.625   c-21.711,0-39.375,17.664-39.375,39.375c0,21.711,17.664,39.375,39.375,39.375c21.712,0,39.375-17.664,39.375-39.375   C89.375,28.289,71.712,10.625,50,10.625z"></path>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M61.516,67.309l2.288,1.063c-4.021,3.073-7.879,5.476-11.577,7.208c-3.698,1.733-6.748,2.599-9.149,2.599    c-1.342,0-2.322-0.255-2.947-0.767c-0.623-0.512-0.937-1.319-0.937-2.424c0-2.73,1.145-7.004,3.432-12.819    c2.288-5.815,3.432-9.933,3.432-12.349c0-0.446-0.127-0.787-0.382-1.024c-0.254-0.236-0.612-0.355-1.074-0.355    c-0.74,0-1.641,0.223-2.704,0.67c-1.063,0.447-2.379,1.156-3.951,2.127l-2.149-1.182c4.297-2.888,8.25-5.146,11.854-6.775    c3.604-1.627,6.422-2.441,8.456-2.441c1.341,0,2.333,0.236,2.98,0.709c0.647,0.472,0.971,1.181,0.971,2.126    c0,0.919-0.739,3.874-2.218,8.862c-0.51,1.681-0.901,3.007-1.179,3.979c-0.971,3.256-1.733,5.961-2.288,8.113    c-0.554,2.153-0.831,3.454-0.831,3.9c0,0.551,0.15,0.959,0.45,1.222c0.301,0.263,0.773,0.394,1.421,0.394    c0.646,0,1.478-0.237,2.495-0.71C58.927,68.963,60.129,68.254,61.516,67.309z"></path>
+                        </g>
+                        <g>
+                            <circle cx="56.198" cy="29.933" r="8.004"></circle>
+                        </g>
+                    </g>
+                </svg>
+                <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
+                    Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
+                </span>
+                <span ng-if="$ctrl.data.data.occupancy.value.maximum == 0">
+                    Opening Hours
+                </span--> 
+
+            </button>
+            <!-- when the service dit NOT return data then show next message-->
+            <button ng-if="!$ctrl.hasData()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <span>
+                    No opening hours data found
+                </span>                     
+            </button>
+    </div>
+
+    <!-- if the button was clicked (toggle button) then show next block -->
+    <div ng-if="$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
+        <div flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
+            <button ng-click="$ctrl.toggle()" class="libinfo md-raised md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <!--span translate='nui.customizing.idslu.informationtooltip'></span-->
+                <span>Opening Hours</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="library-info" style="margin-left: 0.2rem;" x="0px" y="0px" width="38px" height="38px" viewBox="0 0 100 100" xml:space="preserve">
+                    <g>
+                        <path d="M50,95C25.187,95,5,74.813,5,50C5,25.187,25.187,5,50,5c24.813,0,45,20.187,45,45C95,74.813,74.813,95,50,95z M50,10.625   c-21.711,0-39.375,17.664-39.375,39.375c0,21.711,17.664,39.375,39.375,39.375c21.712,0,39.375-17.664,39.375-39.375   C89.375,28.289,71.712,10.625,50,10.625z"></path>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M61.516,67.309l2.288,1.063c-4.021,3.073-7.879,5.476-11.577,7.208c-3.698,1.733-6.748,2.599-9.149,2.599    c-1.342,0-2.322-0.255-2.947-0.767c-0.623-0.512-0.937-1.319-0.937-2.424c0-2.73,1.145-7.004,3.432-12.819    c2.288-5.815,3.432-9.933,3.432-12.349c0-0.446-0.127-0.787-0.382-1.024c-0.254-0.236-0.612-0.355-1.074-0.355    c-0.74,0-1.641,0.223-2.704,0.67c-1.063,0.447-2.379,1.156-3.951,2.127l-2.149-1.182c4.297-2.888,8.25-5.146,11.854-6.775    c3.604-1.627,6.422-2.441,8.456-2.441c1.341,0,2.333,0.236,2.98,0.709c0.647,0.472,0.971,1.181,0.971,2.126    c0,0.919-0.739,3.874-2.218,8.862c-0.51,1.681-0.901,3.007-1.179,3.979c-0.971,3.256-1.733,5.961-2.288,8.113    c-0.554,2.153-0.831,3.454-0.831,3.9c0,0.551,0.15,0.959,0.45,1.222c0.301,0.263,0.773,0.394,1.421,0.394    c0.646,0,1.478-0.237,2.495-0.71C58.927,68.963,60.129,68.254,61.516,67.309z"></path>
+                        </g>
+                        <g>
+                            <circle cx="56.198" cy="29.933" r="8.004"></circle>
+                        </g>
+                    </g>
+                </svg>
+                <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
+                    Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
+                   
+                </span>
+            </button>
+            <!-- Infobutton when open -->
+                <!-- <button ng-if="$ctrl.isOpen" ng-click="$ctrl.toggle()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
+                    <span>Bibliothek ist offen fast immer</span>
+                </button>  -->
+            <!-- Infobutton when closed -->
+             <button ng-if="!$ctrl.isOpen && $ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-warn md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <span>Bibliothek ist geschlossen</span>
+            </button> 
+            <!-- Infobutton when no opening hours data in database -->
+             <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
+                <span>Öffnungszeiten auf Anfrage</span>
+            </button> 
+            <p ng-if='$ctrl.data.data.address'>{{$ctrl.data.name}} <br>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+          
+            <p>
+                <span ng-if='$ctrl.data.data.phone'>
+                    <a href="tel:{{ $ctrl.data.data.phone.value }}" class="md-primoExplore-theme">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                            <path fill="currentColor" d="M 6.034333,6.6917509 17.409102,4.0668064 c 1.235912,-0.284369 2.504637,0.3609298 3.007751,1.5202803 l 5.249894,12.2497413 c 0.459365,1.071853 0.153121,2.329638 -0.754673,3.062435 l -6.62799,5.424886 c 3.93742,8.388885 10.816968,15.366863 19.380856,19.380841 l 5.42489,-6.627985 c 0.743734,-0.907794 1.990584,-1.214037 3.062437,-0.754672 l 12.249751,5.249889 c 1.170289,0.514052 1.815588,1.782775 1.531219,3.018686 l -2.624946,11.37476 C 57.034859,59.146893 55.98488,60 54.748968,60 26.7386,60 4,37.305167 4,9.2510718 4,8.0260977 4.84217,6.9651826 6.034333,6.6917509 z"></path>
+                        </svg>
+                        {{ $ctrl.data.data.phone.value }}
+                    </a>
+                </span>                
+                <br>
+                <span ng-if='$ctrl.data.data.email'> 
+                    <a href="mailto:{{ $ctrl.data.data.email.value }}" class="md-primoExplore-theme">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                            <path fill="currentColor" d="M 54.75,11 H 9.25 C 6.3504687,11 4,13.350469 4,16.25 v 31.5 C 4,50.64953 6.3504687,53 9.25,53 h 45.5 C 57.649531,53 60,50.64953 60,47.75 V 16.25 C 60,13.350469 57.649531,11 54.75,11 Z m 0,5.25 v 4.463047 C 52.297594,22.710125 48.387875,25.8155 40.029547,32.360391 38.187562,33.809281 34.538812,37.290141 32,37.249563 29.461625,37.290578 25.811672,33.808734 23.970453,32.360391 15.613437,25.816484 11.702734,22.710453 9.25,20.713047 V 16.25 Z M 9.25,47.75 V 27.449781 c 2.506219,1.996203 6.060359,4.797406 11.477594,9.039406 2.390609,1.881797 6.577156,6.035969 11.272406,6.010704 4.672172,0.02526 8.805672,-4.068641 11.271422,-6.009829 5.417125,-4.24189 8.97225,-7.043859 11.478578,-9.040171 V 47.75 z"></path>
+                        </svg>
+                        {{ $ctrl.data.data.email.value }}
+                    </a>
+                </span>
+                <br>
+                <span ng-if='$ctrl.data.data.homepage'> 
+                    <a target="_blank" class="md-primoExplore-theme" href="{{ $ctrl.data.data.homepage.value[$ctrl.language] }}">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                            <path fill="currentColor" d="M 32,4 C 16.532258,4 4,16.532258 4,32 4,47.467742 16.532258,60 32,60 47.467742,60 60,47.467742 60,32 60,16.532258 47.467742,4 32,4 Z m -3.612903,5.735484 v 1.275806 c 0,1.343549 -1.41129,2.212903 -2.619355,1.614517 l -2.709678,-1.35484 c 1.682259,-0.72258 3.466129,-1.230644 5.329033,-1.535483 z M 32,51.487097 v 3.093549 C 19.546774,54.580645 9.4193549,44.453226 9.4193549,32 c 0,-3.285484 0.7225801,-6.401613 1.9870971,-9.224193 1.117742,1.659677 2.845161,4.22258 3.906451,5.769354 0.587097,0.858065 1.264517,1.648387 2.043549,2.337097 l 0.09032,0.07903 c 1.07258,0.970969 2.280646,1.806452 3.567742,2.46129 1.580645,0.790323 3.883871,2.05484 5.509677,2.946775 1.151614,0.632258 1.862904,1.840322 1.862904,3.161291 v 3.612903 c 0,0.959677 0.38387,1.874193 1.06129,2.551613 C 31.141936,47.4 32.191936,50.064516 32,51.487097 Z M 36.820967,54.05 38.785484,48.754839 c 0.225806,-0.620968 0.37258,-1.264516 0.541936,-1.908065 0.124193,-0.451613 0.36129,-0.869354 0.7,-1.208064 l 1.275806,-1.275807 C 42.296774,43.380645 42.85,42.037097 42.85,40.637097 c 0,-0.914517 -0.36129,-1.795161 -1.004839,-2.43871 l -1.546774,-1.546774 c -0.67742,-0.67742 -1.591936,-1.06129 -2.551613,-1.06129 h -7.553225 c -1.061291,-0.530646 -2.42742,-3.612903 -3.612903,-3.612903 -1.185485,0 -2.359679,-0.282259 -3.420969,-0.812904 l -1.253225,-0.620968 c -0.451613,-0.225806 -0.745162,-0.699999 -0.745162,-1.208064 0,-0.575807 0.372581,-1.095161 0.925807,-1.275807 l 3.52258,-1.174193 c 0.609678,-0.203226 1.275807,-0.06774 1.75,0.35 l 1.05,0.914516 c 0.169356,0.146774 0.372581,0.225807 0.587097,0.225807 h 0.632259 c 0.677419,0 1.106451,-0.711291 0.812903,-1.309678 l -1.761291,-3.52258 c -0.180645,-0.35 -0.101612,-0.779033 0.180645,-1.05 l 1.117743,-1.083872 C 30.148387,21.240323 30.374193,21.15 30.61129,21.15 h 1.01613 c 0.237096,0 0.474193,-0.09032 0.643547,-0.259677 l 0.903226,-0.903226 c 0.35,-0.35 0.35,-0.925807 0,-1.275807 l -0.530644,-0.530645 c -0.350001,-0.349999 -0.350001,-0.925806 0,-1.275806 l 1.162902,-1.162903 0.530646,-0.530646 c 0.7,-0.7 0.7,-1.851613 0,-2.551613 L 31.141936,9.464516 C 31.424193,9.453226 31.706451,9.419356 32,9.419356 c 8.829033,0 16.46129,5.103226 20.175807,12.498387 l -1.467743,0.733871 c -0.417741,0.214516 -0.779031,0.530646 -1.03871,0.914516 l -2.212903,3.319356 c -0.609677,0.914516 -0.609677,2.1 0,3.003225 L 49.48871,32.9371 c 0.37258,0.564515 0.948387,0.959677 1.591935,1.129031 l 3.296775,0.824194 C 53.158064,44.374193 46.033871,52.040323 36.820967,54.05 Z"></path>
+                        </svg>
+                        {{ $ctrl.data.data.homepage.value[$ctrl.language] }}
+                    </a>
+                </span>
+            </p>
+            <!-- render the opening hours - but only if there are any-->
+            <!--div class="opening"-->
+            <div ng-if="$ctrl.data.data.useage" class="hours">
+                <!--p><strong>Opening Hours for week #{{$ctrl.data.week.number}} // <br>{{$ctrl.data.week.start}} through {{$ctrl.data.week.end}} </strong></p-->
+                <p><strong>Öffnungszeiten für die aktuelle Woche</strong></p>
+                <!-- render the opening hour for a day in the current data object-->
+                <p ng-repeat="day in $ctrl.data.current">
+                    <span class="day">{{$ctrl.weekdayText(day.date)}}</span>
+                    <span ng-repeat="time in day.hours" ng-if="day.hours.length>0 && day.hours[0].open != ''">
+                        <span class="opening" ng-if="time.open">{{time.open}} - {{time.closed}}</span>                    
+                    </span>           
+                    <span ng-if="day.hours.length==0 || (day.hours.length>0 && day.hours[0].open == '')" class="opening">Geschlossen</span>
+                </p>                
+            </div>
+            <div>
+                <span ng-if='$ctrl.data.data.textinfo1'> 
+                    <p>
+                        {{ $ctrl.data.data.textinfo1.value[$ctrl.language] }}
+                    </p>
+                </span>
+            </div>
+   
+            <div>
+                <span ng-if='$ctrl.data.data.infourl'> 
+                    <p>
+                        <a target="_blank" class="md-primoExplore-theme" href="{{ $ctrl.data.data.infourl.value[$ctrl.language] }}"> Weitere Information zu den Öffnungszeiten</a>
+                    </p>
+                </span>
+            </div>                     
+            <div ng-if="$ctrl.data.data.occupancy.value.maximum > 0" class="occupancy">
+                <div>
+                    <hr>
+                    <p><strong>Auslastung Arbeitsplätze: {{$ctrl.data.data.occupancy.value.current}} von {{$ctrl.data.data.occupancy.value.maximum}}</strong></p>
+                    <p><a href="https://rauminfo.zhbluzern.ch/" target="_blank">Rauminfo ZHB Luzern</a></p>
+                </div>
+            </div>   
+        </div>
+        <div ng-if='$ctrl.data.data.image' flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
+            <img style="width:90%;" src="{{$ctrl.data.data.image.value[$ctrl.language]}}">            
+        </div>
+         
+    </div>
+</div>
