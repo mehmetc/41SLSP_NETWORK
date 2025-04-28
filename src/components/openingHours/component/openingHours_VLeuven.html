@@ -20,8 +20,11 @@
                         </g>
                     </g>
                 </svg>
+                <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0" translate='nui.customization.rzs.opening_occupancy'>
+                    Occupancy:
+                </span>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
-                    Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
+                  {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
                 </span>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum == 0">
                     Opening Hours
@@ -30,12 +33,11 @@
             </button>
             <!-- when the service dit NOT return data then show next message-->
             <button ng-if="!$ctrl.hasData()" class="button-confirm md-button md-primoExplore-theme md-ink-ripple" type="button">
-                <span>
-                    No opening hours data found
+                <span translate='nui.customization.rzs.opening_nodata'>
+                    No data found
                 </span>                     
             </button>
     </div>
-
     <!-- if the button was clicked (toggle button) then show next block -->
     <div ng-if="$ctrl.show" layout="row" layout-wrap="" class="layout-wrap layout-row">
         <div flex="100" flex-gt-sm="50" class="flex-gt-sm-50 flex-100">
@@ -55,9 +57,11 @@
                         </g>
                     </g>
                 </svg>
+                <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0" translate='nui.customization.rzs.opening_occupancy'>
+                    Occupancy:
+                </span>
                 <span ng-if="$ctrl.data.data.occupancy.value.maximum > 0">
-                    Occupancy: {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
-                   
+                  {{$ctrl.data.data.occupancy.value.current}} / {{$ctrl.data.data.occupancy.value.maximum  }} 
                 </span>
             </button>
             <!-- Infobutton when open -->
@@ -72,7 +76,7 @@
              <button ng-if="!$ctrl.isOpen && !$ctrl.data.data.useage" ng-click="$ctrl.toggle()" class="button-notice md-button md-primoExplore-theme md-ink-ripple" type="button">
                 <span>Öffnungszeiten auf Anfrage</span>
             </button> 
-            <p ng-if='$ctrl.data.data.address'>{{$ctrl.data.name}} <br>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
+            <p ng-if='$ctrl.data.data.address'>{{ $ctrl.data.data.address.value[$ctrl.language] }}<br>{{ $ctrl.data.data.city.value[$ctrl.language] }}</p>
           
             <p>
                 <span ng-if='$ctrl.data.data.phone'>
@@ -113,7 +117,9 @@
                     <span ng-repeat="time in day.hours" ng-if="day.hours.length>0 && day.hours[0].open != ''">
                         <span class="opening" ng-if="time.open">{{time.open}} - {{time.closed}}</span>                    
                     </span>           
-                    <span ng-if="day.hours.length==0 || (day.hours.length>0 && day.hours[0].open == '')" class="opening">Geschlossen</span>
+                    <!-- <span ng-if="day.hours.length==0 || (day.hours.length>0 && day.hours[0].open == '')" class="opening">Geschlossen</span> -->
+                    <span ng-if="day.hours.length==0 || (day.hours.length>0 && day.hours[0].open == '')" class="opening"> <span translate='nui.customization.rzs.opening_closed'></span>Geschlossen</span>
+
                 </p>                
             </div>
             <div>
