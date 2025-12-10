@@ -52,6 +52,8 @@ slsp-i-button-component>div>a>svg {
  }
  
  
+  /* 06.11.2025 Hiding the display search snippet */
+  div.result-item-text.layout-fill.layout-column.flex > prm-snippet {display: none}
  
  
  
