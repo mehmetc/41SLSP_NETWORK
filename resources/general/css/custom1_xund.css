@@ -14,6 +14,12 @@ negative #808080 mid grey
 notice #ffcc66 vanilla
  */
 
+/* 20.01.2026 alert-bar SLSP deactivate */ 
+body:before {
+ display: none !important;
+}
+
+
 
 /* 17.04.2024 Hiding the Language Menu - but only for XUND View*/
 
