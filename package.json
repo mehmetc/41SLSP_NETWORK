@@ -19,7 +19,7 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo": {
+  "primo_test": {
     "url": "https://slsp-rzs-psb.primo.exlibrisgroup.com/",
     "institution": "41SLSP_RZS",
     "vidId": "VU07",
@@ -33,7 +33,7 @@
       "tmp": "./tmpPackage"
     }
   },
-  "primo_prod": {
+  "primo": {
     "url": "https://slsp-rzs.primo.exlibrisgroup.com",
     "institution": "41SLSP_RZS",
     "vidId": "VU07",
