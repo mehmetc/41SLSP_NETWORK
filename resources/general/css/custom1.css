@@ -765,9 +765,11 @@ slsp-i-button-component>div>a>svg {
      text-align: center;
      /*background-color: #F7EDA3 !important; */
  }
- .courier-info.bar.alert-bar a {
+
+ /* 1.7.2026 */
+ /* .courier-info.bar.alert-bar a {
      color: #44d; /*hier passende Farbe einfügen oder Regel weglassen */
-  }
+  /* } */
  
  /* Change order of elements in full view REIHENFOLGE UMSORTIEREN - inkonsistent im Central package und wir wollen Links weiter oben. Update 20220318 */ 
  
@@ -1555,7 +1557,12 @@ slsp-i-button-component>div>a>svg {
    color: #F7EDA3  !important;
    text-decoration-line: underline;
    } 
- 
+
+   /* 1.7.2026 - für mobile/kleine Bildschirme Text fliessend */
+ .bar-text {
+    display: flow !important; 
+    } 
+
  .prm-highlight, prm-breadcrumbs .md-chip.persistent-facet {
    background-color: #FFFCC4; }
    .prm-highlight.prm-hue1, .list-item-wrapper .item-bookmarked,
