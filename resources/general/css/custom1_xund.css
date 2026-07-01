@@ -61,6 +61,11 @@ slsp-i-button-component>div>a>svg {
   /* 06.11.2025 Hiding the display search snippet */
   div.result-item-text.layout-fill.layout-column.flex > prm-snippet {display: none}
  
+      /* 01.07.2026  request button Rapido Tile*/
+  button.get_it_btn_digital {
+    color: #14413c !important;
+  }
+
  
  
  /*****************************/
@@ -1541,7 +1546,7 @@ slsp-i-button-component>div>a>svg {
      
  /* temporary hide mehmets alert-bar */
  .alert-bar.lbs-message-service {
-   display:none;
+   /* display:none; */
    /*background-color: #DC143C !important; */
    /* background-color: #8fa4df !important;  */
    background-color: #e05c27 !important; 
