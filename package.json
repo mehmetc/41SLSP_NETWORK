@@ -48,7 +48,7 @@
     }
   },
   "scripts": {
-    "start": "cross-env-shell \"primoServe --vid $npm_package_primo_institution:$npm_package_primo_vidId --proxy $npm_package_primo_url --dir ./dist --ve\"",
+    "start": "node start.js",
     "build": "cross-env-shell \"rimraf dist/ && webpack\"",
     "watch": "webpack --watch",
     "package": "node make_package.js"
@@ -73,8 +73,8 @@
     "imports-loader": "^3.0.0",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
-    "primo-explore-eth-openurl-interlibrary": "^0.0.4",
-    "primo-explore-eth-person-card": "^0.0.4",
+    "primo-explore-eth-openurl-interlibrary": "https://gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-openurl-interlibrary.git",
+    "primo-explore-eth-person-card": "https://gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-person-card.git",
     "primo-serve": "^0.0.17",
     "rimraf": "^3.0.2",
     "style-loader": "^3.2.1",

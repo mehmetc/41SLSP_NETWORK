@@ -5407,15 +5407,13 @@ pretty-bytes@^5.2.0, pretty-bytes@^5.3.0:
   resolved "https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz"
   integrity sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==
 
-primo-explore-eth-openurl-interlibrary@^0.0.4:
+"primo-explore-eth-openurl-interlibrary@https://gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-openurl-interlibrary.git":
   version "0.0.4"
-  resolved "https://registry.npmjs.org/primo-explore-eth-openurl-interlibrary/-/primo-explore-eth-openurl-interlibrary-0.0.4.tgz"
-  integrity sha512-F3kyoh2YeeZKxECwed48bh959VA22U3eZ0nm4aZlYcIkEcE0u4G4iS4mVBu/2nyyW2HnF8y3t+FZxX/zL6stGg==
+  resolved "git+ssh://git@gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-openurl-interlibrary.git#9003c2bf35ec554b1db20998065e59d334f839f1"
 
-primo-explore-eth-person-card@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/primo-explore-eth-person-card/-/primo-explore-eth-person-card-0.0.4.tgz"
-  integrity sha512-gjYTxiO256gUJiXCGRDaYPy8uS3oBr0s8QmcmISxnfgQSCf56Cstwpt/MXvQJBw2eeK8vM444tQlte29PmHsKw==
+"primo-explore-eth-person-card@https://gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-person-card.git":
+  version "0.0.8"
+  resolved "git+ssh://git@gitlab.com/ethlibrary/primo-explore-modules/primo-explore-eth-person-card.git#b2a7204eff79a7b31ca5a7a6e4269be508dbec7d"
 
 primo-serve@^0.0.17:
   version "0.0.17"

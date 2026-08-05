@@ -9,6 +9,8 @@ class OpeningHoursController {
     self.locationCode = null; // location code
     self.data = {}; // loaded opening hours data
     self.show = false; // show or hide details
+    self.baseUrl = "https://services.libis.be/opening_hours/41SLSP/";
+    //self.baseUrl = "http://127.0.0.1:9292/opening_hours/41SLSP/";
   }
 
   $onInit() {
@@ -81,7 +83,7 @@ class OpeningHoursController {
 
       if (location != self.locationCode) {
         const response = await fetch(
-          `https://services.libis.be/opening_hours/41SLSP/${institution}/${library}`,
+          `${self.baseUrl}${institution}/${library}?from_today=1`,
           { headers: { Accept: "application/json" } }
         );
 
