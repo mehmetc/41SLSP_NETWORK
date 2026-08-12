@@ -32,36 +32,42 @@ make_package.sh
 
 - Regarding the ETH person-card. After cloning and yarn install, we need to perform some steps manually in order to get it running (```yarn build ```).
 
-Error message in node_modules when using "yarn build"?
+-- Error message in node_modules when using "yarn build"?
 ```
 ./node_modules/primo-explore-eth-openurl-interlibrary/js/eth-openurl-interlibrary.module.js
 ./node_modules/primo-explore-eth-person-card/js/eth-person-card.module.js
 ```
 Solution (remove curly brackets in two lines (html) of the two modules):
+
+Remove curly brackets in line 20:
 ```
 ./node_modules/primo-explore-eth-openurl-interlibrary/js/eth-openurl-interlibrary.module.js
+import ethOpenurlInterlibraryHtml from './eth-openurl-interlibrary.html';
 ```
-Remove curly brackets in line 20 
+
+Remove curly brackets in line 27:
 ```
 ./node_modules/primo-explore-eth-person-card/js/eth-person-card.module.js
+import ethPersonCardHtml from './eth-person-card.html';
 ```
-Remove curly brackets in line 27
+
 Additionally we need to change the controller:
 ```
 .\node_modules\primo-explore-eth-person-card\js\eth-person-card.controller.js
 ```
 
-Line 77 (replace link to dnb)
+Line 77 (replace link to dnb):
 ```
      //if(l.indexOf('href="http://d-nb.info/gnd/')>-1){
     if(l.indexOf('https://explore.gnd.network/gnd/')>-1){
 ```
-Comment Line 90-92 
+Comment Line 90-92 :
 ```
 90              //      else{
 91             //          this.gndIds.push(part);
 92             //      }
 ```
+After all these steps ```yarn build``` works fine.
 
 ### Directory structure
 ```
