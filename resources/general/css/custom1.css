@@ -1546,7 +1546,7 @@ slsp-i-button-component>div>a>svg {
      
  /* temporary hide mehmets alert-bar */
  .alert-bar.lbs-message-service {
-   /* display:none; */
+   display:none;
    /*background-color: #DC143C !important; */
    /* background-color: #8fa4df !important;  */
    background-color: #e05c27 !important; 
